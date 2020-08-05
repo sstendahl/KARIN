@@ -1,0 +1,3 @@
+Sample ID,Date,Amount of Layers,Materials,Magnetron Powers,Growth Times,Inlet gasses,Background Pressure,Period,Gamma ratio,Bias,Comments,Specular file location,Off-specular file location,2D Map location
+Sample ID,2020-01-01,50,,,,Ar: 3 mTorr,,,,,,/home/sjoerd/Dokument/offspecular1194.txt,,
+test,2020-01-01,50,,,,Ar: 3 mTorr,,,,,,/home/sjoerd/Dokument/offspecular1194.txt,,
