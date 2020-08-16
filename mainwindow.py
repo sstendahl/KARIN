@@ -12,7 +12,7 @@ from BornAgainScript import ba, get_sample, get_simulation, run_simulation
 from samples import Sample
 from DialogWindows import NewSample, SampleDatabase
 class MainWindow(Gtk.ApplicationWindow):
-
+#Testing git
 
     def __init__(self):
         self.samplelist = []
