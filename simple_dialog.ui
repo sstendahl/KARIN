@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1083</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTableWidget" name="SampleDBList">
+     <property name="dragEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Sample ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>N</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Materials</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Dep times</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Include</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>IFM20001</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>2020-01-14</string>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string>100</string>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string>Ni/Ti</string>
+      </property>
+     </item>
+     <item row="0" column="4">
+      <property name="text">
+       <string>Ni 5s, Ti 10s</string>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="text">
+       <string>Bla bla bla</string>
+      </property>
+     </item>
+     <item row="0" column="6">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkState">
+       <enum>Checked</enum>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>IFM20002</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>2020-01-14</string>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string>57</string>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string>Co/Yi</string>
+      </property>
+     </item>
+     <item row="1" column="4">
+      <property name="text">
+       <string>Co 5s, Yi, 20s</string>
+      </property>
+     </item>
+     <item row="1" column="5">
+      <property name="text">
+       <string>Test</string>
+      </property>
+     </item>
+     <item row="1" column="6">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checkState">
+       <enum>Unchecked</enum>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <layout class="QGridLayout" name="gridLayout_3"/>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="2" column="0">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>Normalize</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="checkBox_4">
+       <property name="text">
+        <string>Shift vertically</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="addSample_button">
+       <property name="text">
+        <string>Add Sample</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Remove Sample</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

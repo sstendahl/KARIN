@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main</class>
+ <widget class="QMainWindow" name="main">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>952</width>
+    <height>868</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>KARIN 2.0 (alpha)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="2">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="reflectivityTab">
+         <attribute name="title">
+          <string>Specular</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::NoFocus</enum>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page">
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_3">
+                  <item>
+                   <layout class="QGridLayout" name="gridLayout_2">
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="label_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>Period: -- Å</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="5" column="0" alignment="Qt::AlignTop">
+                     <widget class="QPushButton" name="DetectPeaks_button">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>112</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Detect Peaks</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0" alignment="Qt::AlignLeft">
+                     <widget class="QListWidget" name="listWidget">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>Peak 1: 2 degrees</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>Peak 2: 4 degrees</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_2">
+               <layout class="QGridLayout" name="gridLayout_6">
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_5">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="insertVert_button">
+                    <property name="text">
+                     <string>PushButton</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="SpecReflectivity_Xray">
+              <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+               <widget class="QPushButton" name="openSampleDB_button">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Open SampleDB</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="specularTab">
+         <attribute name="title">
+          <string>Off-specular</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="offSpecReflectivity_Xray"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>Simulations</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>Calculator</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>952</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_SampleDB"/>
+    <addaction name="actionOpen_single_specular_file"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuReflectivity">
+    <property name="title">
+     <string>Reflectivity</string>
+    </property>
+    <widget class="QMenu" name="menuShow_2">
+     <property name="title">
+      <string>Show</string>
+     </property>
+     <addaction name="actionSpecular_X_ray_2"/>
+     <addaction name="actionOff_specular_X_ray"/>
+     <addaction name="separator"/>
+     <addaction name="separator"/>
+     <addaction name="actionSpecular_neutron"/>
+     <addaction name="actionOff_specular_neutron"/>
+    </widget>
+    <widget class="QMenu" name="menuTools">
+     <property name="title">
+      <string>Tools</string>
+     </property>
+     <addaction name="actionData_tools"/>
+    </widget>
+    <addaction name="menuShow_2"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="menuTools"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuReflectivity"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionOpen_SampleDB">
+   <property name="text">
+    <string>Open SampleDB</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionOff_specular">
+   <property name="text">
+    <string>Off-specular</string>
+   </property>
+  </action>
+  <action name="actionNeutrons">
+   <property name="text">
+    <string>Neutrons</string>
+   </property>
+  </action>
+  <action name="actionX_Rays">
+   <property name="text">
+    <string>X-Rays</string>
+   </property>
+  </action>
+  <action name="actionOpen_single_specular_file">
+   <property name="text">
+    <string>Open single specular file</string>
+   </property>
+  </action>
+  <action name="actionSpecular_X_ray">
+   <property name="text">
+    <string>Specular X-ray</string>
+   </property>
+  </action>
+  <action name="actionSpecular_X_ray_2">
+   <property name="text">
+    <string>Specular X-ray</string>
+   </property>
+  </action>
+  <action name="actionOff_specular_X_ray">
+   <property name="text">
+    <string>Off-specular X-ray</string>
+   </property>
+  </action>
+  <action name="actionSpecular_neutron">
+   <property name="text">
+    <string>Specular neutron</string>
+   </property>
+  </action>
+  <action name="actionOff_specular_neutron">
+   <property name="text">
+    <string>Off-specular neutron</string>
+   </property>
+  </action>
+  <action name="actionData_tools">
+   <property name="text">
+    <string>Data tools</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
