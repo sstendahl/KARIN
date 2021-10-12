@@ -26,6 +26,8 @@ def singlePlotonCanvas(self, layout, filename, X,Y):
     layout.addWidget(canvas)
     plotFigure(self, filename, X, Y)
     figurecanvas = [figure, canvas]
+    self.toolbar = NavigationToolbar(canvas, self)
+    layout.addWidget(self.toolbar)
     return figurecanvas
 
 
