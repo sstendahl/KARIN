@@ -96,6 +96,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
+        self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
             if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
