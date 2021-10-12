@@ -124,9 +124,15 @@
                 <item row="0" column="0">
                  <layout class="QGridLayout" name="gridLayout_5">
                   <item row="0" column="0">
-                   <widget class="QPushButton" name="Insert_line">
+                   <widget class="QPushButton" name="Insert_line_button">
                     <property name="text">
                      <string>Insert vertical line</string>
+                    </property>
+                    <property name="checkable">
+                     <bool>true</bool>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
@@ -137,7 +143,13 @@
              </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="SpecReflectivity_Xray">
+             <layout class="QVBoxLayout" name="SpecReflectivity_Xray" stretch="0">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetNoConstraint</enum>
+              </property>
               <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
                <widget class="QPushButton" name="openSampleDB_button">
                 <property name="sizePolicy">
@@ -211,26 +223,24 @@
     </property>
     <widget class="QMenu" name="menuShow_2">
      <property name="title">
-      <string>Show</string>
+      <string>View</string>
      </property>
      <addaction name="actionSpecular_X_ray_2"/>
      <addaction name="actionOff_specular_X_ray"/>
      <addaction name="separator"/>
      <addaction name="separator"/>
-     <addaction name="actionSpecular_neutron"/>
-     <addaction name="actionOff_specular_neutron"/>
     </widget>
     <widget class="QMenu" name="menuTools">
      <property name="title">
       <string>Tools</string>
      </property>
-     <addaction name="actionData_tools"/>
      <addaction name="actionDetect_peaks"/>
+     <addaction name="actionData_tools"/>
     </widget>
-    <addaction name="menuShow_2"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="menuTools"/>
+    <addaction name="menuShow_2"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuReflectivity"/>
@@ -273,12 +283,12 @@
   </action>
   <action name="actionSpecular_X_ray_2">
    <property name="text">
-    <string>Specular X-ray</string>
+    <string>Xrays</string>
    </property>
   </action>
   <action name="actionOff_specular_X_ray">
    <property name="text">
-    <string>Off-specular X-ray</string>
+    <string>Neutrons</string>
    </property>
   </action>
   <action name="actionSpecular_neutron">

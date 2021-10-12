@@ -1,4 +1,4 @@
-#Main.py
+#Main file
 import CallUI
 
 def setUp():
