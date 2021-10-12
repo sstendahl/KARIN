@@ -44,10 +44,15 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
-        self.Insert_line.clicked.connect(self.insertLine)
+        self.Insert_line_button.clicked.connect(self.insertLine)
 
     def insertLine(self):
-        plottingtools.insertLine(self,5)
+        try:
+            self.lines.remove()
+            self.figXrayspec[1].draw()
+        except:
+            print("No lines to remove")
+
     def addSample(self):
         self.addSampleWindow.show()
 
@@ -95,18 +100,19 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
-        try:
-            self.lines.remove()
-        except:
-            print("No lines to remove")
-        plottingtools.insertLine(self, xvalue)
-        self.figXrayspec[1].draw()
+        if self.Insert_line_button.isChecked():
+            try:
+                self.lines.remove()
+            except:
+                print("No lines to remove")
+            plottingtools.insertLine(self, xvalue)
+            self.figXrayspec[1].draw()
 
 
 
 
     def hover(self, event):
-        if self.mousepressed:
+        if self.Insert_line_button.isChecked() and self.mousepressed:
             print("Hello")
             xvalue = event.xdata
             try:
