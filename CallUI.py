@@ -4,17 +4,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog
 from pathlib import Path
 import os
-from scipy.signal import find_peaks
+#from scipy.signal import find_peaks
 import helpfunctions
 import plottingtools
-from matplotlib.figure import Figure
+#from matplotlib.figure import Figure
 import functions
 from PyQt5.QtWidgets import QTableWidgetItem
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
-from matplotlib.backends.backend_qt5agg import (
-    FigureCanvasQTAgg as FigureCanvas,
-    NavigationToolbar2QT as NavigationToolbar)
+#import matplotlib.pyplot as plt
+#from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+#from matplotlib.backends.backend_qt5agg import (
+#    FigureCanvasQTAgg as FigureCanvas,
+#    NavigationToolbar2QT as NavigationToolbar)
 
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")

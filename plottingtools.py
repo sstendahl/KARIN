@@ -22,7 +22,6 @@ def plotFigure(self, filename, X, Y):
     # window.addWidget(canvas)
 
 def plotonCanvas(self, layout, datatypo):
-    print("Hoi jongen")
     self.figure = plt.figure()
     print(type(datatypo))
     self.canvas = FigureCanvas(self.figure)
