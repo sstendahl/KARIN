@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added vertical line function">
-      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM18008.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM18009.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM18009.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple_dialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/simple_dialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +27,13 @@
         <option value="sjoerd &lt;sjoerd1993@gmail.com&gt;" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -140,6 +140,8 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.plottingtools" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.plottingtools" />
       </list>
     </recent_temporary>
   </component>
@@ -215,11 +217,11 @@
       <updated>1634040148416</updated>
     </task>
     <task id="LOCAL-00008" summary="Added vertical line function">
-      <created>1634041867005</created>
+      <created>1634044083549</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1634041867005</updated>
+      <updated>1634044083549</updated>
     </task>
     <option name="localTasksCounter" value="9" />
     <servers />
@@ -245,6 +247,7 @@
     <MESSAGE value="Added some groundwork for stack switcher" />
     <MESSAGE value="Groundwork for vertical line function" />
     <MESSAGE value="Added vertical line function (enabled by default for now)" />
+    <MESSAGE value="Improved SampleDB UX" />
     <MESSAGE value="Added vertical line function" />
     <option name="LAST_COMMIT_MESSAGE" value="Added vertical line function" />
   </component>

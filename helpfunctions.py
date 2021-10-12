@@ -1,10 +1,3 @@
-import sys
-import matplotlib.pyplot as plt
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt5agg import (
-    FigureCanvasQTAgg as FigureCanvas,
-    NavigationToolbar2QT as NavigationToolbar)
-
 def openXY(path):
    X, Y = [], []
    for line in open(path, 'r'):

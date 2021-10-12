@@ -1,13 +1,9 @@
-import sys
-from PyQt5.QtWidgets import QDialog, QApplication, QPushButton, QVBoxLayout
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
 import helpfunctions
 import seaborn as sns
 from PyQt5 import QtCore
-from matplotlib.figure import Figure
-
 # main window
 
 def plotFigure(self, filename, X, Y):
