@@ -137,7 +137,13 @@
              </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="SpecReflectivity_Xray">
+             <layout class="QVBoxLayout" name="SpecReflectivity_Xray" stretch="0">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetNoConstraint</enum>
+              </property>
               <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
                <widget class="QPushButton" name="openSampleDB_button">
                 <property name="sizePolicy">

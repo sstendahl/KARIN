@@ -3,12 +3,12 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog
 from pathlib import Path
-import os
 #from scipy.signal import find_peaks
 import helpfunctions
 import plottingtools
 #from matplotlib.figure import Figure
 import functions
+import mplcursors
 from PyQt5.QtWidgets import QTableWidgetItem
 #import matplotlib.pyplot as plt
 #from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -73,17 +73,48 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dialogWindow.show()
 
 
-    def detectPeaks(self):
+    def detectPeaks(self, event):
         print("Detect peaks pressed")
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
+        self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
+        self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
+        self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
         helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
         self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec")
         #plotting X-ray
 
+
+    def mouserelease(self, event):
+        self.mousepressed = False
+
+
+    def mousepress(self,event):
+        self.mousepressed = True
+        xvalue = event.xdata
+        try:
+            self.lines.remove()
+        except:
+            print("No lines to remove")
+        plottingtools.insertLine(self, xvalue)
+        self.figXrayspec[1].draw()
+
+
+
+
+    def hover(self, event):
+        if self.mousepressed:
+            print("Hello")
+            xvalue = event.xdata
+            try:
+                self.lines.remove()
+            except:
+                print("No lines to remove")
+            plottingtools.insertLine(self, xvalue)
+            self.figXrayspec[1].draw()
 
     def openSpecular(self):
         options = QFileDialog.Options()
