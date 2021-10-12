@@ -21,18 +21,17 @@ def plotFigure(self, filename, X, Y):
     # canvas = FigureCanvas(fig)
     # window.addWidget(canvas)
 
-def plotonCanvas(self, layout, datatypo):
+def plotonCanvas(self, layout, datatype):
     self.figure = plt.figure()
-    print(type(datatypo))
     self.canvas = FigureCanvas(self.figure)
     layout.addWidget(self.canvas)
     shifter = 1
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
-            if datatypo.__eq__("XraySpec"):
+            if datatype.__eq__("XraySpec"):
                 XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
-            elif datatypo == "XrayoffSpec":
+            elif datatype == "XrayoffSpec":
                 XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
             else:
                 XY = [0,0]
@@ -42,7 +41,13 @@ def plotonCanvas(self, layout, datatypo):
             if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked:
                 Y = [element * shifter for element in Y]
                 shifter *= 100000
-            plotFigure(self, self.samplelist[i].sampleID, X, Y)
+                plotFigure(self, self.samplelist[i].sampleID, X, Y)
+                plt.yticks([])
+            else:
+                plotFigure(self, self.samplelist[i].sampleID, X, Y)
     self.toolbar = NavigationToolbar(self.canvas, self)
     layout.addWidget(self.toolbar)
     plt.tight_layout()
+
+def insertLine(self,x):
+    plt.axvline(x)

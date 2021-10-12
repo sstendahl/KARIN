@@ -41,8 +41,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionOpen_single_specular_file.triggered.connect(self.openSpecular)
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
         self.actionOpen_SampleDB.triggered.connect(self.openSampleDB)
+        self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
+        self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
+        self.Insert_line.clicked.connect(self.insertLine)
 
+    def insertLine(self):
+        plottingtools.insertLine(self,5)
     def addSample(self):
         self.addSampleWindow.show()
 

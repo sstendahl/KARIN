@@ -9,7 +9,6 @@ def openXY(path):
    X, Y = [], []
    for line in open(path, 'r'):
        values = [float(s) for s in line.split()]
-       print(values)
        X.append(values[0])
        Y.append(values[1])
    XY = [X, Y]

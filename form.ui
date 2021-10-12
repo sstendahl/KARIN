@@ -36,7 +36,7 @@
           <item row="0" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QStackedWidget" name="stackedWidget">
+             <widget class="QStackedWidget" name="SpecularTools">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
                 <horstretch>0</horstretch>
@@ -50,7 +50,7 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="page">
                <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -124,9 +124,9 @@
                 <item row="0" column="0">
                  <layout class="QGridLayout" name="gridLayout_5">
                   <item row="0" column="0">
-                   <widget class="QPushButton" name="insertVert_button">
+                   <widget class="QPushButton" name="Insert_line">
                     <property name="text">
-                     <string>PushButton</string>
+                     <string>Insert vertical line</string>
                     </property>
                    </widget>
                   </item>
@@ -225,6 +225,7 @@
       <string>Tools</string>
      </property>
      <addaction name="actionData_tools"/>
+     <addaction name="actionDetect_peaks"/>
     </widget>
     <addaction name="menuShow_2"/>
     <addaction name="separator"/>
@@ -292,7 +293,12 @@
   </action>
   <action name="actionData_tools">
    <property name="text">
-    <string>Data tools</string>
+    <string>General analysis</string>
+   </property>
+  </action>
+  <action name="actionDetect_peaks">
+   <property name="text">
+    <string>Detect peaks</string>
    </property>
   </action>
  </widget>
