@@ -4,11 +4,14 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
 import helpfunctions
+import seaborn as sns
 from PyQt5 import QtCore
+from matplotlib.figure import Figure
 
 # main window
 
 def plotFigure(self, filename, X, Y):
+    sns.set()
     plt.plot(X, Y, label=filename)
     plt.xlim(0.2, X[-1])
     plt.xlabel('Incidence angle 2θ (°)')
@@ -16,15 +19,15 @@ def plotFigure(self, filename, X, Y):
     plt.yscale('log')
     plt.legend()
     plt.tight_layout()
-    self.canvas.draw()
+    #self.canvas.draw()
     # fig = plt.figure()
     # canvas = FigureCanvas(fig)
     # window.addWidget(canvas)
 
 def plotonCanvas(self, layout, datatype):
-    self.figure = plt.figure()
-    self.canvas = FigureCanvas(self.figure)
-    layout.addWidget(self.canvas)
+    figure = plt.figure()
+    canvas = FigureCanvas(figure)
+    layout.addWidget(canvas)
     shifter = 1
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
     for i in range(len(self.samplelist)):
@@ -38,16 +41,19 @@ def plotonCanvas(self, layout, datatype):
 
             X = XY[0]  # split XY data
             Y = XY[1]
-            if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked:
+            if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked: #if shifted vertically is checked
                 Y = [element * shifter for element in Y]
-                shifter *= 100000
+                shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
                 plotFigure(self, self.samplelist[i].sampleID, X, Y)
                 plt.yticks([])
             else:
                 plotFigure(self, self.samplelist[i].sampleID, X, Y)
-    self.toolbar = NavigationToolbar(self.canvas, self)
+    self.toolbar = NavigationToolbar(canvas, self)
     layout.addWidget(self.toolbar)
-    plt.tight_layout()
+    figurecanvas = [figure, canvas]
+    return figurecanvas
 
 def insertLine(self,x):
-    plt.axvline(x)
+    figure = self.figXrayspec[0]
+    ax = figure.axes[0]
+    self.lines = ax.axvline(x, color='k', linewidth=1.0, linestyle='--')
