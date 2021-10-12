@@ -20,6 +20,16 @@ def plotFigure(self, filename, X, Y):
     # canvas = FigureCanvas(fig)
     # window.addWidget(canvas)
 
+def singlePlotonCanvas(self, layout, filename, X,Y):
+    figure = plt.figure()
+    canvas = FigureCanvas(figure)
+    layout.addWidget(canvas)
+    plotFigure(self, filename, X, Y)
+    figurecanvas = [figure, canvas]
+    return figurecanvas
+
+
+
 def plotonCanvas(self, layout, datatype):
     figure = plt.figure()
     canvas = FigureCanvas(figure)
@@ -28,12 +38,16 @@ def plotonCanvas(self, layout, datatype):
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
-            if datatype.__eq__("XraySpec"):
-                XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
-            elif datatype == "XrayoffSpec":
-                XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
-            else:
-                XY = [0,0]
+            try:
+                if datatype.__eq__("XraySpec"):
+                    XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
+                elif datatype == "XrayoffSpec":
+                    XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
+                else:
+                    XY = [[0],[0]]
+            except:
+                print("Can't open corresponding file, make sure it exists")
+                XY = [[0], [0]]
 
             X = XY[0]  # split XY data
             Y = XY[1]

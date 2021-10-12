@@ -39,7 +39,6 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def connectActions(self):
         # Connect File actions
-        print("Connecting actions")
         self.actionAbout.triggered.connect(self.printHello)
         self.actionOpen_single_specular_file.triggered.connect(self.openSpecular)
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
@@ -99,12 +98,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         #plottingtools.createcanvas(self)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
-            print("I am now checking element"  + str(i))
             if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
-                print(str(i))
                 self.selected.append(i)
-        print("The following items were selected:")
-        print(self.selected)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
@@ -148,12 +143,15 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         options |= QFileDialog.DontUseNativeDialog
         path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
         filename = Path(path).name
-        window = self.ReflectivityplotGrid_Xray
         XY = helpfunctions.openXY(path)
         X = XY[0]
         Y = XY[1]
-        self.specfigX = helpfunctions.plotFigure(self, window, filename, X, Y)
-        print(QtCore.Qt.Checked)
+        helpfunctions.clearLayout(self.SpecReflectivity_Xray)
+        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, X, Y)
+        self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
+        self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
+        self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
+
 
 
 
