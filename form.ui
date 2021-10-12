@@ -50,7 +50,7 @@
                <enum>QFrame::NoFrame</enum>
               </property>
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="page">
                <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -249,6 +249,12 @@
   <action name="actionOpen_SampleDB">
    <property name="text">
     <string>Open SampleDB</string>
+   </property>
+   <property name="shortcut">
+    <string comment="test" extracomment="test"/>
+   </property>
+   <property name="shortcutVisibleInContextMenu">
+    <bool>true</bool>
    </property>
   </action>
   <action name="actionAbout">
