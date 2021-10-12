@@ -14,7 +14,6 @@ def openXY(path):
    XY = [X, Y]
    return XY
 
-
 def multiplyList(myList, multiplier):
     for x in myList:
         result = multiplier * x

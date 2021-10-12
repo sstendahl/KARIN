@@ -1,7 +1,8 @@
 #CallUI.py
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QShortcut
+from PyQt5.QtGui import QKeySequence
 from pathlib import Path
 #from scipy.signal import find_peaks
 import helpfunctions
@@ -33,6 +34,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.connectActions()
+        self.selected = []
+
 
     def connectActions(self):
         # Connect File actions
@@ -45,6 +48,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
         self.Insert_line_button.clicked.connect(self.insertLine)
+        self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
+        self.shortcut_SampleDB.activated.connect(self.openSampleDB)
 
     def insertLine(self):
         try:
@@ -57,6 +62,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addSampleWindow.show()
 
     def openSampleDB(self):
+        #item = self.ui.tableWidget.item(lastIndex, 0)
+        #self.ui.tableWidget.scrollToItem(item, QtGui.QAbstractItemView.PositionAtTop)
+        #self.ui.tableWidget.selectRow(lastIndex)
         self.samplelist = functions.loadSampleList(self)
         self.dialogWindow = dialogUI()
         self.addSampleWindow = SampleCreator()
@@ -74,6 +82,12 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
             self.dialogWindow.SampleDBList.setItem(i, 6, chkBoxItem)
+        for element in self.selected:
+            chkBoxItem = QTableWidgetItem()
+            chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
+            chkBoxItem.setCheckState(QtCore.Qt.Checked)
+            self.dialogWindow.SampleDBList.setItem(element, 6, chkBoxItem)
+        self.selected = []
         self.dialogWindow.accepted.connect(self.loadSampleDB)
         self.dialogWindow.show()
 
@@ -84,6 +98,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
+        for i in range(len(self.samplelist)):
+            print("I am now checking element"  + str(i))
+            if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+                print(str(i))
+                self.selected.append(i)
+        print("The following items were selected:")
+        print(self.selected)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)

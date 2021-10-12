@@ -13,7 +13,7 @@ from matplotlib.figure import Figure
 def plotFigure(self, filename, X, Y):
     sns.set()
     plt.plot(X, Y, label=filename)
-    plt.xlim(0.2, X[-1])
+    plt.xlim(0.1, X[-1])
     plt.xlabel('Incidence angle 2θ (°)')
     plt.ylabel('Intensity (arb. u)')
     plt.yscale('log')
