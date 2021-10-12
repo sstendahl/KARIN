@@ -79,9 +79,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
-        plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
+        self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
-        plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec")
+        self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec")
         #plotting X-ray
 
 

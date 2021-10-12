@@ -22,8 +22,8 @@ def plotFigure(self, filename, X, Y):
     # window.addWidget(canvas)
 
 def plotonCanvas(self, layout, datatype):
-    self.figure = plt.figure()
-    self.canvas = FigureCanvas(self.figure)
+    figure = plt.figure()
+    self.canvas = FigureCanvas(figure)
     layout.addWidget(self.canvas)
     shifter = 1
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
@@ -48,6 +48,9 @@ def plotonCanvas(self, layout, datatype):
     self.toolbar = NavigationToolbar(self.canvas, self)
     layout.addWidget(self.toolbar)
     plt.tight_layout()
+    return figure
 
 def insertLine(self,x):
-    plt.axvline(x)
+    figure = self.figXrayspec
+    ax = figure.axes[0]
+    ax.axvline(x)
