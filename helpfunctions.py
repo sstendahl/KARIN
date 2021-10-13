@@ -1,5 +1,8 @@
+import plottingtools
 from samples import Sample
 import csv
+import numpy as np
+from scipy.signal import find_peaks
 
 def openXY(path):
    X, Y = [], []
@@ -41,3 +44,14 @@ def loadSampleList(self):
                 samplelist.append(newSample)
     return samplelist
 
+def detectPeaks(self, datatype):
+    print(self.samplelist[int(self.selected[0])].sampleID)
+    if datatype == "xray":
+        XY = openXY(self.samplelist[int(self.selected[0])].specularpathXray)
+    X = XY[0]
+    Y = XY[1]
+    peakindex = find_peaks(np.log(Y), prominence=2)[0]
+    for index in peakindex:
+        plottingtools.insertLine(self,X[index])
+    self.figXrayspec[1].draw()
+    return peakindex

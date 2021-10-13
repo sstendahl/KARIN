@@ -35,7 +35,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.selected = []
         self.shiftvertical = False
         self.mousepressed = False
-        self.lines = None
+        self.lines = []
 
 
     def connectActions(self):
@@ -59,9 +59,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addSampleWindow.show()
 
     def openSampleDB(self):
-        #item = self.ui.tableWidget.item(lastIndex, 0)
-        #self.ui.tableWidget.scrollToItem(item, QtGui.QAbstractItemView.PositionAtTop)
-        #self.ui.tableWidget.selectRow(lastIndex)
+        #This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
+
         self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
         if self.shiftvertical == True:
@@ -70,8 +69,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
         self.dialogWindow.SampleDBList.setColumnCount(8)
         self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
-        for i in range(len(self.samplelist)):
-            #Lägga till valda val
+        for i in range(len(self.samplelist)): #Add items to the TableWidget
             self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
             self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
             self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
@@ -83,22 +81,23 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
             self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
-        for element in self.selected:
+        for element in self.selected: #Check which checkboxes were selected previously and check those
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Checked)
             self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
-        self.selected = []
+        self.selected = [] #To make sure unchecked items will remain unchecked
         self.shiftvertical = False
         self.dialogWindow.accepted.connect(self.loadSampleDB)
         self.dialogWindow.show()
 
 
     def detectPeaks(self, event):
-        print("Detect peaks pressed")
+        self.peakindex = helpfunctions.detectPeaks(self, "xray")
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
+        #This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
         self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
@@ -120,6 +119,16 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
+        datatype = "xray"
+        if datatype == "xray":
+            XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
+        X = XY[0]
+        for index in self.peakindex:
+            if abs(event.xdata - X[index]) < 0.15:
+                print("You were near")
+                self.lines.remove()
+                self.figXrayspec[1].draw()
+
         if self.Insert_line_button.isChecked():
             helpfunctions.removeSingleline(self)
             plottingtools.insertLine(self, xvalue)

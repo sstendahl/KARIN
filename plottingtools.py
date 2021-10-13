@@ -70,3 +70,4 @@ def insertLine(self,x):
     figure = self.figXrayspec[0]
     ax = figure.axes[0]
     self.lines = ax.axvline(x, color='k', linewidth=1.0, linestyle='--')
+    return self.lines
