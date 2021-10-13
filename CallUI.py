@@ -102,10 +102,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
-            print("Checking if checked")
             if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
                 self.selected.append(i)
-                print(self.samplelist[i].sampleID)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
