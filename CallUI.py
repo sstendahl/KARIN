@@ -8,8 +8,6 @@ from pathlib import Path
 import helpfunctions
 import plottingtools
 #from matplotlib.figure import Figure
-import functions
-import mplcursors
 from PyQt5.QtWidgets import QTableWidgetItem
 #import matplotlib.pyplot as plt
 #from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
