@@ -36,6 +36,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.connectActions()
         self.selected = []
         self.mousepressed = False
+        self.lines = None
 
 
     def connectActions(self):
@@ -47,16 +48,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
-        self.Insert_line_button.clicked.connect(self.insertLine)
+        self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
 
-    def insertLine(self):
-        try:
-            self.lines.remove()
-            self.figXrayspec[1].draw()
-        except:
-            print("No lines to remove")
+    def insertLine_button(self):
+        helpfunctions.removeSingleline(self)
+        self.figXrayspec[1].draw()
 
     def addSample(self):
         self.addSampleWindow.show()
@@ -119,10 +117,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.mousepressed = True
         xvalue = event.xdata
         if self.Insert_line_button.isChecked():
-            try:
-                self.lines.remove()
-            except:
-                print("No lines to remove")
+            helpfunctions.removeSingleline(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
@@ -132,10 +127,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
-            try:
-                self.lines.remove()
-            except:
-                print("No lines to remove")
+            helpfunctions.removeSingleline(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
