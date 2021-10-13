@@ -63,7 +63,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         #item = self.ui.tableWidget.item(lastIndex, 0)
         #self.ui.tableWidget.scrollToItem(item, QtGui.QAbstractItemView.PositionAtTop)
         #self.ui.tableWidget.selectRow(lastIndex)
-        self.samplelist = functions.loadSampleList(self)
+        self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
         self.addSampleWindow = SampleCreator()
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
