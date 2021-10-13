@@ -35,6 +35,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.setupUi(self)
         self.connectActions()
         self.selected = []
+        self.mousepressed = False
 
 
     def connectActions(self):
@@ -130,7 +131,6 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
-            print("Hello")
             xvalue = event.xdata
             try:
                 self.lines.remove()
