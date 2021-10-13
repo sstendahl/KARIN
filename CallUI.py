@@ -33,6 +33,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.setupUi(self)
         self.connectActions()
         self.selected = []
+        self.shiftvertical = False
         self.mousepressed = False
         self.lines = None
 
@@ -63,9 +64,11 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         #self.ui.tableWidget.selectRow(lastIndex)
         self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
+        if self.shiftvertical == True:
+            self.dialogWindow.checkBox_4.setChecked(True)
         self.addSampleWindow = SampleCreator()
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
-        self.dialogWindow.SampleDBList.setColumnCount(7)
+        self.dialogWindow.SampleDBList.setColumnCount(8)
         self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
         for i in range(len(self.samplelist)):
             #Lägga till valda val
@@ -73,17 +76,20 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
             self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
             self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-            self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].comments)))
+            self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
+            self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
+            self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-            self.dialogWindow.SampleDBList.setItem(i, 6, chkBoxItem)
+            self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
         for element in self.selected:
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Checked)
-            self.dialogWindow.SampleDBList.setItem(element, 6, chkBoxItem)
+            self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
         self.selected = []
+        self.shiftvertical = False
         self.dialogWindow.accepted.connect(self.loadSampleDB)
         self.dialogWindow.show()
 
@@ -96,8 +102,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
-            if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+            print("Checking if checked")
+            if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
                 self.selected.append(i)
+                print(self.samplelist[i].sampleID)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)

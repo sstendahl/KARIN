@@ -39,7 +39,7 @@ def plotonCanvas(self, layout, datatype):
     shifter = 1
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
     for i in range(len(self.samplelist)):
-        if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+        if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
             try:
                 if datatype.__eq__("XraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
@@ -54,6 +54,7 @@ def plotonCanvas(self, layout, datatype):
             X = XY[0]  # split XY data
             Y = XY[1]
             if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked: #if shifted vertically is checked
+                self.shiftvertical = True
                 Y = [element * shifter for element in Y]
                 shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
                 plotFigure(self, self.samplelist[i].sampleID, X, Y)
