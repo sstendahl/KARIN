@@ -17,3 +17,8 @@ def clearLayout(layout):
     child = layout.takeAt(0)
     if child.widget():
       child.widget().deleteLater()
+
+def removeSingleline(self):
+    if self.lines is not None:
+        self.lines.remove()
+        self.lines = None

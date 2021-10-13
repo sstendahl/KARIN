@@ -35,11 +35,12 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.setupUi(self)
         self.connectActions()
         self.selected = []
+        self.mousepressed = False
+        self.lines = None
 
 
     def connectActions(self):
         # Connect File actions
-        print("Connecting actions")
         self.actionAbout.triggered.connect(self.printHello)
         self.actionOpen_single_specular_file.triggered.connect(self.openSpecular)
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
@@ -47,16 +48,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
-        self.Insert_line_button.clicked.connect(self.insertLine)
+        self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
 
-    def insertLine(self):
-        try:
-            self.lines.remove()
-            self.figXrayspec[1].draw()
-        except:
-            print("No lines to remove")
+    def insertLine_button(self):
+        helpfunctions.removeSingleline(self)
+        self.figXrayspec[1].draw()
 
     def addSample(self):
         self.addSampleWindow.show()
@@ -97,14 +95,11 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
+        self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
-            print("I am now checking element"  + str(i))
             if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
-                print(str(i))
                 self.selected.append(i)
-        print("The following items were selected:")
-        print(self.selected)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
@@ -122,10 +117,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.mousepressed = True
         xvalue = event.xdata
         if self.Insert_line_button.isChecked():
-            try:
-                self.lines.remove()
-            except:
-                print("No lines to remove")
+            helpfunctions.removeSingleline(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
@@ -134,12 +126,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
-            print("Hello")
             xvalue = event.xdata
-            try:
-                self.lines.remove()
-            except:
-                print("No lines to remove")
+            helpfunctions.removeSingleline(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
@@ -148,12 +136,14 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         options |= QFileDialog.DontUseNativeDialog
         path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
         filename = Path(path).name
-        window = self.ReflectivityplotGrid_Xray
         XY = helpfunctions.openXY(path)
         X = XY[0]
         Y = XY[1]
-        self.specfigX = helpfunctions.plotFigure(self, window, filename, X, Y)
-        print(QtCore.Qt.Checked)
+        helpfunctions.clearLayout(self.SpecReflectivity_Xray)
+        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, X, Y)
+        self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
+        self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
+        self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
 
 
 
