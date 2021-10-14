@@ -38,6 +38,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.lines = []
         self.peaks = []
         self.vlines = []
+        self.singlespec = False
 
 
     def connectActions(self):
@@ -66,7 +67,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def openSampleDB(self):
         #This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
-
+        self.singlespec = False
         self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
         if self.shiftvertical == True:
@@ -155,15 +156,16 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             self.figXrayspec[1].draw()
 
     def openSpecular(self):
+        self.singlespec = True
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
         filename = Path(path).name
         XY = helpfunctions.openXY(path)
-        X = XY[0]
-        Y = XY[1]
+        self.Xsinglespec = XY[0]
+        self.Ysinglespec = XY[1]
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
-        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, X, Y)
+        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, self.Xsinglespec, self.Ysinglespec)
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
         self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)

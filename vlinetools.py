@@ -25,10 +25,13 @@ def detectPeaks(self, datatype):
         self.vlines[i].remove()
 
     self.vlines = []
-    if datatype == "xray":
+    if datatype == "xray" and self.singlespec == False:
         XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
-    X = XY[0]
-    Y = XY[1]
+        X = XY[0]
+        Y = XY[1]
+    if self.singlespec == True:
+        X = self.Xsinglespec
+        Y = self.Ysinglespec
     peaks = []
     peakindex = list(find_peaks(np.log(Y), prominence=2)[0])
     for index in peakindex:
