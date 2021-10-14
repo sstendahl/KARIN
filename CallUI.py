@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog, QShortcut
 from PyQt5.QtGui import QKeySequence
 from pathlib import Path
-import numpy as np
+import vlinetools
 #from scipy.signal import find_peaks
 import helpfunctions
 import plottingtools
@@ -15,7 +15,6 @@ from PyQt5.QtWidgets import QTableWidgetItem
 #from matplotlib.backends.backend_qt5agg import (
 #    FigureCanvasQTAgg as FigureCanvas,
 #    NavigationToolbar2QT as NavigationToolbar)
-
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")
 Ui_dialog, DialogClass = uic.loadUiType("simple_dialog.ui")
@@ -55,10 +54,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.removeAll_button.clicked.connect(self.removeallPeaks)
 
     def removeallPeaks(self):
-        plottingtools.removeAllPeaks(self)
+        vlinetools.removeAllPeaks(self)
 
     def insertLine_button(self):
-        plottingtools.removeAllPeaks(self)
+        vlinetools.removeAllPeaks(self)
         self.figXrayspec[1].draw()
 
     def addSample(self):
@@ -100,7 +99,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def detectPeaks(self, event):
         self.peakindex = []
-        self.peakindex = helpfunctions.detectPeaks(self, "xray")
+        self.peakindex = vlinetools.detectPeaks(self, "xray")
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
@@ -128,11 +127,11 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         xvalue = event.xdata
 
         if self.removePeak_button.isChecked():
-            plottingtools.removepeakMode(self, event)
+            vlinetools.removepeakMode(self, event)
 
         if self.Insert_line_button.isChecked():
-            plottingtools.removeAllPeaks(self)
-            plottingtools.insertLine(self, xvalue)
+            vlinetools.removeAllPeaks(self)
+            vlinetools.insertLine(self, xvalue)
 
 
 
@@ -140,8 +139,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
-            plottingtools.removeAllPeaks(self)
-            plottingtools.insertLine(self, xvalue)
+            vlinetools.removeAllPeaks(self)
+            vlinetools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
     def openSpecular(self):
