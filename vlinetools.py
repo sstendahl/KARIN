@@ -6,20 +6,16 @@ def addPeak(self, event):
     i = 0
     line = insertLine(self, event.xdata)
     del self.vlines[-1]
-    print("For loop will start now")
     if len(self.peaks) < 3 or event.xdata > self.peaks[-1]:
         self.peaks.append(event.xdata)
         self.vlines.append(line)
     else:
         for position in self.peaks:
-            print("Entering loop")
             if event.xdata < position:
                 self.vlines.insert(i, line)
                 self.peaks.insert(i, event.xdata)
                 break
             i += 1
-        print("New peakslist is")
-        print(self.peaks)
     self.figXrayspec[1].draw()
     helpfunctions.updatePeaklist(self)
 
