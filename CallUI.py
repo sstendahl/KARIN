@@ -58,7 +58,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         plottingtools.removeAllPeaks(self)
 
     def insertLine_button(self):
-        helpfunctions.removeSingleline(self)
+        plottingtools.removeAllPeaks(self)
         self.figXrayspec[1].draw()
 
     def addSample(self):
@@ -131,7 +131,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             plottingtools.removepeakMode(self, event)
 
         if self.Insert_line_button.isChecked():
-            helpfunctions.removeSingleline(self)
+            plottingtools.removeAllPeaks(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
@@ -141,7 +141,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
-            helpfunctions.removeSingleline(self)
+            plottingtools.removeAllPeaks(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 

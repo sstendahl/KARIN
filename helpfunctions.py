@@ -25,9 +25,10 @@ def clearLayout(layout):
       child.widget().deleteLater()
 
 def removeSingleline(self):
-    if self.lines is not None:
-        self.lines.remove()
-        self.lines = None
+    print(len(self.vlines))
+    if len(self.vlines) != 0:
+        self.vlines[0].remove()
+        self.vlines = []
 
 def loadSampleList(self):
     samplelist = []
@@ -55,6 +56,6 @@ def detectPeaks(self, datatype):
     Y = XY[1]
     peakindex = list(find_peaks(np.log(Y), prominence=2)[0])
     for index in peakindex:
-        plottingtools.insertLineNew(self,X[index])
+        plottingtools.insertLine(self,X[index])
     self.figXrayspec[1].draw()
     return peakindex

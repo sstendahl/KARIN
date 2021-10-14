@@ -66,20 +66,12 @@ def plotonCanvas(self, layout, datatype):
     figurecanvas = [figure, canvas]
     return figurecanvas
 
-def insertLineNew(self,x):
-    figure = self.figXrayspec[0]
-    ax = figure.axes[0]
-    #self.lines.append(ax.axvline)
-    self.vlines.append(ax.axvline(x, color='k', linewidth=1.0, linestyle='--'))
-    self.vlines = list(self.vlines)
-    return self.vlines
-
 def insertLine(self,x):
     figure = self.figXrayspec[0]
     ax = figure.axes[0]
-    #self.lines.append(ax.axvline)
-    self.lines = ax.axvline(x, color='k', linewidth=1.0, linestyle='--')
-    return self.lines
+    self.vlines.append(ax.axvline(x, color='k', linewidth=1.0, linestyle='--'))
+    self.vlines = list(self.vlines)
+    return self.vlines
 
 def removepeakMode(self, event):
     datatype = "xray"
