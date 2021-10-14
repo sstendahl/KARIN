@@ -59,7 +59,7 @@
                   <item>
                    <layout class="QGridLayout" name="gridLayout_2">
                     <item row="4" column="0">
-                     <widget class="QLabel" name="label_2">
+                     <widget class="QLabel" name="PeriodXray">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                         <horstretch>0</horstretch>
@@ -75,23 +75,13 @@
                      </widget>
                     </item>
                     <item row="3" column="0" alignment="Qt::AlignLeft">
-                     <widget class="QListWidget" name="listWidget">
+                     <widget class="QListWidget" name="peakList">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
-                      <item>
-                       <property name="text">
-                        <string>Peak 1: 2 degrees</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>Peak 2: 4 degrees</string>
-                       </property>
-                      </item>
                      </widget>
                     </item>
                     <item row="5" column="0">
@@ -139,7 +129,7 @@
                        </widget>
                       </item>
                       <item row="1" column="2">
-                       <widget class="QPushButton" name="pushButton">
+                       <widget class="QPushButton" name="dragMode_button">
                         <property name="text">
                          <string>Drag mode</string>
                         </property>
