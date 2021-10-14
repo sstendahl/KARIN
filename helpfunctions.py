@@ -49,7 +49,6 @@ def detectPeaks(self, datatype):
         self.vlines[i].remove()
 
     self.vlines = []
-    print(self.samplelist[int(self.selected[0])].sampleID)
     if datatype == "xray":
         XY = openXY(self.samplelist[int(self.selected[0])].specularpathXray)
     X = XY[0]

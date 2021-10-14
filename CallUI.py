@@ -52,6 +52,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
+        self.removeAll_button.clicked.connect(self.removeallPeaks)
+
+    def removeallPeaks(self):
+        plottingtools.removeAllPeaks(self)
 
     def insertLine_button(self):
         helpfunctions.removeSingleline(self)
@@ -122,17 +126,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
-        datatype = "xray"
-        if datatype == "xray":
-            XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
-        X = XY[0]
-        for i in range(len(self.peakindex)):
-            if abs(event.xdata - X[self.peakindex[i]]) < 0.15:
-                print("You were near")
-                self.vlines[i].remove()
-                self.peakindex.pop(i)
-                self.vlines.pop(i)
-                self.figXrayspec[1].draw()
+
+        if self.removePeak_button.isChecked():
+            plottingtools.removepeakMode(self, event)
 
         if self.Insert_line_button.isChecked():
             helpfunctions.removeSingleline(self)
