@@ -39,14 +39,11 @@ def loadSampleList(self):
 
 def calculatePeriod(self):
     m = []
-    print(self.peaks)
     for i in range(len(self.peaks)):
         m.append(i+1)
 
     mSquared = np.square(m)
-    print(mSquared)
     thetaSquared = np.square(np.sin((np.array(self.peaks) / 2) * np.pi / 180))
-    print(thetaSquared)
     coef = np.polyfit(mSquared, thetaSquared, 1)
     period = self.wavelength / (2 * np.sqrt(coef[0]))
     self.PeriodXray.setText(f"Period: {period:.2f} Å")
