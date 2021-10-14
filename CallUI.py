@@ -122,7 +122,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-
+        helpfunctions.updatePeaklist(self)
+        helpfunctions.calculatePeriod(self)
 
     def mousepress(self,event):
         self.mousepressed = True

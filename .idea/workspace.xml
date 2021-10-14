@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="added peak detection (alpha)">
-      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Code cleanup">
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +170,7 @@
       <workItem from="1634129995667" duration="8150000" />
       <workItem from="1634201388365" duration="2444000" />
       <workItem from="1634214414968" duration="2054000" />
-      <workItem from="1634226607140" duration="4961000" />
+      <workItem from="1634226607140" duration="5353000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -361,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634231863744</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Code cleanup">
+      <created>1634232234552</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634232234552</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,9 +411,10 @@
     <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
     <MESSAGE value="added peak detection (alpha)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added peak detection (alpha)" />
+    <MESSAGE value="Code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634232195776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634232588218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
