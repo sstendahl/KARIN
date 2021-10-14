@@ -4,12 +4,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog, QShortcut
 from PyQt5.QtGui import QKeySequence
 from pathlib import Path
+import numpy as np
 #from scipy.signal import find_peaks
 import helpfunctions
 import plottingtools
 #from matplotlib.figure import Figure
-import functions
-import mplcursors
 from PyQt5.QtWidgets import QTableWidgetItem
 #import matplotlib.pyplot as plt
 #from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -35,8 +34,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.setupUi(self)
         self.connectActions()
         self.selected = []
+        self.shiftvertical = False
         self.mousepressed = False
-        self.lines = None
+        self.lines = []
+        self.vlines = []
 
 
     def connectActions(self):
@@ -51,54 +52,63 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
+        self.removeAll_button.clicked.connect(self.removeallPeaks)
+
+    def removeallPeaks(self):
+        plottingtools.removeAllPeaks(self)
 
     def insertLine_button(self):
-        helpfunctions.removeSingleline(self)
+        plottingtools.removeAllPeaks(self)
         self.figXrayspec[1].draw()
 
     def addSample(self):
         self.addSampleWindow.show()
 
     def openSampleDB(self):
-        #item = self.ui.tableWidget.item(lastIndex, 0)
-        #self.ui.tableWidget.scrollToItem(item, QtGui.QAbstractItemView.PositionAtTop)
-        #self.ui.tableWidget.selectRow(lastIndex)
-        self.samplelist = functions.loadSampleList(self)
+        #This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
+
+        self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
+        if self.shiftvertical == True:
+            self.dialogWindow.checkBox_4.setChecked(True)
         self.addSampleWindow = SampleCreator()
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
-        self.dialogWindow.SampleDBList.setColumnCount(7)
+        self.dialogWindow.SampleDBList.setColumnCount(8)
         self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
-        for i in range(len(self.samplelist)):
-            #Lägga till valda val
+        for i in range(len(self.samplelist)): #Add items to the TableWidget
             self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
             self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
             self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
             self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-            self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].comments)))
+            self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
+            self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
+            self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-            self.dialogWindow.SampleDBList.setItem(i, 6, chkBoxItem)
-        for element in self.selected:
+            self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
+        for element in self.selected: #Check which checkboxes were selected previously and check those
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Checked)
-            self.dialogWindow.SampleDBList.setItem(element, 6, chkBoxItem)
-        self.selected = []
+            self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
+        self.selected = [] #To make sure unchecked items will remain unchecked
+        self.shiftvertical = False
         self.dialogWindow.accepted.connect(self.loadSampleDB)
         self.dialogWindow.show()
 
 
     def detectPeaks(self, event):
-        print("Detect peaks pressed")
+        self.peakindex = []
+        self.peakindex = helpfunctions.detectPeaks(self, "xray")
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
+        #This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
         self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
         for i in range(len(self.samplelist)):
-            if self.dialogWindow.SampleDBList.item(i,6).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+            if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
                 self.selected.append(i)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
@@ -116,8 +126,12 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
+
+        if self.removePeak_button.isChecked():
+            plottingtools.removepeakMode(self, event)
+
         if self.Insert_line_button.isChecked():
-            helpfunctions.removeSingleline(self)
+            plottingtools.removeAllPeaks(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 
@@ -127,7 +141,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
-            helpfunctions.removeSingleline(self)
+            plottingtools.removeAllPeaks(self)
             plottingtools.insertLine(self, xvalue)
             self.figXrayspec[1].draw()
 

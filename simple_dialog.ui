@@ -16,6 +16,12 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTableWidget" name="SampleDBList">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
      <property name="sizeAdjustPolicy">
       <enum>QAbstractScrollArea::AdjustIgnored</enum>
      </property>
@@ -23,7 +29,10 @@
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="dragEnabled">
-      <bool>true</bool>
+      <bool>false</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
      </property>
      <property name="textElideMode">
       <enum>Qt::ElideRight</enum>
@@ -34,6 +43,9 @@
      <property name="sortingEnabled">
       <bool>true</bool>
      </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
      <row>
       <property name="text">
        <string>1</string>
@@ -81,12 +93,17 @@
      </column>
      <column>
       <property name="text">
-       <string>Dep times</string>
+       <string>Bias</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Other</string>
+       <string>Growth time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Comments</string>
       </property>
      </column>
      <column>
@@ -114,17 +131,17 @@
        <string>Ni/Ti</string>
       </property>
      </item>
-     <item row="0" column="4">
+     <item row="0" column="5">
       <property name="text">
        <string>Ni 5s, Ti 10s</string>
       </property>
      </item>
-     <item row="0" column="5">
+     <item row="0" column="6">
       <property name="text">
        <string>Bla bla bla</string>
       </property>
      </item>
-     <item row="0" column="6">
+     <item row="0" column="7">
       <property name="text">
        <string/>
       </property>
@@ -152,17 +169,17 @@
        <string>Co/Yi</string>
       </property>
      </item>
-     <item row="1" column="4">
+     <item row="1" column="5">
       <property name="text">
        <string>Co 5s, Yi, 20s</string>
       </property>
      </item>
-     <item row="1" column="5">
+     <item row="1" column="6">
       <property name="text">
        <string>Test</string>
       </property>
      </item>
-     <item row="1" column="6">
+     <item row="1" column="7">
       <property name="text">
        <string/>
       </property>
