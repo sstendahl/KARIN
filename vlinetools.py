@@ -17,7 +17,7 @@ def addPeak(self, event):
                 break
             i += 1
     self.figXrayspec[1].draw()
-    helpfunctions.updatePeaklist(self)
+    updatePeaklist(self)
 
 
 def detectPeaks(self, datatype):
@@ -42,6 +42,7 @@ def removeAllPeaks(self):
         self.vlines[i].remove()
     self.vlines = []
     self.peaks = []
+    updatePeaklist(self)
     self.figXrayspec[1].draw()
 
 def dragpeakMode(self, event):
@@ -77,3 +78,10 @@ def insertLine(self,x):
     self.vlines = list(self.vlines)
     self.figXrayspec[1].draw
     return self.vlines[-1]
+
+def updatePeaklist(self):
+    self.peakList.clear()
+    degree = u"\N{DEGREE SIGN}"
+    for i in range(len(self.peaks)):
+        self.peakList.addItem(f"Theta {i + 1}: {self.peaks[i]:.2f}{degree}")
+

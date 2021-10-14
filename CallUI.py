@@ -101,7 +101,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def detectPeaks(self, event):
         self.peaks = []
         self.peaks = vlinetools.detectPeaks(self, "xray")
-        helpfunctions.updatePeaklist(self)
+        vlinetools.updatePeaklist(self)
         helpfunctions.calculatePeriod(self)
 
     def loadSampleDB(self):
@@ -123,7 +123,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-        helpfunctions.updatePeaklist(self)
+        vlinetools.updatePeaklist(self)
         helpfunctions.calculatePeriod(self)
 
     def mousepress(self,event):
@@ -146,7 +146,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.dragMode_button.isChecked() and self.mousepressed:
             vlinetools.dragpeakMode(self, event)
-            helpfunctions.updatePeaklist(self)
+            vlinetools.updatePeaklist(self)
 
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
