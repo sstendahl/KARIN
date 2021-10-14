@@ -4,6 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtWidgets import QFileDialog, QShortcut
 from PyQt5.QtGui import QKeySequence
 from pathlib import Path
+import numpy as np
 #from scipy.signal import find_peaks
 import helpfunctions
 import plottingtools
@@ -36,6 +37,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shiftvertical = False
         self.mousepressed = False
         self.lines = []
+        self.vlines = []
 
 
     def connectActions(self):
@@ -93,6 +95,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
 
     def detectPeaks(self, event):
+        self.peakindex = []
         self.peakindex = helpfunctions.detectPeaks(self, "xray")
 
     def loadSampleDB(self):
@@ -123,10 +126,12 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         if datatype == "xray":
             XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
         X = XY[0]
-        for index in self.peakindex:
-            if abs(event.xdata - X[index]) < 0.15:
+        for i in range(len(self.peakindex)):
+            if abs(event.xdata - X[self.peakindex[i]]) < 0.15:
                 print("You were near")
-                self.lines.remove()
+                self.vlines[i].remove()
+                self.peakindex.pop(i)
+                self.vlines.pop(i)
                 self.figXrayspec[1].draw()
 
         if self.Insert_line_button.isChecked():

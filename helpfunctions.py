@@ -45,13 +45,17 @@ def loadSampleList(self):
     return samplelist
 
 def detectPeaks(self, datatype):
+    for i in range(len(self.vlines)):
+        self.vlines[i].remove()
+
+    self.vlines = []
     print(self.samplelist[int(self.selected[0])].sampleID)
     if datatype == "xray":
         XY = openXY(self.samplelist[int(self.selected[0])].specularpathXray)
     X = XY[0]
     Y = XY[1]
-    peakindex = find_peaks(np.log(Y), prominence=2)[0]
+    peakindex = list(find_peaks(np.log(Y), prominence=2)[0])
     for index in peakindex:
-        plottingtools.insertLine(self,X[index])
+        plottingtools.insertLineNew(self,X[index])
     self.figXrayspec[1].draw()
     return peakindex
