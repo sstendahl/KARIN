@@ -133,7 +133,6 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         if self.Insert_line_button.isChecked():
             plottingtools.removeAllPeaks(self)
             plottingtools.insertLine(self, xvalue)
-            self.figXrayspec[1].draw()
 
 
 

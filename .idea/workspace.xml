@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added some tools for peak detection">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed regression bug where vline stopped working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.pyproject.user" beforeDir="false" afterPath="$PROJECT_DIR$/main.pyproject.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +170,8 @@
       <workItem from="1634050920989" duration="18000" />
       <workItem from="1634115157435" duration="2088000" />
       <workItem from="1634128146065" duration="1785000" />
-      <workItem from="1634129995667" duration="7894000" />
+      <workItem from="1634129995667" duration="8150000" />
+      <workItem from="1634201388365" duration="392000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -326,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634199470954</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed regression bug where vline stopped working">
+      <created>1634200518607</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634200518607</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,9 +373,10 @@
     <MESSAGE value="Groundwork for Detect Peaks feature" />
     <MESSAGE value="Prototype implementation of peak detection" />
     <MESSAGE value="Added some tools for peak detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some tools for peak detection" />
+    <MESSAGE value="Fixed regression bug where vline stopped working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed regression bug where vline stopped working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634200307065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634201491382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

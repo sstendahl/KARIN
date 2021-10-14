@@ -71,6 +71,7 @@ def insertLine(self,x):
     ax = figure.axes[0]
     self.vlines.append(ax.axvline(x, color='k', linewidth=1.0, linestyle='--'))
     self.vlines = list(self.vlines)
+    self.figXrayspec[1].draw
     return self.vlines
 
 def removepeakMode(self, event):
