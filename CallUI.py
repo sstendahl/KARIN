@@ -39,7 +39,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.peaks = []
         self.vlines = []
         self.singlespec = False
-
+        self.wavelength = 1.5406
 
     def connectActions(self):
         # Connect File actions

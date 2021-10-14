@@ -51,16 +51,17 @@ def removeAllPeaks(self):
 def dragpeakMode(self, event):
     datatype = "xray"
     if datatype == "xray":
-        X = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)[0]
         figure = self.figXrayspec[0]
         ax = figure.axes[0]
     for i in range(len(self.peaks)):
-        if abs(event.xdata - self.peaks[i]) < 0.15: #If correct peak is selected
+        if abs(event.xdata - self.peaks[i]) < 0.35: #If correct peak is selected
             self.vlines[i].remove() #Remove the vertical line form plot
             self.peaks[i] = event.xdata #Change the peak on this position to the new
             self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--'))
             self.vlines = list(self.vlines)
             self.figXrayspec[1].draw()
+            updatePeaklist(self)
+
 
 def removepeakMode(self, event):
     datatype = "xray"
