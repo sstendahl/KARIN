@@ -1,8 +1,5 @@
-import plottingtools
 from samples import Sample
 import csv
-import numpy as np
-from scipy.signal import find_peaks
 
 def openXY(path):
    X, Y = [], []
@@ -24,12 +21,6 @@ def clearLayout(layout):
     if child.widget():
       child.widget().deleteLater()
 
-def removeSingleline(self):
-    print(len(self.vlines))
-    if len(self.vlines) != 0:
-        self.vlines[0].remove()
-        self.vlines = []
-
 def loadSampleList(self):
     samplelist = []
     with open('samplelist.csv', 'r') as file:
@@ -45,17 +36,3 @@ def loadSampleList(self):
                 samplelist.append(newSample)
     return samplelist
 
-def detectPeaks(self, datatype):
-    for i in range(len(self.vlines)):
-        self.vlines[i].remove()
-
-    self.vlines = []
-    if datatype == "xray":
-        XY = openXY(self.samplelist[int(self.selected[0])].specularpathXray)
-    X = XY[0]
-    Y = XY[1]
-    peakindex = list(find_peaks(np.log(Y), prominence=2)[0])
-    for index in peakindex:
-        plottingtools.insertLine(self,X[index])
-    self.figXrayspec[1].draw()
-    return peakindex
