@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>868</height>
+    <width>1048</width>
+    <height>793</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -59,7 +59,7 @@
                   <item>
                    <layout class="QGridLayout" name="gridLayout_2">
                     <item row="4" column="0">
-                     <widget class="QLabel" name="label_2">
+                     <widget class="QLabel" name="PeriodXray">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
                         <horstretch>0</horstretch>
@@ -75,23 +75,13 @@
                      </widget>
                     </item>
                     <item row="3" column="0" alignment="Qt::AlignLeft">
-                     <widget class="QListWidget" name="listWidget">
+                     <widget class="QListWidget" name="peakList">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
-                      <item>
-                       <property name="text">
-                        <string>Peak 1: 2 degrees</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>Peak 2: 4 degrees</string>
-                       </property>
-                      </item>
                      </widget>
                     </item>
                     <item row="5" column="0">
@@ -103,13 +93,6 @@
                         </property>
                         <property name="checkable">
                          <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="0" column="2">
-                       <widget class="QPushButton" name="removeAll_button">
-                        <property name="text">
-                         <string>Clear all peaks</string>
                         </property>
                        </widget>
                       </item>
@@ -138,8 +121,18 @@
                         </property>
                        </widget>
                       </item>
-                      <item row="1" column="2">
-                       <widget class="QPushButton" name="pushButton">
+                      <item row="0" column="1">
+                       <widget class="QPushButton" name="addPeak_button">
+                        <property name="text">
+                         <string>Add peak</string>
+                        </property>
+                        <property name="checkable">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="1">
+                       <widget class="QPushButton" name="dragMode_button">
                         <property name="text">
                          <string>Drag mode</string>
                         </property>
@@ -149,6 +142,13 @@
                        </widget>
                       </item>
                      </layout>
+                    </item>
+                    <item row="6" column="0">
+                     <widget class="QPushButton" name="removeAll_button">
+                      <property name="text">
+                       <string>Clear all peaks</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -237,7 +237,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>952</width>
+     <width>1048</width>
      <height>29</height>
     </rect>
    </property>

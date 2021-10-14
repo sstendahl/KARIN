@@ -36,6 +36,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shiftvertical = False
         self.mousepressed = False
         self.lines = []
+        self.peaks = []
         self.vlines = []
 
 
@@ -98,8 +99,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
 
     def detectPeaks(self, event):
-        self.peakindex = []
-        self.peakindex = vlinetools.detectPeaks(self, "xray")
+        self.peaks = []
+        self.peaks = vlinetools.detectPeaks(self, "xray")
+        helpfunctions.updatePeaklist(self)
+        helpfunctions.calculatePeriod(self)
 
     def loadSampleDB(self):
         #plottingtools.createcanvas(self)
@@ -120,11 +123,15 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-
+        helpfunctions.updatePeaklist(self)
+        helpfunctions.calculatePeriod(self)
 
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
+
+        if self.addPeak_button.isChecked():
+            vlinetools.addPeak(self, event)
 
         if self.removePeak_button.isChecked():
             vlinetools.removepeakMode(self, event)
@@ -137,6 +144,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
 
     def hover(self, event):
+        if self.dragMode_button.isChecked() and self.mousepressed:
+            vlinetools.dragpeakMode(self, event)
+            helpfunctions.updatePeaklist(self)
+
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
             vlinetools.removeAllPeaks(self)
