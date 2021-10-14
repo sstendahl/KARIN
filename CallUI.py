@@ -36,6 +36,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shiftvertical = False
         self.mousepressed = False
         self.lines = []
+        self.peaks = []
         self.vlines = []
 
 
@@ -128,6 +129,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def mousepress(self,event):
         self.mousepressed = True
         xvalue = event.xdata
+
+        if self.addPeak_button.isChecked():
+            vlinetools.addPeak(self, event)
 
         if self.removePeak_button.isChecked():
             vlinetools.removepeakMode(self, event)
