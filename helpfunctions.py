@@ -26,7 +26,7 @@ def updatePeaklist(self):
     self.peakList.clear()
     degree = u"\N{DEGREE SIGN}"
     for i in range(len(self.peaks)):
-        self.peakList.addItem(f"Theta {i + 1}: "  + "%.2f" % self.peaks[i] + degree)
+        self.peakList.addItem(f"Theta {i + 1}: {self.peaks[i]:.2f}{degree}")
 
 
 def loadSampleList(self):
@@ -54,6 +54,6 @@ def calculatePeriod(self):
     coef = np.polyfit(mSquared, thetaSquared, 1)
     self.xraywavelength = 1.54
     period = self.xraywavelength / (2 * np.sqrt(coef[0]))
-    self.PeriodXray.setText(f"Period: {period} Å")
+    self.PeriodXray.setText(f"Period: {period:.2f} Å")
     #periodlabel.set_text(str(round(period, 2)) + " Å")
     pass
