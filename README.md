@@ -10,30 +10,28 @@ This program is part a personal tool for my personal data analysis, and part a h
 8. This software is provided without warranty.
 9. The software author or license can not be held liable for any damages inflicted by the software.
 A full version of this license should have come with this program, and can otherwise be found at: https://www.gnu.org/licenses/gpl-3.0.html
-
-Simulations are done using the BornAgain code-base, which is covered by the same license. 
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 **KARIN: Keen Analysis for Reflectivity Involving Neutrons**
 
 KARIN is a data analysis kit for Neutron- and X-Ray reflectivity. 
-Note that this is a very early alpha. Currently working features include:
+Note that this is a very early alpha. Development is done on Fedora so testing is mostly focused on GNU/Linux, however limited testing is done on Windows 11 as well. In time I am planning to release an installer for Windows as well as RPM and Deb packages for GNU/Linux distributions. 
+ 
+Currently working features include:
+- A Sample Database prototype (SampleDB). The SampleDB gets its information from the included csv file. At the current stage it is not possible to manually add samples to the SampleDB other than by editing the csv file. Both specular and off-specular measurements of the selected Samples are loaded automatically when closing the SampleDB. The shortkey Ctrl+D opens SampleDB.
+- When loading multiple measurements simultaniously, it is possible to shift them vertically in the SampleDB for easy comparison.
+- A vertical line can be inserted in order to compare vertically shifted plots. This line can be dragged around by the mouse pointer
+- Automated peak detection, peak positions can be adjusted by dragging them using the mouse pointer while in drag mode.
+- Manual peak insertion or removal while in Add peak mode or in Remove Peak mode respectively. 
 
-- A fully working sample database. One can add samples and store all relevant details (including location to measurement files). All measurement files of a specific sample can simultaniously be loaded from the Sample Database. 
-- Automated peak detection, peak positions can be adjusted by dragging them using the mouse pointer. The peak list is sorted automatically. (Manually adding or removing new peaks will be added in the near future)
-- Normalization of data
-- Centering off-specular graphs 
-- Exporting the edited data to a txt file
-- Simulating scattering from multilayers in 2D. (This is still very bare-bones and more of a working prototype)
-
-Features that are planned in the semi-short term can be found in Issues on Gitlab (https://gitlab.com/SjoerdB93/karin/-/issues). These include, but are not limited to:
+Features that are planned in the semi-short term include, but are not limited to:
+- Adding and removing samples from SampleDB
 - Edit existing sample from Sample DB
-- Possibility to add and remove peaks manually
+- Ability to switch between X-ray and Neutron data
+- Manual settings for e.g. wavelength and vertical shift.
+- Normalization of measurements
+- Simulations (both specular and full 2D maps) using the BornAgain code-base
+- Data manipulation tools such as shift in x-data, and cutting selected parts of the measurement (e.g. direct beam)
 - Footprint correction for specular data
-- More data modification (shift peak, normalise or multiply by given number)
-- Thickness calculations for single-layered films 
-- Fully functional specular reflectivity simulations
 - A simple sample builder for reflectivity simulations
 - Support for 2D maps as obtained at SuperAdam at ILL
-- More features for 2D simulations
 - In the longer term: simple fitting features, at least for specular data.
