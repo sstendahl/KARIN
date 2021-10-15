@@ -31,12 +31,12 @@ def editSample(self):
     loadEdit(self,i)
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
-    self.addSampleWindow.accepted.connect(lambda: editSample2(self,i))
+    self.addSampleWindow.accepted.connect(lambda: editSampleAccepted(self,i))
     print(len(self.samplelist))
 
 
 
-def editSample2(self,i):
+def editSampleAccepted(self,i):
     self.samplelist[i] = defineSample(self)
     writeToSampleList(self)
     print(len(self.samplelist))
