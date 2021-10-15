@@ -35,6 +35,7 @@ def loadSampleList(self):
                                    row[10], row[11], row[12], row[13], row[14], row[15],
                                    row[16])  # SampleID, Date, BG pressure
                 samplelist.append(newSample)
+        samplelist = sorted(samplelist, key=lambda x: x.sampleID, reverse=False)
     return samplelist
 
 def calculatePeriod(self):
