@@ -9,7 +9,6 @@ from samples import Sample
 
 def newSample(self):
     sampleID = self.addSampleWindow.sampleIDline.displayText()
-    print(sampleID)
     date = self.addSampleWindow.dateLine.displayText()
     layers = self.addSampleWindow.layersLine.displayText()
     materials = self.addSampleWindow.materialsLine.displayText()
@@ -30,10 +29,7 @@ def newSample(self):
                      gamma, bias, comments, specxraypath, offspecxraypath, specneutronpath,
                      offspecneutronpath)
     self.samplelist.append(newSample)
-    print(newSample.sampleID)
-    print(newSample.date)
     writeToSampleList(self)
-    print("I closed the diolog window")
     refreshSampleDB(self)
 
 def getPath(self):
@@ -119,7 +115,6 @@ def openSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
         self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
         self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
-        print(self.samplelist[i].layers)
         self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
         self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
         self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
@@ -141,7 +136,6 @@ def openSampleDB(self):
 
 def removeSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()
-    print(f"You are about to remove {self.samplelist[i].sampleID}")
     self.removeConfirmation = CallUI.removeConfirmation()
     self.removeConfirmation.warning_removesample.setText(f"You are about to remove {self.samplelist[i].sampleID} from the SampleDB. Are you sure?")
     self.removeConfirmation.show()
@@ -154,7 +148,6 @@ def confirmRemoval(self, i):
 
 
 def writeToSampleList(self):
-    print("Writing to sample")
     with open('samplelist.csv', 'w', newline='') as file:
         file.seek(0)
         writer = csv.writer(file)

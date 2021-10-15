@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import QFileDialog, QShortcut
 from PyQt5.QtGui import QKeySequence
 from pathlib import Path
 import vlinetools
-import matplotlib.pyplot as plt
 import helpfunctions
 import sampleDB
 import plottingtools
