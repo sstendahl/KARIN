@@ -96,6 +96,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addSampleWindow = SampleCreator()
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
         self.dialogWindow.SampleDBList.setColumnCount(8)
+        self.dialogWindow.SampleDBList.setColumnWidth(2, 50) #Width for layers
+        self.dialogWindow.SampleDBList.setColumnWidth(3, 150) #Width for materials
+        self.dialogWindow.SampleDBList.setColumnWidth(4, 80) #Width for bias
+        self.dialogWindow.SampleDBList.setColumnWidth(5, 200) #Column width for growth times
+        self.dialogWindow.SampleDBList.setColumnWidth(6, 200) #Width for comments
+
+
         self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
         for i in range(len(self.samplelist)): #Add items to the TableWidget
             self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
