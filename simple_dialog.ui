@@ -31,6 +31,9 @@
      <property name="dragEnabled">
       <bool>false</bool>
      </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
      </property>
@@ -98,7 +101,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Growth time</string>
+       <string>Deposition time</string>
       </property>
      </column>
      <column>
@@ -217,8 +220,18 @@
      </item>
      <item row="2" column="0">
       <widget class="QCheckBox" name="checkBox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Normalize</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="editSample_button">
+       <property name="text">
+        <string>Edit Sample</string>
        </property>
       </widget>
      </item>

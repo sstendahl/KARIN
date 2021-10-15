@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Implemented SampleDB">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Implemented sample edit mode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +176,8 @@
       <workItem from="1634239922835" duration="464000" />
       <workItem from="1634281318449" duration="3117000" />
       <workItem from="1634287756292" duration="3094000" />
-      <workItem from="1634298620570" duration="7666000" />
+      <workItem from="1634298620570" duration="7986000" />
+      <workItem from="1634311342783" duration="3489000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -442,7 +445,28 @@
       <option name="project" value="LOCAL" />
       <updated>1634306187812</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Updated readme">
+      <created>1634306299989</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1634306299989</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Code cleanup">
+      <created>1634306343509</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1634306343509</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Implemented sample edit mode">
+      <created>1634315670433</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1634315670433</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,8 +486,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added shortkeys+SampleDB persistence" />
-    <MESSAGE value="Added some off-spec files" />
     <MESSAGE value="Fixed bug where wrong files are displayed when column in SampleDB was sorted" />
     <MESSAGE value="Small bug fix" />
     <MESSAGE value="Changed default sampleDB to be relative path" />
@@ -479,7 +501,6 @@
     <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
     <MESSAGE value="added peak detection (alpha)" />
-    <MESSAGE value="Code cleanup" />
     <MESSAGE value="Implemented peak detection" />
     <MESSAGE value="Added &quot;add peak&quot; function" />
     <MESSAGE value="Enabled peak detection for singular specular file" />
@@ -487,9 +508,12 @@
     <MESSAGE value="Bug fixes" />
     <MESSAGE value="Removed some redundant data" />
     <MESSAGE value="Implemented SampleDB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented SampleDB" />
+    <MESSAGE value="Updated readme" />
+    <MESSAGE value="Code cleanup" />
+    <MESSAGE value="Implemented sample edit mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented sample edit mode" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634306140842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634316200572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
