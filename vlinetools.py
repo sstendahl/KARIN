@@ -17,7 +17,7 @@ def addPeak(self, event):
                 break
             i += 1
     self.figXrayspec[1].draw()
-    helpfunctions.updatePeaklist(self)
+    updatePeaklist(self)
 
 
 def detectPeaks(self, datatype):
@@ -25,10 +25,13 @@ def detectPeaks(self, datatype):
         self.vlines[i].remove()
 
     self.vlines = []
-    if datatype == "xray":
+    if datatype == "xray" and self.singlespec == False:
         XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
-    X = XY[0]
-    Y = XY[1]
+        X = XY[0]
+        Y = XY[1]
+    if self.singlespec == True:
+        X = self.Xsinglespec
+        Y = self.Ysinglespec
     peaks = []
     peakindex = list(find_peaks(np.log(Y), prominence=2)[0])
     for index in peakindex:
@@ -42,26 +45,29 @@ def removeAllPeaks(self):
         self.vlines[i].remove()
     self.vlines = []
     self.peaks = []
+    try:
+        updatePeaklist(self)
+    except:
+        print("Could not update peak list, perhaps there was no such list yet?")
     self.figXrayspec[1].draw()
+
 
 def dragpeakMode(self, event):
     datatype = "xray"
     if datatype == "xray":
-        X = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)[0]
         figure = self.figXrayspec[0]
         ax = figure.axes[0]
     for i in range(len(self.peaks)):
-        if abs(event.xdata - self.peaks[i]) < 0.15: #If correct peak is selected
+        if abs(event.xdata - self.peaks[i]) < 0.35: #If correct peak is selected
             self.vlines[i].remove() #Remove the vertical line form plot
-            self.peaks[i] = event.xdata #Change the peak on this position to the new
-            self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--'))
-            self.vlines = list(self.vlines)
-            self.figXrayspec[1].draw()
+            self.peaks[i] = event.xdata #Change the peak on this position to the new selected position
+            self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line
+            self.vlines = list(self.vlines) #Convert vlines array to list
+            self.figXrayspec[1].draw() #Refresh figure
+            updatePeaklist(self) #Update peak list
+
 
 def removepeakMode(self, event):
-    datatype = "xray"
-    if datatype == "xray":
-        X = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)[0]
     for i in range(len(self.peaks)):
         if abs(event.xdata - self.peaks[i]) < 0.15:
             self.vlines[i].remove()
@@ -77,3 +83,10 @@ def insertLine(self,x):
     self.vlines = list(self.vlines)
     self.figXrayspec[1].draw
     return self.vlines[-1]
+
+def updatePeaklist(self):
+    self.peakList.clear()
+    degree = u"\N{DEGREE SIGN}"
+    for i in range(len(self.peaks)):
+        self.peakList.addItem(f"Theta {i + 1}: {self.peaks[i]:.2f}{degree}")
+

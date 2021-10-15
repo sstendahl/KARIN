@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Implemented peak detection">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Enabled peak detection for singular specular file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +173,9 @@
       <workItem from="1634129995667" duration="8150000" />
       <workItem from="1634201388365" duration="2444000" />
       <workItem from="1634214414968" duration="2054000" />
-      <workItem from="1634226607140" duration="9449000" />
+      <workItem from="1634226607140" duration="11700000" />
+      <workItem from="1634239922835" duration="464000" />
+      <workItem from="1634281318449" duration="3117000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -379,7 +380,35 @@
       <option name="project" value="LOCAL" />
       <updated>1634232731330</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Added &quot;add peak&quot; function">
+      <created>1634237670588</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1634237670588</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added &quot;add peak&quot; function">
+      <created>1634237703774</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634237703774</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added &quot;add peak&quot; function">
+      <created>1634238569270</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1634238569270</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Enabled peak detection for singular specular file">
+      <created>1634239365886</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1634239365886</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,8 +428,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="KarinQT0.1" />
-    <MESSAGE value="Added some groundwork for stack switcher" />
     <MESSAGE value="Groundwork for vertical line function" />
     <MESSAGE value="Added vertical line function (enabled by default for now)" />
     <MESSAGE value="Improved SampleDB UX" />
@@ -424,9 +451,11 @@
     <MESSAGE value="added peak detection (alpha)" />
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Implemented peak detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented peak detection" />
+    <MESSAGE value="Added &quot;add peak&quot; function" />
+    <MESSAGE value="Enabled peak detection for singular specular file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enabled peak detection for singular specular file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634237530495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634283947871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

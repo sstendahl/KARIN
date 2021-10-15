@@ -38,7 +38,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.lines = []
         self.peaks = []
         self.vlines = []
-
+        self.singlespec = False
+        self.wavelength = 1.5406
 
     def connectActions(self):
         # Connect File actions
@@ -47,12 +48,33 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
         self.actionOpen_SampleDB.triggered.connect(self.openSampleDB)
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
-        self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
+        self.actionDetect_peaks.triggered.connect(self.triggerDetectpeaks)
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
+        self.addPeak_button.clicked.connect(self.addpeakButtonclick)
+        self.removePeak_button.clicked.connect(self.removepeakButtonclick)
+        self.dragMode_button.clicked.connect(self.dragpeakButtonclick)
+
         self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
         self.removeAll_button.clicked.connect(self.removeallPeaks)
+
+    def triggerDetectpeaks(self):
+        self.SpecularTools.setCurrentIndex(0)
+        self.insertLine_button.setChecked(False)
+
+    def removepeakButtonclick(self):
+        self.addPeak_button.setChecked(False)
+        self.dragMode_button.setChecked(False)
+
+    def addpeakButtonclick(self):
+        self.removePeak_button.setChecked(False)
+        self.dragMode_button.setChecked(False)
+
+    def dragpeakButtonclick(self):
+        self.addPeak_button.setChecked(False)
+        self.removePeak_button.setChecked(False)
+
 
     def removeallPeaks(self):
         vlinetools.removeAllPeaks(self)
@@ -66,7 +88,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def openSampleDB(self):
         #This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
-
+        self.singlespec = False
         self.samplelist = helpfunctions.loadSampleList(self)
         self.dialogWindow = dialogUI()
         if self.shiftvertical == True:
@@ -101,7 +123,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def detectPeaks(self, event):
         self.peaks = []
         self.peaks = vlinetools.detectPeaks(self, "xray")
-        helpfunctions.updatePeaklist(self)
+        vlinetools.updatePeaklist(self)
         helpfunctions.calculatePeriod(self)
 
     def loadSampleDB(self):
@@ -123,7 +145,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-        helpfunctions.updatePeaklist(self)
+        vlinetools.updatePeaklist(self)
         helpfunctions.calculatePeriod(self)
 
     def mousepress(self,event):
@@ -146,7 +168,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
     def hover(self, event):
         if self.dragMode_button.isChecked() and self.mousepressed:
             vlinetools.dragpeakMode(self, event)
-            helpfunctions.updatePeaklist(self)
+            vlinetools.updatePeaklist(self)
 
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
@@ -155,15 +177,16 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             self.figXrayspec[1].draw()
 
     def openSpecular(self):
+        self.singlespec = True
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
         filename = Path(path).name
         XY = helpfunctions.openXY(path)
-        X = XY[0]
-        Y = XY[1]
+        self.Xsinglespec = XY[0]
+        self.Ysinglespec = XY[1]
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
-        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, X, Y)
+        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, self.Xsinglespec, self.Ysinglespec)
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
         self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
