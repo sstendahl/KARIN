@@ -43,7 +43,6 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
                 if datatype.__eq__("XraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
                 elif datatype == "XrayoffSpec":
-                    print(f"Opening the off-specular graph of {self.samplelist[i].sampleID}")
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
                 else:
                     XY = [[0],[0]]
