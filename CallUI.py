@@ -48,12 +48,33 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
         self.actionOpen_SampleDB.triggered.connect(self.openSampleDB)
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
-        self.actionDetect_peaks.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(0))
+        self.actionDetect_peaks.triggered.connect(self.triggerDetectpeaks)
         self.openSampleDB_button.clicked.connect(self.openSampleDB)
+        self.addPeak_button.clicked.connect(self.addpeakButtonclick)
+        self.removePeak_button.clicked.connect(self.removepeakButtonclick)
+        self.dragMode_button.clicked.connect(self.dragpeakButtonclick)
+
         self.Insert_line_button.clicked.connect(self.insertLine_button)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(self.openSampleDB)
         self.removeAll_button.clicked.connect(self.removeallPeaks)
+
+    def triggerDetectpeaks(self):
+        self.SpecularTools.setCurrentIndex(0)
+        self.insertLine_button.setChecked(False)
+
+    def removepeakButtonclick(self):
+        self.addPeak_button.setChecked(False)
+        self.dragMode_button.setChecked(False)
+
+    def addpeakButtonclick(self):
+        self.removePeak_button.setChecked(False)
+        self.dragMode_button.setChecked(False)
+
+    def dragpeakButtonclick(self):
+        self.addPeak_button.setChecked(False)
+        self.removePeak_button.setChecked(False)
+
 
     def removeallPeaks(self):
         vlinetools.removeAllPeaks(self)
