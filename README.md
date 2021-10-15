@@ -17,7 +17,7 @@ KARIN is a data analysis kit for Neutron- and X-Ray reflectivity.
 Note that this is a very early alpha. Development is done on Fedora so testing is mostly focused on Linux, however limited testing is done on Windows 11 as well. In time I am planning to release an installer for Windows as well as RPM and Deb packages for Linux via Fedora and Ubuntu respectively. 
  
 Currently working features include:
-- A fully working Sample Database (SampleDB). The SampleDB gets its information from the included csv file. Both specular and off-specular measurements of the selected Samples are loaded automatically when closing the SampleDB. The shortkey Ctrl+D opens SampleDB. Path still needs to be manually inserted.
+- A fully working Sample Database (SampleDB). The SampleDB gets its information from the included csv file. Both specular and off-specular measurements of the selected Samples are loaded automatically when closing the SampleDB. The shortkey Ctrl+D opens SampleDB. Path still needs to be inserted manually.
 - When loading multiple measurements simultaniously, it is possible to shift them vertically in the SampleDB for easy comparison.
 - A vertical line can be inserted in order to compare vertically shifted plots. This line can be dragged around by the mouse pointer
 - Automated peak detection, peak positions can be adjusted by dragging them using the mouse pointer while in drag mode.
