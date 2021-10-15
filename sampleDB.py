@@ -7,7 +7,44 @@ import csv
 import matplotlib.pyplot as plt
 from samples import Sample
 
-def newSample(self):
+def loadEdit(self, i):
+    self.addSampleWindow.sampleIDline.setText(self.samplelist[i].sampleID)
+    self.addSampleWindow.dateLine.setText(self.samplelist[i].date)
+    self.addSampleWindow.layersLine.setText(self.samplelist[i].layers)
+    self.addSampleWindow.materialsLine.setText(self.samplelist[i].materials)
+    self.addSampleWindow.magPowerLine.setText(self.samplelist[i].magPower)
+    self.addSampleWindow.depTimeLine.setText(self.samplelist[i].growthTimes)
+    self.addSampleWindow.SputteringGasLine.setText(self.samplelist[i].gasses)
+    self.addSampleWindow.bgPressureLine.setText(self.samplelist[i].backgroundPressure)
+    self.addSampleWindow.periodLine.setText(self.samplelist[i].period)
+    self.addSampleWindow.gammaLine.setText(self.samplelist[i].gamma)
+    self.addSampleWindow.biasLine.setText(self.samplelist[i].bias)
+    self.addSampleWindow.CommentsLine.setText(self.samplelist[i].comments)
+    self.addSampleWindow.pathXraySpecLine.setText(self.samplelist[i].specularpathXray)
+    self.addSampleWindow.pathOffSpecXline.setText(self.samplelist[i].offspecularpathXray)
+    self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutrons)
+    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutrons)
+
+
+def editSample(self):
+    i = self.dialogWindow.SampleDBList.currentRow()
+    loadEdit(self,i)
+    self.addSampleWindow.show()
+    self.addSampleWindow.accepted.disconnect()
+    self.addSampleWindow.accepted.connect(lambda: editSample2(self,i))
+    print(len(self.samplelist))
+
+
+
+def editSample2(self,i):
+    self.samplelist[i] = defineSample(self)
+    writeToSampleList(self)
+    print(len(self.samplelist))
+    refreshSampleDB(self)
+    self.addSampleWindow.accepted.disconnect()
+    self.addSampleWindow.accepted.connect(lambda: newSample(self))
+
+def defineSample(self):
     sampleID = self.addSampleWindow.sampleIDline.displayText()
     date = self.addSampleWindow.dateLine.displayText()
     layers = self.addSampleWindow.layersLine.displayText()
@@ -24,10 +61,13 @@ def newSample(self):
     offspecxraypath = self.addSampleWindow.pathOffSpecXline.displayText()
     specneutronpath = self.addSampleWindow.pathNspecLine.displayText()
     offspecneutronpath = self.addSampleWindow.pathoffspecNline.displayText()
-
     newSample = Sample(sampleID, date, layers, materials, magPower, growthTimes, gasses, bgpressure, period,
                      gamma, bias, comments, specxraypath, offspecxraypath, specneutronpath,
                      offspecneutronpath)
+    return newSample
+
+def newSample(self):
+    newSample = defineSample(self)
     self.samplelist.append(newSample)
     writeToSampleList(self)
     refreshSampleDB(self)
@@ -103,6 +143,7 @@ def openSampleDB(self):
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
     self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
+    self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
     self.dialogWindow.SampleDBList.setColumnCount(8)
     self.dialogWindow.SampleDBList.setColumnWidth(2, 50)  # Width for layers
     self.dialogWindow.SampleDBList.setColumnWidth(3, 150)  # Width for materials
@@ -159,7 +200,7 @@ def writeToSampleList(self):
             writer.writerow([self.samplelist[i].sampleID, self.samplelist[i].date, self.samplelist[i].layers,
                              self.samplelist[i].materials, self.samplelist[i].magPower,
                              self.samplelist[i].growthTimes, self.samplelist[i].gasses,
-                             self.samplelist[i].backgroundpressure, self.samplelist[i].period,
+                             self.samplelist[i].backgroundPressure, self.samplelist[i].period,
                              self.samplelist[i].gamma, self.samplelist[i].bias, self.samplelist[i].comments,
                              self.samplelist[i].specularpathXray, self.samplelist[i].offspecularpathXray,
                              self.samplelist[i].specularpathNeutrons, self.samplelist[i].offspecularpathNeutrons,

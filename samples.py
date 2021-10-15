@@ -3,7 +3,7 @@ class Sample:
         #self.internalID = internalID
         self.sampleID = sampleID
         self.date = date
-        self.backgroundpressure = backgroundPressure
+        self.backgroundPressure = backgroundPressure
         self.layers = layers
         self.materials = materials
         self.magPower = magPower
