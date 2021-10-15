@@ -31,9 +31,9 @@ def loadSampleList(self):
             if i == 0:
                 i += 1
             else:
-                newSample = Sample(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9],
-                                   row[10], row[11], row[12], row[13], row[14], row[15],
-                                   row[16])  # SampleID, Date, BG pressure
+                newSample = Sample(sampleID=row[0], date=row[1], layers=row[2], materials=row[3], magPower=row[4], growthTimes=row[5], gasses=row[6], backgroundPressure=row[7], period=row[8], gamma=row[9],
+                                   bias=row[10], comments=row[11], specularpathXray=row[12], offspecularpathXray=row[13], specularpathNeutron=row[14], offspecularpathNeutron=row[15],
+                                   superAdamMapPath=row[16])  # SampleID, Date, BG pressure
                 samplelist.append(newSample)
         samplelist = sorted(samplelist, key=lambda x: x.sampleID, reverse=False)
     return samplelist

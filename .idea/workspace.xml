@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bug fixes">
-      <change beforePath="$PROJECT_DIR$/main.pyproject" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.pyproject.user" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.pyproject.user.33787f4" beforeDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Removed some redundant data">
+      <change afterPath="$PROJECT_DIR$/removeConfirmation.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleCreator.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sampleCreator.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples.py" beforeDir="false" afterPath="$PROJECT_DIR$/samples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_dialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/simple_dialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +181,8 @@
       <workItem from="1634226607140" duration="11700000" />
       <workItem from="1634239922835" duration="464000" />
       <workItem from="1634281318449" duration="3117000" />
-      <workItem from="1634287756292" duration="3018000" />
+      <workItem from="1634287756292" duration="3094000" />
+      <workItem from="1634298620570" duration="7346000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -422,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634292019212</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Removed some redundant data">
+      <created>1634292201251</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1634292201251</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Removed some redundant data">
+      <created>1634292214596</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1634292214596</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improved SampleDB UX" />
     <MESSAGE value="Added vertical line function" />
     <MESSAGE value="Added shortkeys+SampleDB persistence" />
     <MESSAGE value="Added some off-spec files" />
@@ -467,9 +487,10 @@
     <MESSAGE value="Enabled peak detection for singular specular file" />
     <MESSAGE value="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot" />
     <MESSAGE value="Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
+    <MESSAGE value="Removed some redundant data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed some redundant data" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634292001248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634305967086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

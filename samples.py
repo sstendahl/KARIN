@@ -1,5 +1,5 @@
 class Sample:
-    def __init__(self, sampleID, date, layers, materials, magPower, growthTimes, gasses, backgroundPressure, period, gamma, bias, comments, specularpathXray, offspecularpathXray, specularpathNeutron, offspecularpathNeutron, mappath):
+    def __init__(self, sampleID="", date="", layers="", materials="", magPower="", growthTimes="", gasses="", backgroundPressure="", period="", gamma="", bias="", comments="", specularpathXray="", offspecularpathXray="", specularpathNeutron="", offspecularpathNeutron="", superAdamMapPath=""):
         #self.internalID = internalID
         self.sampleID = sampleID
         self.date = date
@@ -17,4 +17,4 @@ class Sample:
         self.offspecularpathXray = offspecularpathXray
         self.specularpathNeutrons = specularpathNeutron
         self.offspecularpathNeutrons = offspecularpathNeutron
-        self.mappath = mappath
+        self.superAdamMapPath = superAdamMapPath
