@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QFileDialog, QShortcut
 from PyQt5.QtGui import QKeySequence
 from pathlib import Path
 import vlinetools
-#from scipy.signal import find_peaks
+import matplotlib.pyplot as plt
 import helpfunctions
 import plottingtools
 #from matplotlib.figure import Figure
@@ -96,6 +96,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addSampleWindow = SampleCreator()
         self.dialogWindow.addSample_button.clicked.connect(self.addSample)
         self.dialogWindow.SampleDBList.setColumnCount(8)
+        self.dialogWindow.SampleDBList.setColumnWidth(2, 50) #Width for layers
+        self.dialogWindow.SampleDBList.setColumnWidth(3, 150) #Width for materials
+        self.dialogWindow.SampleDBList.setColumnWidth(4, 80) #Width for bias
+        self.dialogWindow.SampleDBList.setColumnWidth(5, 200) #Column width for growth times
+        self.dialogWindow.SampleDBList.setColumnWidth(6, 200) #Width for comments
+
+
         self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
         for i in range(len(self.samplelist)): #Add items to the TableWidget
             self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
@@ -135,11 +142,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
                 self.selected.append(i)
         self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
+        self.figXrayspec[1]
+        plt.xlim(0.1)
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
         self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
         helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
-        self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec")
+        self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec", xlabel="Rocking angle ω(°)")
         #plotting X-ray
 
 

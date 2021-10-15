@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Enabled peak detection for singular specular file">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot">
+      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20026_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20027_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20028_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM18009.xy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrr/IFM18009.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,6 +183,7 @@
       <workItem from="1634226607140" duration="11700000" />
       <workItem from="1634239922835" duration="464000" />
       <workItem from="1634281318449" duration="3117000" />
+      <workItem from="1634287756292" duration="2683000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -408,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634239365886</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot">
+      <created>1634288555023</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1634288555023</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Groundwork for vertical line function" />
     <MESSAGE value="Added vertical line function (enabled by default for now)" />
     <MESSAGE value="Improved SampleDB UX" />
     <MESSAGE value="Added vertical line function" />
@@ -453,9 +467,10 @@
     <MESSAGE value="Implemented peak detection" />
     <MESSAGE value="Added &quot;add peak&quot; function" />
     <MESSAGE value="Enabled peak detection for singular specular file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enabled peak detection for singular specular file" />
+    <MESSAGE value="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634283947871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634291648599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

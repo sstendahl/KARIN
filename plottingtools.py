@@ -6,11 +6,10 @@ import seaborn as sns
 from PyQt5 import QtCore
 # main window
 
-def plotFigure(self, filename, X, Y):
+def plotFigure(self, filename, X, Y, xlabel="Incidence angle 2θ (°)"):
     sns.set()
     plt.plot(X, Y, label=filename)
-    plt.xlim(0.1, X[-1])
-    plt.xlabel('Incidence angle 2θ (°)')
+    plt.xlabel(xlabel)
     plt.ylabel('Intensity (arb. u)')
     plt.yscale('log')
     plt.legend()
@@ -32,7 +31,7 @@ def singlePlotonCanvas(self, layout, filename, X,Y):
 
 
 
-def plotonCanvas(self, layout, datatype):
+def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)"):
     figure = plt.figure()
     canvas = FigureCanvas(figure)
     layout.addWidget(canvas)
@@ -44,6 +43,7 @@ def plotonCanvas(self, layout, datatype):
                 if datatype.__eq__("XraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
                 elif datatype == "XrayoffSpec":
+                    print(f"Opening the off-specular graph of {self.samplelist[i].sampleID}")
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
                 else:
                     XY = [[0],[0]]
@@ -57,10 +57,10 @@ def plotonCanvas(self, layout, datatype):
                 self.shiftvertical = True
                 Y = [element * shifter for element in Y]
                 shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
-                plotFigure(self, self.samplelist[i].sampleID, X, Y)
+                plotFigure(self, self.samplelist[i].sampleID, X, Y, xlabel)
                 plt.yticks([])
             else:
-                plotFigure(self, self.samplelist[i].sampleID, X, Y)
+                plotFigure(self, self.samplelist[i].sampleID, X, Y, xlabel)
     self.toolbar = NavigationToolbar(canvas, self)
     layout.addWidget(self.toolbar)
     figurecanvas = [figure, canvas]

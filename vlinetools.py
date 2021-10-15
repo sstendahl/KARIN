@@ -52,13 +52,12 @@ def removeAllPeaks(self):
     self.figXrayspec[1].draw()
 
 
-def dragpeakMode(self, event):
-    datatype = "xray"
-    if datatype == "xray":
+def dragpeakMode(self, event, datatype="XraySpec"):
+    if datatype == "XraySpec":
         figure = self.figXrayspec[0]
         ax = figure.axes[0]
     for i in range(len(self.peaks)):
-        if abs(event.xdata - self.peaks[i]) < 0.35: #If correct peak is selected
+        if event.xdata != None and abs(event.xdata - self.peaks[i]) < 0.35: #Make sure user is inside of plot and that peak is selected
             self.vlines[i].remove() #Remove the vertical line form plot
             self.peaks[i] = event.xdata #Change the peak on this position to the new selected position
             self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line
