@@ -4,11 +4,14 @@ import csv
 
 def openXY(path):
    X, Y = [], []
+   print("opening XY")
    for line in open(path, 'r'):
        values = [float(s) for s in line.split()]
        X.append(values[0])
        Y.append(values[1])
    XY = [X, Y]
+   print(X)
+   print(Y)
    return XY
 
 def multiplyList(myList, multiplier):

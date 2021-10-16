@@ -4,10 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Implemented sample edit mode">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Update readme">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Karin_QT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Karin_QT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM18008.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM18008.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20027_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20027_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20028_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20028_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20043_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20043_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20044_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20044_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20045_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20045_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20046_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20046_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20047_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20047_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20048_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20048_rocking.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/xrr/IFM18009.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM18009.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples.py" beforeDir="false" afterPath="$PROJECT_DIR$/samples.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +57,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1xdVR6KIAfYhqQHwhacushB8YI9" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -54,13 +72,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -98,7 +116,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -135,6 +153,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.plottingtools" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
@@ -177,7 +199,8 @@
       <workItem from="1634281318449" duration="3117000" />
       <workItem from="1634287756292" duration="3094000" />
       <workItem from="1634298620570" duration="7986000" />
-      <workItem from="1634311342783" duration="3489000" />
+      <workItem from="1634311342783" duration="4245000" />
+      <workItem from="1634401718418" duration="1213000" />
     </task>
     <task id="LOCAL-00001" summary="KarinQT0.1">
       <created>1633974883680</created>
@@ -466,7 +489,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634315670433</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Minor bugfix">
+      <created>1634316936220</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1634316936220</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Update readme">
+      <created>1634317048715</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1634317048715</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,8 +523,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed bug where wrong files are displayed when column in SampleDB was sorted" />
-    <MESSAGE value="Small bug fix" />
     <MESSAGE value="Changed default sampleDB to be relative path" />
     <MESSAGE value="Removed functions.py" />
     <MESSAGE value="Removed some unused imports" />
@@ -511,9 +546,8 @@
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Code cleanup" />
     <MESSAGE value="Implemented sample edit mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented sample edit mode" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Karin_QT$main.coverage" NAME="main Coverage Results" MODIFIED="1634316200572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <MESSAGE value="Minor bugfix" />
+    <MESSAGE value="Update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
   </component>
 </project>

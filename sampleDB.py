@@ -22,8 +22,8 @@ def loadEdit(self, i):
     self.addSampleWindow.CommentsLine.setText(self.samplelist[i].comments)
     self.addSampleWindow.pathXraySpecLine.setText(self.samplelist[i].specularpathXray)
     self.addSampleWindow.pathOffSpecXline.setText(self.samplelist[i].offspecularpathXray)
-    self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutrons)
-    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutrons)
+    self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutron)
+    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
 
 def editSample(self):
@@ -203,6 +203,6 @@ def writeToSampleList(self):
                              self.samplelist[i].backgroundPressure, self.samplelist[i].period,
                              self.samplelist[i].gamma, self.samplelist[i].bias, self.samplelist[i].comments,
                              self.samplelist[i].specularpathXray, self.samplelist[i].offspecularpathXray,
-                             self.samplelist[i].specularpathNeutrons, self.samplelist[i].offspecularpathNeutrons,
+                             self.samplelist[i].specularpathNeutron, self.samplelist[i].offspecularpathNeutron,
                              self.samplelist[i].superAdamMapPath])
         file.truncate()
