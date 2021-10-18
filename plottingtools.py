@@ -1,29 +1,17 @@
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
-import matplotlib.pyplot as plt
 import helpfunctions
 import seaborn as sns
+from matplotlib.figure import Figure
 from PyQt5 import QtCore
-# main window
 
-def plotFigure(self, filename, X, Y, xlabel="Incidence angle 2θ (°)"):
-    sns.set()
-    plt.plot(X, Y, label=filename)
-    plt.xlabel(xlabel)
-    plt.ylabel('Intensity (arb. u)')
-    plt.yscale('log')
-    plt.legend()
-    plt.tight_layout()
-    #self.canvas.draw()
-    # fig = plt.figure()
-    # canvas = FigureCanvas(fig)
-    # window.addWidget(canvas)
+
 
 def singlePlotonCanvas(self, layout, filename, X,Y):
-    figure = plt.figure()
-    canvas = FigureCanvas(figure)
+    canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
+    figure = canvas.figure
+    plotFigure(X, Y, canvas, filename)
     layout.addWidget(canvas)
-    plotFigure(self, filename, X, Y)
     figurecanvas = [figure, canvas]
     self.toolbar = NavigationToolbar(canvas, self)
     layout.addWidget(self.toolbar)
@@ -31,19 +19,18 @@ def singlePlotonCanvas(self, layout, filename, X,Y):
 
 
 
-def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)"):
-    figure = plt.figure()
-    canvas = FigureCanvas(figure)
-    layout.addWidget(canvas)
+def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)",title=""):
     shifter = 1
-    # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
+    plotWidget = PlotWidget(xlabel=xlabel)
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i,self.includeColumn).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
             try:
                 if datatype.__eq__("XraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
+                    xlim = 0.1
                 elif datatype == "XrayoffSpec":
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
+                    xlim = XY[0][0]
                 else:
                     XY = [[0],[0]]
             except:
@@ -56,15 +43,38 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
                 self.shiftvertical = True
                 Y = [element * shifter for element in Y]
                 shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
-                plotFigure(self, self.samplelist[i].sampleID, X, Y, xlabel)
-                plt.yticks([])
+                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
             else:
-                plotFigure(self, self.samplelist[i].sampleID, X, Y, xlabel)
+                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
+
+    figure = plotWidget.figure
+    canvas = plotWidget.canvas
     self.toolbar = NavigationToolbar(canvas, self)
+
+    layout.addWidget(canvas)
     layout.addWidget(self.toolbar)
+
     figurecanvas = [figure, canvas]
     return figurecanvas
 
+def plotFigure(X, Y, canvas,filename, xlim,title=""):
+    fig = canvas.theplot
+    fig.plot(X, Y,label=filename)
+    canvas.theplot.legend()
+    canvas.theplot.set_title(title)
+    canvas.theplot.set_xlim(xlim)
 
 
-
+class PlotWidget(FigureCanvas):
+    def __init__(self, parent=None, xlabel='x label', ylabel='Intensity (arb. u)', title=""):
+        super(PlotWidget, self).__init__(Figure())
+        sns.set()
+        self.setParent(parent)
+        self.figure = Figure()
+        self.canvas = FigureCanvas(self.figure)
+        self.theplot = self.figure.add_subplot(111)
+        self.theplot.set_yscale('log')
+        self.theplot.set_title(title)
+        self.theplot.set_xlabel(xlabel)
+        self.theplot.set_ylabel(ylabel)
+        self.figure.set_tight_layout(True)
