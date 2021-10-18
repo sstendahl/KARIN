@@ -17,8 +17,6 @@ def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None, xmax = None):
     layout.addWidget(self.toolbar)
     return figurecanvas
 
-
-
 def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)",title=""):
     shifter = 1
     plotWidget = PlotWidget(xlabel=xlabel)
