@@ -91,7 +91,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-        #Can only calculate period if there's more
+
         if self.Insert_line_button.isChecked() == False and len(self.vlines) > 1: #Calculating period from one peak only is a very bad idea and should not be condoned, hence > 1
             vlinetools.updatePeaklist(self)
             helpfunctions.calculatePeriod(self)
@@ -119,7 +119,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             xvalue = event.xdata
             vlinetools.removeAllPeaks(self)
             vlinetools.insertLine(self, xvalue)
-            self.figXrayspec[1].draw()
+            self.figXrayspec[1].draw_idle()
 
     def openSpecular(self):
         self.singlespec = True

@@ -63,7 +63,7 @@ def dragpeakMode(self, event, datatype="XraySpec"):
             self.peaks[i] = event.xdata #Change the peak on this position to the new selected position
             self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line
             self.vlines = list(self.vlines) #Convert vlines array to list
-            self.figXrayspec[1].draw() #Refresh figure
+    self.figXrayspec[1].draw() #Refresh figure
 
 
 def removepeakMode(self, event):
@@ -77,12 +77,12 @@ def removepeakMode(self, event):
     if len(self.peaks) < 2:
         self.PeriodXray.setText(f"Period: -- Å")
 
-def insertLine(self,x):
-    figure = self.figXrayspec[0]
+def insertLine(self,x, figure=None):
+    if figure == None:
+        figure = self.figXrayspec[0]
     ax = figure.axes[0]
     self.vlines.append(ax.axvline(x, color='k', linewidth=1.0, linestyle='--'))
     self.vlines = list(self.vlines)
-    self.figXrayspec[1].draw
     return self.vlines[-1]
 
 def updatePeaklist(self):

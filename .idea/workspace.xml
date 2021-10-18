@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Rewrote the plotting function as widget in own class. Now supports tight figure layout.">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bugfixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dialog.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -86,6 +86,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="blitting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Karin_QT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/tmp/mozilla_sjoerd0" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="/tmp/mozilla_sjoerd0/blitting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -141,10 +160,12 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.plottingtools" />
+      <item itemvalue="Python.blitting" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.blitting" />
         <item itemvalue="Python.plottingtools" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.plottingtools" />
@@ -186,13 +207,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00003" summary="KarinQT0.1">
-      <created>1634021004020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1634021004020</updated>
     </task>
     <task id="LOCAL-00004" summary="Added some groundwork for stack switcher">
       <created>1634022638355</created>
@@ -530,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634565861589</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Bugfixes">
+      <created>1634566447790</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1634566447791</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed regression bug where vline stopped working" />
     <MESSAGE value="Small performance fix in peak dragging" />
     <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
@@ -575,7 +595,8 @@
     <MESSAGE value="removed some redundant prints" />
     <MESSAGE value="Minor bugfixes and polish" />
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
+    <MESSAGE value="Bugfixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
