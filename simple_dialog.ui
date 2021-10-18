@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1083</width>
+    <width>1473</width>
     <height>643</height>
    </rect>
   </property>
@@ -96,6 +96,11 @@
      </column>
      <column>
       <property name="text">
+       <string>Magnetron Powers</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Bias</string>
       </property>
      </column>
@@ -134,17 +139,17 @@
        <string>Ni/Ti</string>
       </property>
      </item>
-     <item row="0" column="5">
+     <item row="0" column="6">
       <property name="text">
        <string>Ni 5s, Ti 10s</string>
       </property>
      </item>
-     <item row="0" column="6">
+     <item row="0" column="7">
       <property name="text">
        <string>Bla bla bla</string>
       </property>
      </item>
-     <item row="0" column="7">
+     <item row="0" column="8">
       <property name="text">
        <string/>
       </property>
@@ -172,17 +177,17 @@
        <string>Co/Yi</string>
       </property>
      </item>
-     <item row="1" column="5">
+     <item row="1" column="6">
       <property name="text">
        <string>Co 5s, Yi, 20s</string>
       </property>
      </item>
-     <item row="1" column="6">
+     <item row="1" column="7">
       <property name="text">
        <string>Test</string>
       </property>
      </item>
-     <item row="1" column="7">
+     <item row="1" column="8">
       <property name="text">
        <string/>
       </property>

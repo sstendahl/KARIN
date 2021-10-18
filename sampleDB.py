@@ -61,9 +61,9 @@ def defineSample(self):
     offspecxraypath = self.addSampleWindow.pathOffSpecXline.displayText()
     specneutronpath = self.addSampleWindow.pathNspecLine.displayText()
     offspecneutronpath = self.addSampleWindow.pathoffspecNline.displayText()
-    newSample = Sample(sampleID, date, layers, materials, magPower, growthTimes, gasses, bgpressure, period,
-                     gamma, bias, comments, specxraypath, offspecxraypath, specneutronpath,
-                     offspecneutronpath)
+    newSample = Sample(sampleID=sampleID, date=date, layers=layers, materials=materials, magPower=magPower, growthTimes=growthTimes, gasses=gasses, backgroundPressure=bgpressure, period=period,
+                     gamma=gamma, bias=bias, comments=comments, specularpathXray=specxraypath, offspecularpathXray=offspecxraypath, specularpathNeutron=specneutronpath,
+                     offspecularpathNeutron=offspecneutronpath)
     return newSample
 
 def newSample(self):

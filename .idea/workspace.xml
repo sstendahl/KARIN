@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Update readme">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Karin_QT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Karin_QT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM18008.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM18008.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20027_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20027_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20028_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20028_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20043_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20043_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20044_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20044_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20045_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20045_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20046_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20046_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20047_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20047_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrayoffspec/IFM20048_rocking.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM20048_rocking.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/IFM18009.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM18009.xy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples.py" beforeDir="false" afterPath="$PROJECT_DIR$/samples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_dialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/simple_dialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,12 +60,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sampleDB.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
