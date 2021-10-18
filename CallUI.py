@@ -131,7 +131,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.Xsinglespec = XY[0]
         self.Ysinglespec = XY[1]
         helpfunctions.clearLayout(self.SpecReflectivity_Xray)
-        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, self.Xsinglespec, self.Ysinglespec)
+        self.figXrayspec = plottingtools.singlePlotonCanvas(self, self.SpecReflectivity_Xray, filename, self.Xsinglespec, self.Ysinglespec, xlim=0)
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
         self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)

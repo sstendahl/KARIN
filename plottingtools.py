@@ -7,10 +7,10 @@ from PyQt5 import QtCore
 
 
 
-def singlePlotonCanvas(self, layout, filename, X,Y):
+def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None):
     canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
     figure = canvas.figure
-    plotFigure(X, Y, canvas, filename)
+    plotFigure(X, Y, canvas, filename, xlim)
     layout.addWidget(canvas)
     figurecanvas = [figure, canvas]
     self.toolbar = NavigationToolbar(canvas, self)
@@ -44,6 +44,8 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
                 Y = [element * shifter for element in Y]
                 shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
                 plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
+                plotWidget.theplot.set_yticks([])
+
             else:
                 plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
 
@@ -57,7 +59,7 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
     figurecanvas = [figure, canvas]
     return figurecanvas
 
-def plotFigure(X, Y, canvas,filename, xlim,title=""):
+def plotFigure(X, Y, canvas,filename, xlim=None,title=""):
     fig = canvas.theplot
     fig.plot(X, Y,label=filename)
     canvas.theplot.legend()
