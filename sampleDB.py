@@ -104,12 +104,13 @@ def refreshSampleDB(self):
     self.samplelist = helpfunctions.loadSampleList(self)
     if self.shiftvertical == True:
         self.dialogWindow.checkBox_4.setChecked(True)
-    self.dialogWindow.SampleDBList.setColumnCount(8)
+    self.dialogWindow.SampleDBList.setColumnCount(9)
     self.dialogWindow.SampleDBList.setColumnWidth(2, 50)  # Width for layers
-    self.dialogWindow.SampleDBList.setColumnWidth(3, 150)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(4, 80)  # Width for bias
-    self.dialogWindow.SampleDBList.setColumnWidth(5, 200)  # Column width for growth times
-    self.dialogWindow.SampleDBList.setColumnWidth(6, 200)  # Width for comments
+    self.dialogWindow.SampleDBList.setColumnWidth(3, 170)  # Width for materials
+    self.dialogWindow.SampleDBList.setColumnWidth(4, 220)  # Width for magPower
+    self.dialogWindow.SampleDBList.setColumnWidth(5, 90)  # Width for bias
+    self.dialogWindow.SampleDBList.setColumnWidth(6, 175)  # Column width for growth times
+    self.dialogWindow.SampleDBList.setColumnWidth(7, 250)  # Width for comments
 
     self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
     for i in range(len(self.samplelist)):  # Add items to the TableWidget
@@ -117,60 +118,31 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
         self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
         self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-        self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
-        self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
-        self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
+        self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].magPower)))
+        self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].bias)))
+        self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].growthTimes)))
+        self.dialogWindow.SampleDBList.setItem(i, 7, QTableWidgetItem((self.samplelist[i].comments)))
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-        self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
+        self.dialogWindow.SampleDBList.setItem(i, 8, chkBoxItem)
     for element in self.selected:  # Check which checkboxes were selected previously and check those
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Checked)
-        self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
+        self.dialogWindow.SampleDBList.setItem(element, 8, chkBoxItem)
     self.selected = []  # To make sure unchecked items will remain unchecked
     self.shiftvertical = False
 
 def openSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
-    self.singlespec = False
-    self.samplelist = helpfunctions.loadSampleList(self)
     self.dialogWindow = CallUI.dialogUI()
-    if self.shiftvertical == True:
-        self.dialogWindow.checkBox_4.setChecked(True)
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
     self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
-    self.dialogWindow.SampleDBList.setColumnCount(8)
-    self.dialogWindow.SampleDBList.setColumnWidth(2, 50)  # Width for layers
-    self.dialogWindow.SampleDBList.setColumnWidth(3, 150)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(4, 80)  # Width for bias
-    self.dialogWindow.SampleDBList.setColumnWidth(5, 200)  # Column width for growth times
-    self.dialogWindow.SampleDBList.setColumnWidth(6, 200)  # Width for comments
-
-    self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
-    for i in range(len(self.samplelist)):  # Add items to the TableWidget
-        self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
-        self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
-        self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
-        self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-        self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
-        self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
-        self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
-        chkBoxItem = QTableWidgetItem()
-        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-        chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-        self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
-    for element in self.selected:  # Check which checkboxes were selected previously and check those
-        chkBoxItem = QTableWidgetItem()
-        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-        chkBoxItem.setCheckState(QtCore.Qt.Checked)
-        self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
-    self.selected = []  # To make sure unchecked items will remain unchecked
-    self.shiftvertical = False
+    refreshSampleDB(self)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
 
