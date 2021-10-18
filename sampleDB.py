@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QTableWidgetItem, QFileDialog
 import CallUI
 import plottingtools
 import csv
-import matplotlib.pyplot as plt
 from samples import Sample
 
 def loadEdit(self, i):
@@ -85,15 +84,14 @@ def loadSampleDB(self):
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
-    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
+    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec",title="Specular X-Ray Reflectivity")
     self.figXrayspec[1]
-    plt.xlim(0.1)
     self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
     self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
     self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
     helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
     self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec",
-                                                     xlabel="Rocking angle ω(°)")
+                                                     xlabel="Rocking angle ω(°)",title="Off-specular X-Ray Reflectivity")
 
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="removed some redundant prints">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Minor bugfixes and polish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,13 +186,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00001" summary="KarinQT0.1">
-      <created>1633974883680</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1633974883680</updated>
     </task>
     <task id="LOCAL-00002" summary="KarinQT0.1">
       <created>1633974904886</created>
@@ -530,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634555753274</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Minor bugfixes and polish">
+      <created>1634558167091</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1634558167092</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Prototype implementation of peak detection" />
     <MESSAGE value="Added some tools for peak detection" />
     <MESSAGE value="Fixed regression bug where vline stopped working" />
     <MESSAGE value="Small performance fix in peak dragging" />
@@ -575,7 +574,8 @@
     <MESSAGE value="UX changes in SampleDB" />
     <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
     <MESSAGE value="removed some redundant prints" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some redundant prints" />
+    <MESSAGE value="Minor bugfixes and polish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor bugfixes and polish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
