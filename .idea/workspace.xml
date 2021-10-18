@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added y-limit for plots">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added maximum x limit for plots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +98,9 @@
       <module name="Karin_QT" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="/tmp/mozilla_sjoerd0" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -208,13 +210,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00005" summary="Added some groundwork for stack switcher">
-      <created>1634022989602</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1634022989603</updated>
     </task>
     <task id="LOCAL-00006" summary="Groundwork for vertical line function">
       <created>1634034454236</created>
@@ -552,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634568401618</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added maximum x limit for plots">
+      <created>1634568427722</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1634568427722</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
     <MESSAGE value="added peak detection (alpha)" />
     <MESSAGE value="Implemented peak detection" />
@@ -597,7 +598,8 @@
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
     <MESSAGE value="Bugfixes" />
     <MESSAGE value="Added y-limit for plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added y-limit for plots" />
+    <MESSAGE value="Added maximum x limit for plots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added maximum x limit for plots" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

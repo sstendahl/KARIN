@@ -52,6 +52,16 @@ def removeAllPeaks(self):
         print("Could not update peak list, perhaps the list does not exist?")
     self.figXrayspec[1].draw()
 
+def dragVline(self,event, datatype="XraySpec"):
+    if datatype == "XraySpec":
+        figure = self.figXrayspec[0]
+        ax = figure.axes[0]
+    self.vlines[0].remove()  # Remove the vertical line form plot
+    self.peaks[0] = event.xdata #Change the peak on this position to the new selected position
+    self.vlines[0]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line
+    self.vlines = list(self.vlines) #Convert vlines array to list
+    self.figXrayspec[1].draw() #Refresh figure
+
 
 def dragpeakMode(self, event, datatype="XraySpec"):
     if datatype == "XraySpec":

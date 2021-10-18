@@ -108,18 +108,15 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
         if self.Insert_line_button.isChecked():
             vlinetools.removeAllPeaks(self)
-            vlinetools.insertLine(self, xvalue)
+            vlinetools.addPeak(self, event)
+            self.figXrayspec[1].draw()
 
     def hover(self, event):
         if self.dragMode_button.isChecked() and self.mousepressed:
             vlinetools.dragpeakMode(self, event)
-            #vlinetools.updatePeaklist(self)
 
         if self.Insert_line_button.isChecked() and self.mousepressed:
-            xvalue = event.xdata
-            vlinetools.removeAllPeaks(self)
-            vlinetools.insertLine(self, xvalue)
-            self.figXrayspec[1].draw_idle()
+            vlinetools.dragVline(self, event)
 
     def openSpecular(self):
         self.singlespec = True
