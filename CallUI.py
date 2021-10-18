@@ -44,7 +44,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def connectActions(self):
         # Connect File actions
-        self.actionAbout.triggered.connect(self.printHello)
+        #self.actionAbout.triggered.connect(self.printHello)
         self.actionOpen_single_specular_file.triggered.connect(self.openSpecular)
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
         self.actionOpen_SampleDB.triggered.connect(lambda: sampleDB.openSampleDB(self))
@@ -54,14 +54,14 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addPeak_button.clicked.connect(self.addpeakButtonclick)
         self.removePeak_button.clicked.connect(self.removepeakButtonclick)
         self.dragMode_button.clicked.connect(self.dragpeakButtonclick)
-        self.Insert_line_button.clicked.connect(self.insertLine_button)
+        self.Insert_line_button.clicked.connect(self.insertLine_pressed)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
-        self.removeAll_button.clicked.connect(self.removeallPeaks)
+        self.removeAll_button.clicked.connect(lambda: vlinetools.removeAllPeaks(self))
 
     def triggerDetectpeaks(self):
         self.SpecularTools.setCurrentIndex(0)
-        self.insertLine_button.setChecked(False)
+        self.Insert_line_button.setChecked(False)
 
     def removepeakButtonclick(self):
         self.addPeak_button.setChecked(False)
@@ -75,11 +75,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addPeak_button.setChecked(False)
         self.removePeak_button.setChecked(False)
 
-
-    def removeallPeaks(self):
-        vlinetools.removeAllPeaks(self)
-
-    def insertLine_button(self):
+    def insertLine_pressed(self):
         vlinetools.removeAllPeaks(self)
         self.figXrayspec[1].draw()
 
@@ -87,12 +83,18 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.peaks = []
         self.peaks = vlinetools.detectPeaks(self, "xray")
         vlinetools.updatePeaklist(self)
-        helpfunctions.calculatePeriod(self)
+        if len(self.peaks) > 2:
+            helpfunctions.calculatePeriod(self)
+        else:
+            self.PeriodXray.setText(f"Period: -- Å")
+
 
     def mouserelease(self, event):
         self.mousepressed = False
-        vlinetools.updatePeaklist(self)
-        helpfunctions.calculatePeriod(self)
+        #Can only calculate period if there's more
+        if self.Insert_line_button.isChecked() == False and len(self.vlines) > 1: #Calculating period from one peak only is a very bad idea and should not be condoned, hence > 1
+            vlinetools.updatePeaklist(self)
+            helpfunctions.calculatePeriod(self)
 
     def mousepress(self,event):
         self.mousepressed = True
@@ -108,13 +110,10 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             vlinetools.removeAllPeaks(self)
             vlinetools.insertLine(self, xvalue)
 
-
-
-
     def hover(self, event):
         if self.dragMode_button.isChecked() and self.mousepressed:
             vlinetools.dragpeakMode(self, event)
-            vlinetools.updatePeaklist(self)
+            #vlinetools.updatePeaklist(self)
 
         if self.Insert_line_button.isChecked() and self.mousepressed:
             xvalue = event.xdata
@@ -136,12 +135,6 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
         self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
         self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
-
-
-
-
-    def printHello(self):
-        print("Hello")
 
 class dialogUI(DialogClass, Ui_dialog):
     def __init__(self, parent=None):

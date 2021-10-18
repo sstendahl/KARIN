@@ -47,8 +47,9 @@ def removeAllPeaks(self):
     self.peaks = []
     try:
         updatePeaklist(self)
+        self.PeriodXray.setText(f"Period: -- Å")
     except:
-        print("Could not update peak list, perhaps there was no such list yet?")
+        print("Could not update peak list, perhaps the list does not exist?")
     self.figXrayspec[1].draw()
 
 
@@ -63,7 +64,6 @@ def dragpeakMode(self, event, datatype="XraySpec"):
             self.vlines[i]=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line
             self.vlines = list(self.vlines) #Convert vlines array to list
             self.figXrayspec[1].draw() #Refresh figure
-            updatePeaklist(self) #Update peak list
 
 
 def removepeakMode(self, event):
@@ -74,6 +74,8 @@ def removepeakMode(self, event):
             self.vlines.pop(i)
             self.figXrayspec[1].draw()
             break
+    if len(self.peaks) < 2:
+        self.PeriodXray.setText(f"Period: -- Å")
 
 def insertLine(self,x):
     figure = self.figXrayspec[0]

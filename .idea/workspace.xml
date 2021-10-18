@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added incrementer class for added flexibility in SampleDB class">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="removed some redundant prints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634555647352</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="removed some redundant prints">
+      <created>1634555753274</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1634555753274</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Groundwork for Detect Peaks feature" />
     <MESSAGE value="Prototype implementation of peak detection" />
     <MESSAGE value="Added some tools for peak detection" />
     <MESSAGE value="Fixed regression bug where vline stopped working" />
@@ -567,6 +574,18 @@
     <MESSAGE value="Fixed regression bug" />
     <MESSAGE value="UX changes in SampleDB" />
     <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added incrementer class for added flexibility in SampleDB class" />
+    <MESSAGE value="removed some redundant prints" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed some redundant prints" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CallUI.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
