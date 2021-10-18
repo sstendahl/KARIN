@@ -22,8 +22,8 @@ def loadEdit(self, i):
     self.addSampleWindow.CommentsLine.setText(self.samplelist[i].comments)
     self.addSampleWindow.pathXraySpecLine.setText(self.samplelist[i].specularpathXray)
     self.addSampleWindow.pathOffSpecXline.setText(self.samplelist[i].offspecularpathXray)
-    self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutrons)
-    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutrons)
+    self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutron)
+    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
 
 def editSample(self):
@@ -32,14 +32,11 @@ def editSample(self):
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: editSampleAccepted(self,i))
-    print(len(self.samplelist))
-
 
 
 def editSampleAccepted(self,i):
     self.samplelist[i] = defineSample(self)
     writeToSampleList(self)
-    print(len(self.samplelist))
     refreshSampleDB(self)
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
@@ -61,9 +58,9 @@ def defineSample(self):
     offspecxraypath = self.addSampleWindow.pathOffSpecXline.displayText()
     specneutronpath = self.addSampleWindow.pathNspecLine.displayText()
     offspecneutronpath = self.addSampleWindow.pathoffspecNline.displayText()
-    newSample = Sample(sampleID, date, layers, materials, magPower, growthTimes, gasses, bgpressure, period,
-                     gamma, bias, comments, specxraypath, offspecxraypath, specneutronpath,
-                     offspecneutronpath)
+    newSample = Sample(sampleID=sampleID, date=date, layers=layers, materials=materials, magPower=magPower, growthTimes=growthTimes, gasses=gasses, backgroundPressure=bgpressure, period=period,
+                     gamma=gamma, bias=bias, comments=comments, specularpathXray=specxraypath, offspecularpathXray=offspecxraypath, specularpathNeutron=specneutronpath,
+                     offspecularpathNeutron=offspecneutronpath)
     return newSample
 
 def newSample(self):
@@ -81,11 +78,12 @@ def getPath(self):
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
     # This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
+    self.selected = []  # To make sure unchecked items will remain unchecked
+    self.shiftvertical = False
     self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
     helpfunctions.clearLayout(self.SpecReflectivity_Xray)
     for i in range(len(self.samplelist)):
-        if self.dialogWindow.SampleDBList.item(i,
-                                               7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+        if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
     self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
     self.figXrayspec[1]
@@ -97,80 +95,54 @@ def loadSampleDB(self):
     self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec",
                                                      xlabel="Rocking angle ω(°)")
 
-
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
     self.singlespec = False
     self.samplelist = helpfunctions.loadSampleList(self)
     if self.shiftvertical == True:
         self.dialogWindow.checkBox_4.setChecked(True)
-    self.dialogWindow.SampleDBList.setColumnCount(8)
-    self.dialogWindow.SampleDBList.setColumnWidth(2, 50)  # Width for layers
-    self.dialogWindow.SampleDBList.setColumnWidth(3, 150)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(4, 80)  # Width for bias
-    self.dialogWindow.SampleDBList.setColumnWidth(5, 200)  # Column width for growth times
-    self.dialogWindow.SampleDBList.setColumnWidth(6, 200)  # Width for comments
+    self.dialogWindow.SampleDBList.setColumnCount(9)
+    i = Incrementer()
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for date
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 50)  # Width for layers
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 170)  # Width for materials
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 240)  # Width for magnetron power
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 85)  # Width for bias
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 175)  # Column width for deposition times
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 250)  # Width for comments
 
     self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
     for i in range(len(self.samplelist)):  # Add items to the TableWidget
-        self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
-        self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
-        self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
-        self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-        self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
-        self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
-        self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
+        j = Incrementer()
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].sampleID)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].date)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].layers)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].materials)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].magPower)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].bias)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].growthTimes)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].comments)))
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-        self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
+        self.includeColumn = j()
+        self.dialogWindow.SampleDBList.setItem(i, self.includeColumn, chkBoxItem)
     for element in self.selected:  # Check which checkboxes were selected previously and check those
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Checked)
-        self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
-    self.selected = []  # To make sure unchecked items will remain unchecked
-    self.shiftvertical = False
+        self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
 
 def openSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
-    self.singlespec = False
-    self.samplelist = helpfunctions.loadSampleList(self)
     self.dialogWindow = CallUI.dialogUI()
-    if self.shiftvertical == True:
-        self.dialogWindow.checkBox_4.setChecked(True)
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
     self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
-    self.dialogWindow.SampleDBList.setColumnCount(8)
-    self.dialogWindow.SampleDBList.setColumnWidth(2, 50)  # Width for layers
-    self.dialogWindow.SampleDBList.setColumnWidth(3, 150)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(4, 80)  # Width for bias
-    self.dialogWindow.SampleDBList.setColumnWidth(5, 200)  # Column width for growth times
-    self.dialogWindow.SampleDBList.setColumnWidth(6, 200)  # Width for comments
-
-    self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
-    for i in range(len(self.samplelist)):  # Add items to the TableWidget
-        self.dialogWindow.SampleDBList.setItem(i, 0, QTableWidgetItem((self.samplelist[i].sampleID)))
-        self.dialogWindow.SampleDBList.setItem(i, 1, QTableWidgetItem((self.samplelist[i].date)))
-        self.dialogWindow.SampleDBList.setItem(i, 2, QTableWidgetItem((self.samplelist[i].layers)))
-        self.dialogWindow.SampleDBList.setItem(i, 3, QTableWidgetItem((self.samplelist[i].materials)))
-        self.dialogWindow.SampleDBList.setItem(i, 4, QTableWidgetItem((self.samplelist[i].bias)))
-        self.dialogWindow.SampleDBList.setItem(i, 5, QTableWidgetItem((self.samplelist[i].growthTimes)))
-        self.dialogWindow.SampleDBList.setItem(i, 6, QTableWidgetItem((self.samplelist[i].comments)))
-        chkBoxItem = QTableWidgetItem()
-        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-        chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-        self.dialogWindow.SampleDBList.setItem(i, 7, chkBoxItem)
-    for element in self.selected:  # Check which checkboxes were selected previously and check those
-        chkBoxItem = QTableWidgetItem()
-        chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
-        chkBoxItem.setCheckState(QtCore.Qt.Checked)
-        self.dialogWindow.SampleDBList.setItem(element, 7, chkBoxItem)
-    self.selected = []  # To make sure unchecked items will remain unchecked
-    self.shiftvertical = False
+    refreshSampleDB(self)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
 
@@ -203,6 +175,14 @@ def writeToSampleList(self):
                              self.samplelist[i].backgroundPressure, self.samplelist[i].period,
                              self.samplelist[i].gamma, self.samplelist[i].bias, self.samplelist[i].comments,
                              self.samplelist[i].specularpathXray, self.samplelist[i].offspecularpathXray,
-                             self.samplelist[i].specularpathNeutrons, self.samplelist[i].offspecularpathNeutrons,
+                             self.samplelist[i].specularpathNeutron, self.samplelist[i].offspecularpathNeutron,
                              self.samplelist[i].superAdamMapPath])
         file.truncate()
+
+class Incrementer:
+    def __init__(self):
+        self.value = -1
+
+    def __call__(self):
+        self.value += 1
+        return self.value
