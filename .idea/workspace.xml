@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Removed redundant function">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed regression bug">
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/samples.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dialog.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -500,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634553869942</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Fixed regression bug">
+      <created>1634554341175</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1634554341175</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed some unused imports" />
     <MESSAGE value="Small UX Changes" />
     <MESSAGE value="Removed some prints" />
     <MESSAGE value="Groundwork for Detect Peaks feature" />
@@ -545,6 +552,7 @@
     <MESSAGE value="Update readme" />
     <MESSAGE value="Fixed a bug in sample creator where attributes got mixed up" />
     <MESSAGE value="Removed redundant function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant function" />
+    <MESSAGE value="Fixed regression bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed regression bug" />
   </component>
 </project>

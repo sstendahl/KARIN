@@ -81,6 +81,8 @@ def getPath(self):
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
     # This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
+    self.selected = []  # To make sure unchecked items will remain unchecked
+    self.shiftvertical = False
     self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
     helpfunctions.clearLayout(self.SpecReflectivity_Xray)
     for i in range(len(self.samplelist)):
@@ -132,8 +134,6 @@ def refreshSampleDB(self):
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Checked)
         self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
-    self.selected = []  # To make sure unchecked items will remain unchecked
-    self.shiftvertical = False
 
 def openSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
