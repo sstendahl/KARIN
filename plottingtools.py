@@ -38,7 +38,7 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
     shifter = 1
     # helpfunctions.plot2canvas(self, self.ReflectivityplotGrid_Xray)
     for i in range(len(self.samplelist)):
-        if self.dialogWindow.SampleDBList.item(i,7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+        if self.dialogWindow.SampleDBList.item(i,self.includeColumn).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
             try:
                 if datatype.__eq__("XraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file

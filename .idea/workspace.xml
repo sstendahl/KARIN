@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed a bug in sample creator where attributes got mixed up">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Removed redundant function">
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -495,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634553243669</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Removed redundant function">
+      <created>1634553869942</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1634553869942</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +520,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Removed functions.py" />
     <MESSAGE value="Removed some unused imports" />
     <MESSAGE value="Small UX Changes" />
     <MESSAGE value="Removed some prints" />
@@ -540,6 +544,7 @@
     <MESSAGE value="Minor bugfix" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="Fixed a bug in sample creator where attributes got mixed up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug in sample creator where attributes got mixed up" />
+    <MESSAGE value="Removed redundant function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant function" />
   </component>
 </project>

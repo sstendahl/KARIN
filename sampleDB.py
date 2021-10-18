@@ -84,9 +84,9 @@ def loadSampleDB(self):
     self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
     helpfunctions.clearLayout(self.SpecReflectivity_Xray)
     for i in range(len(self.samplelist)):
-        if self.dialogWindow.SampleDBList.item(i,
-                                               7).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+        if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
+    print(self.SpecReflectivity_Xray)
     self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
     self.figXrayspec[1]
     plt.xlim(0.1)
@@ -125,12 +125,13 @@ def refreshSampleDB(self):
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Unchecked)
-        self.dialogWindow.SampleDBList.setItem(i, 8, chkBoxItem)
+        self.includeColumn = 8
+        self.dialogWindow.SampleDBList.setItem(i, self.includeColumn, chkBoxItem)
     for element in self.selected:  # Check which checkboxes were selected previously and check those
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Checked)
-        self.dialogWindow.SampleDBList.setItem(element, 8, chkBoxItem)
+        self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
     self.selected = []  # To make sure unchecked items will remain unchecked
     self.shiftvertical = False
 
