@@ -32,14 +32,11 @@ def editSample(self):
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: editSampleAccepted(self,i))
-    print(len(self.samplelist))
-
 
 
 def editSampleAccepted(self,i):
     self.samplelist[i] = defineSample(self)
     writeToSampleList(self)
-    print(len(self.samplelist))
     refreshSampleDB(self)
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
@@ -88,7 +85,6 @@ def loadSampleDB(self):
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
-    print(self.SpecReflectivity_Xray)
     self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec")
     self.figXrayspec[1]
     plt.xlim(0.1)
