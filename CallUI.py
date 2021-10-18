@@ -36,9 +36,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.selected = []
         self.shiftvertical = False
         self.mousepressed = False
-        self.lines = []
-        self.peaks = []
-        self.vlines = []
+        self.peakobject = []
+        self.dragPeakmode = False
         self.singlespec = False
         self.wavelength = 1.5406
 
@@ -80,10 +79,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.figXrayspec[1].draw()
 
     def detectPeaks(self, event):
-        self.peaks = []
-        self.peaks = vlinetools.detectPeaks(self, "xray")
-        vlinetools.updatePeaklist(self)
-        if len(self.peaks) > 2:
+        vlinetools.detectPeaks(self, "xray")
+        if len(self.peakobject) >= 2:
             helpfunctions.calculatePeriod(self)
         else:
             self.PeriodXray.setText(f"Period: -- Å")
@@ -91,14 +88,22 @@ class CallUI(QtBaseClass, Ui_MainWindow):
 
     def mouserelease(self, event):
         self.mousepressed = False
-
-        if self.Insert_line_button.isChecked() == False and len(self.vlines) > 1: #Calculating period from one peak only is a very bad idea and should not be condoned, hence > 1
-            vlinetools.updatePeaklist(self)
+        self.dragIndex = 0
+        self.dragPeakmode = False
+        self.peakobject.sort(key=lambda p: p.peak)
+        if self.Insert_line_button.isChecked() == False and len(self.peakobject) > 1: #Calculating period from one peak only is a very bad idea and should not be condoned, hence > 1
             helpfunctions.calculatePeriod(self)
+        vlinetools.updatePeaklist(self)
+
 
     def mousepress(self,event):
         self.mousepressed = True
-        xvalue = event.xdata
+
+        if self.dragMode_button.isChecked():
+            for i in range(len(self.peakobject)):
+                if event.xdata != None and abs(event.xdata - self.peakobject[i].peak) < 0.35:  # Make sure user is inside of plot and that peak is selected
+                    self.dragPeakmode = True
+                    self.dragIndex = i
 
         if self.addPeak_button.isChecked():
             vlinetools.addPeak(self, event)
@@ -112,7 +117,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             self.figXrayspec[1].draw()
 
     def hover(self, event):
-        if self.dragMode_button.isChecked() and self.mousepressed:
+        if self.dragMode_button.isChecked() and self.mousepressed and self.dragPeakmode == True:
             vlinetools.dragpeakMode(self, event)
 
         if self.Insert_line_button.isChecked() and self.mousepressed:
