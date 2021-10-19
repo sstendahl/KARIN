@@ -14,7 +14,7 @@ def detectPeaks(self, datatype):
     for i in range(len(self.peakobject)):
         self.peakobject[i].line.remove()
     self.peakobject = []
-    if datatype == "xray" and self.singlespec == False:
+    if datatype == "xraySpec" and self.singlespec == False:
         XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
         X = XY[0]
         Y = XY[1]
@@ -48,8 +48,8 @@ def dragVline(self,event, datatype="XraySpec"):
     self.figXrayspec[1].draw() #Refresh figure
 
 
-def dragpeakMode(self, event, datatype="XraySpec"):
-    if datatype == "XraySpec":
+def dragpeakMode(self, event, datatype="xraySpec"):
+    if datatype == "xraySpec":
         figure = self.figXrayspec[0]
     ax = figure.axes[0]
     i = self.dragIndex
@@ -88,5 +88,3 @@ class Peak:
     def __init__(self, peaks, lines):
         self.peak = peaks
         self.line = lines
-
-

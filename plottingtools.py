@@ -7,28 +7,30 @@ from PyQt5 import QtCore
 
 
 
-def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None, xmax = None):
+def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None):
     canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
     figure = canvas.figure
-    plotFigure(X, Y, canvas, filename, xlim, xmax)
+    plotFigure(X, Y, canvas, filename, xlim)
     layout.addWidget(canvas)
     figurecanvas = [figure, canvas]
     self.toolbar = NavigationToolbar(canvas, self)
     layout.addWidget(self.toolbar)
     return figurecanvas
 
-def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)",title=""):
+
+
+def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ (°)",title=""):
     shifter = 1
     plotWidget = PlotWidget(xlabel=xlabel)
-    for i in range(len(self.samplelist)):
+    for i in self.selected:
         if self.dialogWindow.SampleDBList.item(i,self.includeColumn).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
             try:
-                if datatype.__eq__("XraySpec"):
+                if datatype.__eq__("xraySpec"):
                     XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
                     xlim = 0.1
-                elif datatype == "XrayoffSpec":
+                elif datatype == "xrayoffSpec":
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
-                    xlim = XY[0][0]
+                    xlim = None
                 else:
                     XY = [[0],[0]]
             except:
@@ -41,11 +43,11 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
                 self.shiftvertical = True
                 Y = [element * shifter for element in Y]
                 shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
-                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title,xmax=X[-1])
+                plotFigure(X, Y, plotWidget, self.samplelist[i].sampleID, xlim, title)
                 plotWidget.theplot.set_yticks([])
 
             else:
-                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title,xmax=X[-1])
+                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
 
     figure = plotWidget.figure
     canvas = plotWidget.canvas
@@ -57,13 +59,12 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
     figurecanvas = [figure, canvas]
     return figurecanvas
 
-def plotFigure(X, Y, canvas,filename, xlim=None,title="", xmax=None):
+def plotFigure(X, Y, canvas,filename, xlim=None,title=""):
     fig = canvas.theplot
     fig.plot(X, Y,label=filename)
     canvas.theplot.legend()
     canvas.theplot.set_title(title)
-    canvas.theplot.set_xlim(xlim,xmax)
-
+    canvas.theplot.set_xlim(xlim)
 
 
 class PlotWidget(FigureCanvas):

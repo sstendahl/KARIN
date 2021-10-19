@@ -8,6 +8,9 @@ import vlinetools
 import helpfunctions
 import sampleDB
 import plottingtools
+from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+import numpy as np
+from scipy.signal import find_peaks
 
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")
@@ -57,6 +60,40 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
         self.removeAll_button.clicked.connect(lambda: vlinetools.removeAllPeaks(self))
+        self.normalizeToSpec_button.clicked.connect(self.normalizetoSpec)
+
+#Need to clean up the next code bit and move it to correct classes
+    def normalizetoSpec(self, datatype):
+        #Placeholder to support neutron implementation in the future
+        datatype = "xrayoffSpec"
+        if datatype == "xrayoffSpec":
+            layout = self.offSpecReflectivity_Xray
+        helpfunctions.clearLayout(layout)
+        plotWidget = plottingtools.PlotWidget()
+        for i in self.selected:
+            if datatype == "xrayoffSpec":
+                title = "Off-specular X-ray scattering"
+                XY_spec = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)
+                XY_offspec = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
+            X_spec = XY_spec[0]
+            Y_spec = XY_spec[1]
+            X_offspec = XY_offspec[0]
+            Y_offspec = XY_offspec[1]
+            peakindex = list(find_peaks(np.log(Y_spec), prominence=2)[0])
+
+            #Make sure that we haven't accidently identified the critical angle as first Bragg peak
+            if X_spec[peakindex[0]] > 1:
+                peak_value =  Y_spec[peakindex[0]]
+            else:
+                print(X_spec[peakindex[0]])
+                peak_value = Y_spec[peakindex[1]]
+            normfactor = peak_value / max(Y_offspec)
+            Y_offspec = [element * normfactor for element in Y_offspec]
+            plottingtools.plotFigure(X_offspec, Y_offspec, plotWidget, self.samplelist[i].sampleID, title=title)
+        canvas = plotWidget.canvas
+        self.toolbar = NavigationToolbar(canvas, self)
+        layout.addWidget(canvas)
+        layout.addWidget(self.toolbar)
 
     def triggerDetectpeaks(self):
         self.SpecularTools.setCurrentIndex(0)
@@ -79,7 +116,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.figXrayspec[1].draw()
 
     def detectPeaks(self, event):
-        vlinetools.detectPeaks(self, "xray")
+        vlinetools.detectPeaks(self, "xraySpec")
         if len(self.peakobject) >= 2:
             helpfunctions.calculatePeriod(self)
         else:

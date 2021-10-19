@@ -28,7 +28,7 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="reflectivityTab">
+        <widget class="QWidget" name="specularTab">
          <attribute name="title">
           <string>Specular</string>
          </attribute>
@@ -203,11 +203,52 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="specularTab">
+        <widget class="QWidget" name="OffspecularTab">
          <attribute name="title">
           <string>Off-specular</string>
          </attribute>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page_3">
+               <layout class="QGridLayout" name="gridLayout_7">
+                <item row="0" column="0" colspan="2" alignment="Qt::AlignLeft|Qt::AlignTop">
+                 <widget class="QPushButton" name="normalizeToSpec_button">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>992</width>
+                    <height>36</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Normalize to specular</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_4"/>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item>
            <layout class="QVBoxLayout" name="offSpecReflectivity_Xray"/>
           </item>

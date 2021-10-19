@@ -84,13 +84,13 @@ def loadSampleDB(self):
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
-    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "XraySpec",title="Specular X-Ray Reflectivity")
+    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "xraySpec",title="Specular X-Ray Reflectivity")
     self.figXrayspec[1]
     self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
     self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
     self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
     helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
-    self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "XrayoffSpec",
+    self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "xrayoffSpec",
                                                      xlabel="Rocking angle ω(°)",title="Off-specular X-Ray Reflectivity")
 
 def refreshSampleDB(self):
