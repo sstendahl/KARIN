@@ -69,7 +69,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         if datatype == "xrayoffSpec":
             layout = self.offSpecReflectivity_Xray
         helpfunctions.clearLayout(layout)
-        plotWidget = plottingtools.PlotWidget()
+        plotWidget = plottingtools.PlotWidget(xlabel="Rocking angle ω(°)")
         for i in self.selected:
             if datatype == "xrayoffSpec":
                 title = "Off-specular X-ray scattering"

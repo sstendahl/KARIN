@@ -5,7 +5,7 @@ IFM20028,2020-04-03,100,Ti/Ni + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,0V/-35V,,data/x
 IFM20029,2020-04-03,100,Ti/Ni,,,Ar: 3 mTorr,,,,0V/-30V,,data/xrr/IFM20029.xy,,,,
 IFM20043,2020-04-03,100,Ti/Ni + 11B4C,B4C: 40W,,Ar: 3 mTorr,,54.87 Å,,-30V,,data/xrr/IFM20043.xy,data/xrayoffspec/IFM20043_rocking.xy,,,
 IFM20044,2020-04-03,100,Ti/Ni,,,Ar: 3 mTorr,,51.44 Å,,0V/-30V,,data/xrr/IFM20044.xy,data/xrayoffspec/IFM20044_rocking.xy,,,
-IFM20045,2020-04-03,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,47.5 Å,,0V/-30V,,data/xrr/IFM20045.xy,data/xrayoffspec/IFM20045_rocking.xy,,,
+IFM20045,2020-04-03,100,Ti/Ni + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,47.5 Å,,0V/-30V,,data/xrr/IFM20045.xy,data/xrayoffspec/IFM20045_rocking.xy,,,
 IFM20046,2020-04-04,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,,,data/xrr/IFM20046.xy,data/xrayoffspec/IFM20046_rocking.xy,,,
 IFM20047,2020-04-05,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,0V/-30V,,data/xrr/IFM20047.xy,data/xrayoffspec/IFM20047_rocking.xy,,,
 IFM20048,2020-04-03,100,Ti/Ni + 11B4C,11B4C: 20W,,Ar: 3 mTorr,,54.87 Å,,0V/-30V,,data/xrr/IFM20048.xy,data/xrayoffspec/IFM20048_rocking.xy,,,

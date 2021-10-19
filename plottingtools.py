@@ -68,7 +68,7 @@ def plotFigure(X, Y, canvas,filename, xlim=None,title=""):
 
 
 class PlotWidget(FigureCanvas):
-    def __init__(self, parent=None, xlabel='x label', ylabel='Intensity (arb. u)', title=""):
+    def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title=""):
         super(PlotWidget, self).__init__(Figure())
         sns.set()
         self.setParent(parent)
