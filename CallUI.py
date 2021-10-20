@@ -61,6 +61,30 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
         self.removeAll_button.clicked.connect(lambda: vlinetools.removeAllPeaks(self))
         self.normalizeToSpec_button.clicked.connect(self.normalizetoSpec)
+        self.centerPeak_button.clicked.connect(self.centerPeak)
+
+    def centerPeak(self, datatype):
+        datatype = "xrayoffSpec"
+        if datatype == "xrayoffSpec":
+            layout = self.offSpecReflectivity_Xray
+        helpfunctions.clearLayout(layout)
+        plotWidget = plottingtools.PlotWidget(xlabel="Rocking angle ω(°)")
+        for i in self.selected:
+            if datatype == "xrayoffSpec":
+                title = "Off-specular X-ray scattering"
+                XY_offspec = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
+            X_offspec = XY_offspec[0]
+            Y_offspec = XY_offspec[1]
+            max_value = max(Y_offspec)
+            peak_index = Y_offspec.index(max_value)
+            X_offspec = [i - X_offspec[peak_index] for i in X_offspec]
+            plottingtools.plotFigure(X_offspec, Y_offspec, plotWidget, self.samplelist[i].sampleID, title=title)
+        canvas = plotWidget.canvas
+        self.toolbar = NavigationToolbar(canvas, self)
+        layout.addWidget(canvas)
+        layout.addWidget(self.toolbar)
+
+
 
 #Need to clean up the next code bit and move it to correct classes
     def normalizetoSpec(self, datatype):

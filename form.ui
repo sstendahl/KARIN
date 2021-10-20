@@ -26,7 +26,7 @@
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="specularTab">
          <attribute name="title">
@@ -223,24 +223,35 @@
               </property>
               <widget class="QWidget" name="page_3">
                <layout class="QGridLayout" name="gridLayout_7">
-                <item row="0" column="0" colspan="2" alignment="Qt::AlignLeft|Qt::AlignTop">
-                 <widget class="QPushButton" name="normalizeToSpec_button">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>992</width>
-                    <height>36</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Normalize to specular</string>
-                  </property>
-                 </widget>
+                <item row="1" column="0">
+                 <layout class="QGridLayout" name="gridLayout_8">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="normalizeToSpec_button">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>992</width>
+                      <height>36</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Normalize to specular</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="centerPeak_button">
+                    <property name="text">
+                     <string>Center peak</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </widget>
