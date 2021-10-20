@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,27 +211,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00010" summary="Added some off-spec files">
-      <created>1634045167404</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1634045167404</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Fixed bug where wrong files are displayed when column in SampleDB was sorted">
-      <created>1634050590114</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1634050590114</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Small bug fix">
-      <created>1634115217520</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1634115217520</updated>
     </task>
     <task id="LOCAL-00013" summary="Minor code cleanup">
       <created>1634117109598</created>
@@ -554,7 +534,28 @@
       <option name="project" value="LOCAL" />
       <updated>1634673913633</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added center peak button + functionality">
+      <created>1634713017689</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1634713017690</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added center peak button + functionality">
+      <created>1634713077068</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1634713077068</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Added center peak button + functionality">
+      <created>1634713094943</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1634713094943</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

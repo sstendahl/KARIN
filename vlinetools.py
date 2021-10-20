@@ -53,9 +53,14 @@ def dragpeakMode(self, event, datatype="xraySpec"):
         figure = self.figXrayspec[0]
     ax = figure.axes[0]
     i = self.dragIndex
+    if event.xdata == None:
+        xvalue = 0
+    else:
+        xvalue = event.xdata
+
     self.peakobject[i].line.remove()
-    self.peakobject[i].peak = event.xdata #Change the peak position of the selected peak
-    self.peakobject[i].line=(ax.axvline(event.xdata, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line#Sort the peak list
+    self.peakobject[i].peak = xvalue #Change the peak position of the selected peak
+    self.peakobject[i].line=(ax.axvline(xvalue, color='k', linewidth=1.0, linestyle='--')) #Change the line in the list to new selected line#Sort the peak list
     self.figXrayspec[1].draw() #Refresh figure
     updatePeaklist(self)
 
