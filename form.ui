@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1048</width>
-    <height>793</height>
+    <width>1344</width>
+    <height>857</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -293,7 +293,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1048</width>
+     <width>1344</width>
      <height>29</height>
     </rect>
    </property>
@@ -303,6 +303,8 @@
     </property>
     <addaction name="actionOpen_SampleDB"/>
     <addaction name="actionOpen_single_specular_file"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -408,6 +410,11 @@
   <action name="actionDetect_peaks">
    <property name="text">
     <string>Detect peaks</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

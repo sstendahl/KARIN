@@ -65,6 +65,7 @@ def defineSample(self):
 def newSample(self):
     newSample = defineSample(self)
     self.samplelist.append(newSample)
+    self.samplelist = sorted(self.samplelist, key=lambda x: x.sampleID, reverse=False)
     writeToSampleList(self)
     refreshSampleDB(self)
 

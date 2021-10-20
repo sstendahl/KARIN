@@ -11,12 +11,23 @@ import plottingtools
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import numpy as np
 from scipy.signal import find_peaks
+import settings
 
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")
 Ui_dialog, DialogClass = uic.loadUiType("simple_dialog.ui")
 Ui_sampleCreator, sampleCreatorClass = uic.loadUiType("sampleCreator.ui")
+Ui_settingsDialog, settingsDialogClass = uic.loadUiType("settingsdialog.ui")
 Ui_removeConfirmationwindow, removeConfirmationclass = uic.loadUiType("removeConfirmation.ui")
+Ui_aboutWindow, aboutWindowClass = uic.loadUiType("aboutwindow.ui")
+
+
+class aboutWindow(aboutWindowClass, Ui_aboutWindow):
+    def __init__(self, parent=None):
+        aboutWindowClass.__init__(self, parent)
+        self.setupUi(self)
+
+
 
 class removeConfirmation(removeConfirmationclass, Ui_removeConfirmationwindow):
     def __init__(self, parent=None):
@@ -44,12 +55,14 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.singlespec = False
         self.wavelength = 1.5406
 
+
     def connectActions(self):
         # Connect File actions
-        #self.actionAbout.triggered.connect(self.printHello)
+        self.actionAbout.triggered.connect(lambda: settings.showAbout(self))
         self.actionOpen_single_specular_file.triggered.connect(self.openSpecular)
         self.DetectPeaks_button.clicked.connect(self.detectPeaks)
         self.actionOpen_SampleDB.triggered.connect(lambda: sampleDB.openSampleDB(self))
+        self.actionSettings.triggered.connect(lambda: settings.openSettingsdialog(self))
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(self.triggerDetectpeaks)
         self.openSampleDB_button.clicked.connect(lambda: sampleDB.openSampleDB(self))
@@ -244,6 +257,10 @@ class dialogUI(DialogClass, Ui_dialog):
         DialogClass.__init__(self, parent)
         self.setupUi(self)
 
+class settingsUI(settingsDialogClass, Ui_settingsDialog):
+    def __init__(self, parent=None):
+        settingsDialogClass.__init__(self, parent)
+        self.setupUi(self)
 
 def setUpWindow():
     app = QtWidgets.QApplication(sys.argv)
