@@ -210,7 +210,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.mousepressed = False
         self.dragIndex = 0
         self.dragPeakmode = False
-        if self.peakobject[self.dragIndex].peak != None:
+        if len(self.peakobject) > 0:
             self.peakobject.sort(key=lambda p: p.peak)
         if self.Insert_line_button.isChecked() == False and len(self.peakobject) > 1: #Calculating period from one peak only is a very bad idea and should not be condoned, hence > 1
             helpfunctions.calculatePeriod(self)

@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bugfixes, groundwork for settings, plus added about window">
-      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM21005_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM21006_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM21007_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrayoffspec/IFM21010_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21001.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21002.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21003.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21004.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21005.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21006.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21007.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21009.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21010.xy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,13 +209,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00016" summary="Removed functions.py">
-      <created>1634122399537</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1634122399537</updated>
     </task>
     <task id="LOCAL-00017" summary="Removed some unused imports">
       <created>1634122431065</created>
@@ -568,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636364900143</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Bugfixes, groundwork for settings, plus added about window">
+      <created>1636372520203</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1636372520203</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
