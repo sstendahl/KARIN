@@ -78,6 +78,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.temp_button.clicked.connect(self.normalizeAndCenter)
 
 #This function below is temporary just as a showcase. Will be removed and implemented properly later on
+#This function is painfully ugly, but works as proof of concept
     def normalizeAndCenter(self, datatype):
         datatype = "xrayoffSpec"
         if datatype == "xrayoffSpec":
@@ -85,28 +86,34 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         helpfunctions.clearLayout(layout)
         plotWidget = plottingtools.PlotWidget(xlabel="Rocking angle ω(°)")
         for i in self.selected:
+            error = False
             if datatype == "xrayoffSpec":
                 title = "Off-specular X-ray scattering"
                 XY_spec = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)
-                XY_offspec = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
-            X_spec = XY_spec[0]
-            Y_spec = XY_spec[1]
-            X_offspec = XY_offspec[0]
-            Y_offspec = XY_offspec[1]
-            peakindex = list(find_peaks(np.log(Y_spec), prominence=2)[0])
+                try:
+                    XY_offspec = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
+                except:
+                    print(f"Could not find an off-specular data file for {self.samplelist[i].sampleID}")
+                    XY_offspec = [0][0]
+                    error = True
+            if error == False:
+                X_spec = XY_spec[0]
+                Y_spec = XY_spec[1]
+                X_offspec = XY_offspec[0]
+                Y_offspec = XY_offspec[1]
+                peakindex = list(find_peaks(np.log(Y_spec), prominence=2)[0])
 
-            #Make sure that we haven't accidently identified the critical angle as first Bragg peak
-            if X_spec[peakindex[0]] > 1:
-                peak_value =  Y_spec[peakindex[0]]
-            else:
-                print(X_spec[peakindex[0]])
-                peak_value = Y_spec[peakindex[1]]
-            normfactor = peak_value / max(Y_offspec)
-            Y_offspec = [element * normfactor for element in Y_offspec]
-            max_value = max(Y_offspec)
-            peak_index = Y_offspec.index(max_value)
-            X_offspec = [i - X_offspec[peak_index] for i in X_offspec]
-            plottingtools.plotFigure(X_offspec, Y_offspec, plotWidget, self.samplelist[i].sampleID, title=title)
+                #Make sure that we haven't accidently identified the critical angle as first Bragg peak
+                if X_spec[peakindex[0]] > 1:
+                    peak_value =  Y_spec[peakindex[0]]
+                else:
+                    peak_value = Y_spec[peakindex[1]]
+                normfactor = peak_value / max(Y_offspec)
+                Y_offspec = [element * normfactor for element in Y_offspec]
+                max_value = max(Y_offspec)
+                peak_index = Y_offspec.index(max_value)
+                X_offspec = [i - X_offspec[peak_index] for i in X_offspec]
+                plottingtools.plotFigure(X_offspec, Y_offspec, plotWidget, self.samplelist[i].sampleID, title=title)
         canvas = plotWidget.canvas
         self.toolbar = NavigationToolbar(canvas, self)
         layout.addWidget(canvas)
