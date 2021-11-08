@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Small bugfix">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bugfixes, groundwork for settings, plus added about window">
       <change afterPath="$PROJECT_DIR$/IFM20043.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aboutwindow.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settingsdialog.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Karin_QT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Karin_QT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CallUI.py" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Other/Software/genx-git/genx/genx/genx_gui.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -169,9 +163,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.blitting" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.plottingtools" />
-      <item itemvalue="Python.blitting" />
     </list>
     <recent_temporary>
       <list>
@@ -218,13 +212,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00014" summary="Changed default sampleDB to be relative path">
-      <created>1634122224398</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1634122224398</updated>
     </task>
     <task id="LOCAL-00015" summary="Changed default sampleDB to be relative path">
       <created>1634122376981</created>
@@ -562,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634714764781</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Bugfixes, groundwork for settings, plus added about window">
+      <created>1634732208186</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1634732208187</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +576,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bug fixes" />
     <MESSAGE value="Removed some redundant data" />
     <MESSAGE value="Implemented SampleDB" />
     <MESSAGE value="Updated readme" />
@@ -607,6 +600,7 @@
     <MESSAGE value="Bugfix" />
     <MESSAGE value="Added center peak button + functionality" />
     <MESSAGE value="Small bugfix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small bugfix" />
+    <MESSAGE value="Bugfixes, groundwork for settings, plus added about window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes, groundwork for settings, plus added about window" />
   </component>
 </project>
