@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QTableWidgetItem, QFileDialog
 import CallUI
 import plottingtools
 import csv
+from pathlib import Path
 from samples import Sample
 
 def loadEdit(self, i):
@@ -22,7 +23,7 @@ def loadEdit(self, i):
     self.addSampleWindow.pathXraySpecLine.setText(self.samplelist[i].specularpathXray)
     self.addSampleWindow.pathOffSpecXline.setText(self.samplelist[i].offspecularpathXray)
     self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutron)
-    self.addSampleWindow.pathoffspecNline.setText(self.samplelist[i].offspecularpathNeutron)
+    self.addSampleWindow.pathOffSpecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
 
 def editSample(self):
@@ -56,7 +57,7 @@ def defineSample(self):
     specxraypath = self.addSampleWindow.pathXraySpecLine.displayText()
     offspecxraypath = self.addSampleWindow.pathOffSpecXline.displayText()
     specneutronpath = self.addSampleWindow.pathNspecLine.displayText()
-    offspecneutronpath = self.addSampleWindow.pathoffspecNline.displayText()
+    offspecneutronpath = self.addSampleWindow.pathOffSpecNline.displayText()
     newSample = Sample(sampleID=sampleID, date=date, layers=layers, materials=materials, magPower=magPower, growthTimes=growthTimes, gasses=gasses, backgroundPressure=bgpressure, period=period,
                      gamma=gamma, bias=bias, comments=comments, specularpathXray=specxraypath, offspecularpathXray=offspecxraypath, specularpathNeutron=specneutronpath,
                      offspecularpathNeutron=offspecneutronpath)
@@ -100,7 +101,7 @@ def refreshSampleDB(self):
     self.samplelist = helpfunctions.loadSampleList(self)
     if self.shiftvertical == True:
         self.dialogWindow.checkBox_4.setChecked(True)
-    self.dialogWindow.SampleDBList.setColumnCount(9)
+    self.dialogWindow.SampleDBList.setColumnCount(10)
     i = Incrementer()
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for date
@@ -109,7 +110,10 @@ def refreshSampleDB(self):
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 240)  # Width for magnetron power
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 85)  # Width for bias
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 175)  # Column width for deposition times
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 150)  # Width for background pressure
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 250)  # Width for comments
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 75)  # Width for Include column
+
 
     self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
     for i in range(len(self.samplelist)):  # Add items to the TableWidget
@@ -121,6 +125,7 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].magPower)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].bias)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].growthTimes)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].backgroundPressure)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].comments)))
         chkBoxItem = QTableWidgetItem()
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
@@ -141,10 +146,24 @@ def openSampleDB(self):
     self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
+    self.addSampleWindow.openSpecXpath_button.clicked.connect(lambda: getSamplelocation(self, "specX"))
+    self.addSampleWindow.openSpecNpath_button.clicked.connect(lambda: getSamplelocation(self, "specN"))
+    self.addSampleWindow.openOffSpecXpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecX"))
+    self.addSampleWindow.openOffSpecNpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecN"))
     refreshSampleDB(self)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
 
+def getSamplelocation(self,datatype):
+    path = getPath(self)
+    if datatype == "specX":
+        self.addSampleWindow.pathXraySpecLine.setText(path)
+    if datatype == "specN":
+        self.addSampleWindow.pathNspecLine.setText(path)
+    if datatype == "offspecX":
+        self.addSampleWindow.pathOffSpecXline.setText(path)
+    if datatype == "offspecN":
+        self.addSampleWindow.pathOffSpecNline.setText(path)
 
 def removeSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()

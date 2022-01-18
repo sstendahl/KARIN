@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bugfixes, groundwork for settings, plus added about window">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Rewrote the plotting function as widget in own class. Now supports tight figure layout.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/plottingtools.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dialog.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -85,28 +86,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="blitting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Karin_QT" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="/tmp/mozilla_sjoerd0" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="/tmp/mozilla_sjoerd0/blitting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,14 +139,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.blitting" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.plottingtools" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.blitting" />
         <item itemvalue="Python.plottingtools" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.plottingtools" />
@@ -209,6 +186,104 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
+    </task>
+    <task id="LOCAL-00003" summary="KarinQT0.1">
+      <created>1634021004020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634021004020</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added some groundwork for stack switcher">
+      <created>1634022638355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634022638356</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added some groundwork for stack switcher">
+      <created>1634022989602</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634022989603</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Groundwork for vertical line function">
+      <created>1634034454236</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1634034454236</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added vertical line function (enabled by default for now)">
+      <created>1634040148416</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1634040148416</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added vertical line function">
+      <created>1634044083549</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1634044083549</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added shortkeys+SampleDB persistence">
+      <created>1634045060412</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1634045060412</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added some off-spec files">
+      <created>1634045167404</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634045167404</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed bug where wrong files are displayed when column in SampleDB was sorted">
+      <created>1634050590114</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634050590114</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Small bug fix">
+      <created>1634115217520</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1634115217520</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Minor code cleanup">
+      <created>1634117109598</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634117109598</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changed default sampleDB to be relative path">
+      <created>1634122224398</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634122224398</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Changed default sampleDB to be relative path">
+      <created>1634122376981</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634122376981</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Removed functions.py">
+      <created>1634122399537</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634122399537</updated>
     </task>
     <task id="LOCAL-00017" summary="Removed some unused imports">
       <created>1634122431065</created>
@@ -455,105 +530,7 @@
       <option name="project" value="LOCAL" />
       <updated>1634565861589</updated>
     </task>
-    <task id="LOCAL-00052" summary="Bugfixes">
-      <created>1634566447790</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1634566447791</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Added y-limit for plots">
-      <created>1634568401618</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1634568401618</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Added maximum x limit for plots">
-      <created>1634568427722</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1634568427722</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Performance improvements to vertical line tool">
-      <created>1634569699436</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1634569699436</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Rewrote peaks+lines implementation to a single class">
-      <created>1634585577167</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1634585577168</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Implemented &quot;normalize to specular&quot; function">
-      <created>1634673273280</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1634673273280</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Bugfix">
-      <created>1634673913633</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1634673913633</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Added center peak button + functionality">
-      <created>1634713017689</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1634713017690</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Added center peak button + functionality">
-      <created>1634713077068</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1634713077068</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Added center peak button + functionality">
-      <created>1634713094943</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1634713094943</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Small bugfix">
-      <created>1634714764781</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1634714764781</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Bugfixes, groundwork for settings, plus added about window">
-      <created>1634732208186</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1634732208187</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Bugfixes, groundwork for settings, plus added about window">
-      <created>1636364900143</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1636364900143</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Bugfixes, groundwork for settings, plus added about window">
-      <created>1636372520203</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1636372520203</updated>
-    </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,6 +550,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fixed regression bug where vline stopped working" />
+    <MESSAGE value="Small performance fix in peak dragging" />
+    <MESSAGE value="Minor code cleanup" />
+    <MESSAGE value="Peak detection (alpha)" />
+    <MESSAGE value="added peak detection (alpha)" />
+    <MESSAGE value="Implemented peak detection" />
+    <MESSAGE value="Added &quot;add peak&quot; function" />
+    <MESSAGE value="Enabled peak detection for singular specular file" />
+    <MESSAGE value="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot" />
+    <MESSAGE value="Bug fixes" />
     <MESSAGE value="Removed some redundant data" />
     <MESSAGE value="Implemented SampleDB" />
     <MESSAGE value="Updated readme" />
@@ -588,16 +575,17 @@
     <MESSAGE value="removed some redundant prints" />
     <MESSAGE value="Minor bugfixes and polish" />
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
-    <MESSAGE value="Bugfixes" />
-    <MESSAGE value="Added y-limit for plots" />
-    <MESSAGE value="Added maximum x limit for plots" />
-    <MESSAGE value="Performance improvements to vertical line tool" />
-    <MESSAGE value="Rewrote peaks+lines implementation to a single class" />
-    <MESSAGE value="Implemented &quot;normalize to specular&quot; function" />
-    <MESSAGE value="Bugfix" />
-    <MESSAGE value="Added center peak button + functionality" />
-    <MESSAGE value="Small bugfix" />
-    <MESSAGE value="Bugfixes, groundwork for settings, plus added about window" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfixes, groundwork for settings, plus added about window" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CallUI.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

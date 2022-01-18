@@ -111,6 +111,11 @@
      </column>
      <column>
       <property name="text">
+       <string>Background pressure</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
        <string>Comments</string>
       </property>
      </column>
@@ -144,12 +149,12 @@
        <string>Ni 5s, Ti 10s</string>
       </property>
      </item>
-     <item row="0" column="7">
+     <item row="0" column="8">
       <property name="text">
        <string>Bla bla bla</string>
       </property>
      </item>
-     <item row="0" column="8">
+     <item row="0" column="9">
       <property name="text">
        <string/>
       </property>
@@ -182,12 +187,12 @@
        <string>Co 5s, Yi, 20s</string>
       </property>
      </item>
-     <item row="1" column="7">
+     <item row="1" column="8">
       <property name="text">
        <string>Test</string>
       </property>
      </item>
-     <item row="1" column="8">
+     <item row="1" column="9">
       <property name="text">
        <string/>
       </property>
