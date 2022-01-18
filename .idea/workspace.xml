@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Rewrote the plotting function as widget in own class. Now supports tight figure layout.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed path buttons in Sample creator">
+      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xdVR6KIAfYhqQHwhacushB8YI9" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -186,13 +186,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00003" summary="KarinQT0.1">
-      <created>1634021004020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1634021004020</updated>
     </task>
     <task id="LOCAL-00004" summary="Added some groundwork for stack switcher">
       <created>1634022638355</created>
@@ -530,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634565861589</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fixed path buttons in Sample creator">
+      <created>1642507209222</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507209223</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,11 +546,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed regression bug where vline stopped working" />
     <MESSAGE value="Small performance fix in peak dragging" />
     <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
@@ -575,7 +573,8 @@
     <MESSAGE value="removed some redundant prints" />
     <MESSAGE value="Minor bugfixes and polish" />
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
+    <MESSAGE value="Fixed path buttons in Sample creator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed path buttons in Sample creator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
