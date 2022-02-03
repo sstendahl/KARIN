@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1048</width>
-    <height>793</height>
+    <width>1344</width>
+    <height>857</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,7 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="reflectivityTab">
+        <widget class="QWidget" name="specularTab">
          <attribute name="title">
           <string>Specular</string>
          </attribute>
@@ -203,11 +203,70 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="specularTab">
+        <widget class="QWidget" name="OffspecularTab">
          <attribute name="title">
           <string>Off-specular</string>
          </attribute>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="page_3">
+               <layout class="QGridLayout" name="gridLayout_7">
+                <item row="1" column="0">
+                 <layout class="QGridLayout" name="gridLayout_8">
+                  <item row="0" column="0">
+                   <widget class="QPushButton" name="normalizeToSpec_button">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>992</width>
+                      <height>36</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Normalize to specular</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QPushButton" name="centerPeak_button">
+                    <property name="text">
+                     <string>Center peak</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QPushButton" name="temp_button">
+                    <property name="text">
+                     <string>Normalize and center</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page_4"/>
+             </widget>
+            </item>
+           </layout>
+          </item>
           <item>
            <layout class="QVBoxLayout" name="offSpecReflectivity_Xray"/>
           </item>
@@ -234,7 +293,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1048</width>
+     <width>1344</width>
      <height>29</height>
     </rect>
    </property>
@@ -244,6 +303,8 @@
     </property>
     <addaction name="actionOpen_SampleDB"/>
     <addaction name="actionOpen_single_specular_file"/>
+    <addaction name="separator"/>
+    <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -349,6 +410,11 @@
   <action name="actionDetect_peaks">
    <property name="text">
     <string>Detect peaks</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
    </property>
   </action>
  </widget>

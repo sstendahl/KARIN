@@ -1,6 +1,28 @@
 from samples import Sample
 import numpy as np
 import csv
+import json
+
+
+def createLabel(self, index):
+    attributes = getLabelAttributes()
+    label = ""
+    for item in attributes:
+        if getattr(self.samplelist[index], item) != "":
+            label = label + getattr(self.samplelist[index], item) + " - "
+    label = label[:-3] #Remove dash in the end
+    return label
+
+def getLabelAttributes():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    config = config['legend'][0]
+    attributes = []
+    for key in config:
+        if config.get(key) == True:
+            attributes.append(key)
+    return attributes
+
 
 def openXY(path):
    X, Y = [], []
@@ -40,12 +62,13 @@ def loadSampleList(self):
 
 def calculatePeriod(self):
     m = []
-    for i in range(len(self.peaks)):
+    for i in range(len(self.peakobject)):
         m.append(i+1)
-
+    peaks = []
+    for element in self.peakobject:
+        peaks.append(element.peak)
     mSquared = np.square(m)
-    thetaSquared = np.square(np.sin((np.array(self.peaks) / 2) * np.pi / 180))
+    thetaSquared = np.square(np.sin((np.array(peaks) / 2) * np.pi / 180))
     coef = np.polyfit(mSquared, thetaSquared, 1)
     period = self.wavelength / (2 * np.sqrt(coef[0]))
     self.PeriodXray.setText(f"Period: {period:.2f} Å")
-    pass

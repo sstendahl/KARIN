@@ -6,8 +6,7 @@ from matplotlib.figure import Figure
 from PyQt5 import QtCore
 
 
-
-def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None):
+def singlePlotonCanvas(self, layout, filename, X, Y, xlim=None):
     canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
     figure = canvas.figure
     plotFigure(X, Y, canvas, filename, xlim)
@@ -18,36 +17,42 @@ def singlePlotonCanvas(self, layout, filename, X,Y, xlim = None):
     return figurecanvas
 
 
-
-def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ (°)",title=""):
+def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ (°)", title=""):
     shifter = 1
     plotWidget = PlotWidget(xlabel=xlabel)
-    for i in range(len(self.samplelist)):
-        if self.dialogWindow.SampleDBList.item(i,self.includeColumn).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
+    for i in self.selected:
+        error = False
+        if self.dialogWindow.SampleDBList.item(i,
+                                               self.includeColumn).checkState() == QtCore.Qt.Checked:  # checks for every box if they're checked
             try:
-                if datatype.__eq__("XraySpec"):
-                    XY = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
+                if datatype.__eq__("xraySpec"):
+                    XY = helpfunctions.openXY(
+                        path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
                     xlim = 0.1
-                elif datatype == "XrayoffSpec":
+                elif datatype == "xrayoffSpec":
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
-                    xlim = XY[0][0]
+                    xlim = None
                 else:
-                    XY = [[0],[0]]
+                    XY = [[0], [0]]
             except:
+                error = True
                 print("Can't open corresponding file, make sure it exists")
                 XY = [[0], [0]]
 
             X = XY[0]  # split XY data
             Y = XY[1]
-            if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked: #if shifted vertically is checked
+            legend = helpfunctions.createLabel(self, i)
+            if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked and not error:  # if shifted vertically is checked
+                print(f"Not error on {self.samplelist[i].sampleID}")
                 self.shiftvertical = True
                 Y = [element * shifter for element in Y]
-                shifter /= 100000 #Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
-                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
+                shifter /= 100000  # Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
+                plotFigure(X, Y, plotWidget, legend, xlim, title)
                 plotWidget.theplot.set_yticks([])
 
             else:
-                plotFigure(X,Y,plotWidget,self.samplelist[i].sampleID,xlim,title)
+                if not error:
+                    plotFigure(X, Y, plotWidget, legend, xlim, title)
 
     figure = plotWidget.figure
     canvas = plotWidget.canvas
@@ -59,16 +64,18 @@ def plotonCanvas(self, layout, datatype="XraySpec", xlabel="Incidence angle 2θ 
     figurecanvas = [figure, canvas]
     return figurecanvas
 
-def plotFigure(X, Y, canvas,filename, xlim=None,title=""):
+
+def plotFigure(X, Y, canvas, filename, xlim=None, title=""):
     fig = canvas.theplot
-    fig.plot(X, Y,label=filename)
+    fig.plot(X, Y, label=filename)
     canvas.theplot.legend()
     canvas.theplot.set_title(title)
     canvas.theplot.set_xlim(xlim)
 
 
+
 class PlotWidget(FigureCanvas):
-    def __init__(self, parent=None, xlabel='x label', ylabel='Intensity (arb. u)', title=""):
+    def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title=""):
         super(PlotWidget, self).__init__(Figure())
         sns.set()
         self.setParent(parent)

@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="5" column="5">
-    <widget class="QPushButton" name="openOffSpecNpath">
+    <widget class="QPushButton" name="openOffSpecNpath_button">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -28,7 +28,7 @@
     </widget>
    </item>
    <item row="5" column="4">
-    <widget class="QLineEdit" name="pathoffspecNline"/>
+    <widget class="QLineEdit" name="pathOffSpecNline"/>
    </item>
    <item row="7" column="4">
     <widget class="QLineEdit" name="SputteringGasLine"/>
@@ -41,7 +41,7 @@
     </widget>
    </item>
    <item row="3" column="5">
-    <widget class="QPushButton" name="openSpecNpath">
+    <widget class="QPushButton" name="openSpecNpath_button">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -131,7 +131,7 @@
     <widget class="QLineEdit" name="materialsLine"/>
    </item>
    <item row="2" column="5">
-    <widget class="QPushButton" name="openSpecXpath">
+    <widget class="QPushButton" name="openSpecXpath_button">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -241,7 +241,7 @@
     </widget>
    </item>
    <item row="4" column="5">
-    <widget class="QPushButton" name="openOffSpecXpath">
+    <widget class="QPushButton" name="openOffSpecXpath_button">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -265,6 +265,28 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>sampleIDline</tabstop>
+  <tabstop>dateLine</tabstop>
+  <tabstop>layersLine</tabstop>
+  <tabstop>depTimeLine</tabstop>
+  <tabstop>magPowerLine</tabstop>
+  <tabstop>materialsLine</tabstop>
+  <tabstop>biasLine</tabstop>
+  <tabstop>bgPressureLine</tabstop>
+  <tabstop>pathXraySpecLine</tabstop>
+  <tabstop>openSpecXpath_button</tabstop>
+  <tabstop>pathNspecLine</tabstop>
+  <tabstop>openSpecNpath_button</tabstop>
+  <tabstop>pathOffSpecXline</tabstop>
+  <tabstop>openOffSpecXpath_button</tabstop>
+  <tabstop>pathOffSpecNline</tabstop>
+  <tabstop>openOffSpecNpath_button</tabstop>
+  <tabstop>periodLine</tabstop>
+  <tabstop>SputteringGasLine</tabstop>
+  <tabstop>CommentsLine</tabstop>
+  <tabstop>gammaLine</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -274,8 +296,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>1121</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -290,8 +312,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>1121</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
