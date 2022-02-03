@@ -27,7 +27,10 @@ def openSettingsdialog(self):
     self.settingsdialog.theme.setCurrentText(theme)
     context = config['context']
     self.settingsdialog.context.setCurrentText(context)
-
+    xraywavelength = config['xraywavelength']
+    self.settingsdialog.xraywavelength.setText(str(xraywavelength))
+    neutronwavelength = config['neutronwavelength']
+    self.settingsdialog.neutronwavelength.setText(str(neutronwavelength))
 
     self.settingsdialog.show()
     self.settingsdialog.accepted.connect(lambda: loadSettings(self))
@@ -57,6 +60,13 @@ def writeConfig(self):
 
     context = str(self.settingsdialog.context.currentText())
     config['context'] = context
+
+    xraywavelength = str(self.settingsdialog.xraywavelength.text())
+    config['xraywavelength'] = float(xraywavelength)
+
+    neutronwavelength = str(self.settingsdialog.neutronwavelength.text())
+    config['neutronwavelength'] = float(neutronwavelength)
+
 
     # write it back to the file
     with open('config.json', 'w') as f:

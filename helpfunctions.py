@@ -25,6 +25,16 @@ def createLabel(self, index):
     label = label[:-3] #Remove dash in the end
     return label
 
+def getWavelength(source):
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    if source == "xray":
+        return config['xraywavelength']
+    if source == "neutron":
+        return config['neutronwavelength']
+
+
+
 def getLabelAttributes():
     with open('config.json', 'r') as f:
         config = json.load(f)
@@ -73,6 +83,8 @@ def loadSampleList(self):
     return samplelist
 
 def calculatePeriod(self):
+    source = "xray"
+    wavelength = getWavelength(source)
     m = []
     for i in range(len(self.peakobject)):
         m.append(i+1)
@@ -82,5 +94,5 @@ def calculatePeriod(self):
     mSquared = np.square(m)
     thetaSquared = np.square(np.sin((np.array(peaks) / 2) * np.pi / 180))
     coef = np.polyfit(mSquared, thetaSquared, 1)
-    period = self.wavelength / (2 * np.sqrt(coef[0]))
+    period = wavelength / (2 * np.sqrt(coef[0]))
     self.PeriodXray.setText(f"Period: {period:.2f} Å")
