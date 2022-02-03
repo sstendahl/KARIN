@@ -26,7 +26,6 @@ def openSettingsdialog(self):
     self.settingsdialog.accepted.connect(lambda: loadSettings(self))
 
 def loadSettings(self):
-    print("loading settings")
     writeConfig(self)
     sampleDB.loadSampleDB(self)
 
@@ -41,7 +40,6 @@ def writeConfig(self):
     for key in legend:
         config['legend'][0][key] = False
         if self.settingsdialog.legendAttributes.item(i, 1).checkState() == QtCore.Qt.Checked:
-            print(f"Number {i} was checked!")
             config['legend'][0][key] = True
         i = i + 1
 
