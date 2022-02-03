@@ -23,11 +23,10 @@ Currently working features include:
 - A vertical line can be inserted in order to compare vertically shifted plots. This line can be dragged around by the mouse pointer
 - Automated peak detection, peak positions can be adjusted by dragging them using the mouse pointer while in drag mode.
 - Manual peak insertion or removal while in Add peak mode or in Remove Peak mode respectively. 
-- Graph theme and style can be selected in the dedicated settings menu
+- Manual settings for wavelength, graph theme and style and attributes displayed in legend.
 
 Features that are planned in the semi-short term include, but are not limited to:
 - Ability to switch between X-ray and Neutron data
-- More settings for e.g. used wavelength and vertical shift.*
 - Conversion from theta to q-space and vice-versa
 - Simulations (both specular and full 2D maps) using the BornAgain code-base
 - Data manipulation tools such as shift in x-data, and cutting selected parts of the measurement (e.g. direct beam)
