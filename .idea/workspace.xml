@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed tab order in Sample Creator">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Small bug fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleCreator.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sampleCreator.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples.py" beforeDir="false" afterPath="$PROJECT_DIR$/samples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settingsdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/settingsdialog.ui" afterDir="false" />
     </list>
@@ -196,27 +190,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00006" summary="Groundwork for vertical line function">
-      <created>1634034454236</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1634034454236</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added vertical line function (enabled by default for now)">
-      <created>1634040148416</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1634040148416</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added vertical line function">
-      <created>1634044083549</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1634044083549</updated>
     </task>
     <task id="LOCAL-00009" summary="Added shortkeys+SampleDB persistence">
       <created>1634045060412</created>
@@ -540,7 +513,28 @@
       <option name="project" value="LOCAL" />
       <updated>1643884861945</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added dynamically generated labels using settings dialog with json file">
+      <created>1643893949929</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1643893949929</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Small bug fixes">
+      <created>1643895180313</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1643895180313</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Small bug fixes">
+      <created>1643895274141</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1643895274141</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,8 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Peak detection (alpha)" />
-    <MESSAGE value="added peak detection (alpha)" />
     <MESSAGE value="Implemented peak detection" />
     <MESSAGE value="Added &quot;add peak&quot; function" />
     <MESSAGE value="Enabled peak detection for singular specular file" />
@@ -584,7 +576,9 @@
     <MESSAGE value="Fixed path buttons in Sample creator" />
     <MESSAGE value="groundwork for settings using json file" />
     <MESSAGE value="Fixed tab order in Sample Creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed tab order in Sample Creator" />
+    <MESSAGE value="Added dynamically generated labels using settings dialog with json file" />
+    <MESSAGE value="Small bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small bug fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

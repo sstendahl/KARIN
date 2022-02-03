@@ -2,6 +2,7 @@ import CallUI
 import json
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QTableWidgetItem
+import sampleDB
 
 def openSettingsdialog(self):
     self.settingsdialog = CallUI.settingsUI()
@@ -25,8 +26,8 @@ def openSettingsdialog(self):
     self.settingsdialog.accepted.connect(lambda: loadSettings(self))
 
 def loadSettings(self):
-    print("loading settings")
     writeConfig(self)
+    sampleDB.loadSampleDB(self)
 
 
 def writeConfig(self):
@@ -39,7 +40,6 @@ def writeConfig(self):
     for key in legend:
         config['legend'][0][key] = False
         if self.settingsdialog.legendAttributes.item(i, 1).checkState() == QtCore.Qt.Checked:
-            print(f"Number {i} was checked!")
             config['legend'][0][key] = True
         i = i + 1
 
@@ -48,16 +48,6 @@ def writeConfig(self):
         json.dump(config, f)
 
 def showAbout(self):
-    data = {
-        'legend': [
-            {
-                'sampleID': True,
-                'backgroundPressure': True,
-                'magPower': True,
-                'comments': True
-            }]
-    }
-
-    with open('config.json', 'w') as f:
-        json.dump(data, f)
+    self.aboutWindow = CallUI.aboutWindow()
+    self.aboutWindow.show()
 
