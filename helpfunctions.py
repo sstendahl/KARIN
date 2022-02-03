@@ -1,6 +1,28 @@
 from samples import Sample
 import numpy as np
 import csv
+import json
+
+
+def createLabel(self, index):
+    attributes = getLabelAttributes()
+    label = ""
+    for item in attributes:
+        if getattr(self.samplelist[index], item) != "":
+            label = label + getattr(self.samplelist[index], item) + " - "
+    label = label[:-3] #Remove dash in the end
+    return label
+
+def getLabelAttributes():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    config = config['legend'][0]
+    attributes = []
+    for key in config:
+        if config.get(key) == True:
+            attributes.append(key)
+    return attributes
+
 
 def openXY(path):
    X, Y = [], []

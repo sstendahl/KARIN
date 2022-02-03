@@ -76,6 +76,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.normalizeToSpec_button.clicked.connect(self.normalizetoSpec)
         self.centerPeak_button.clicked.connect(self.centerPeak)
         self.temp_button.clicked.connect(self.normalizeAndCenter)
+        self.shortcut_settings= QShortcut(QKeySequence('Ctrl+S'), self)
+        self.shortcut_settings.activated.connect(lambda: settings.openSettingsdialog(self))
+
 
 #This function below is temporary just as a showcase. Will be removed and implemented properly later on
 #This function is painfully ugly, but works as proof of concept

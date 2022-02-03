@@ -41,17 +41,18 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
 
             X = XY[0]  # split XY data
             Y = XY[1]
+            legend = helpfunctions.createLabel(self, i)
             if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked and not error:  # if shifted vertically is checked
                 print(f"Not error on {self.samplelist[i].sampleID}")
                 self.shiftvertical = True
                 Y = [element * shifter for element in Y]
                 shifter /= 100000  # Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
-                plotFigure(X, Y, plotWidget, self.samplelist[i].sampleID, xlim, title)
+                plotFigure(X, Y, plotWidget, legend, xlim, title)
                 plotWidget.theplot.set_yticks([])
 
             else:
                 if not error:
-                    plotFigure(X, Y, plotWidget, self.samplelist[i].sampleID, xlim, title)
+                    plotFigure(X, Y, plotWidget, legend, xlim, title)
 
     figure = plotWidget.figure
     canvas = plotWidget.canvas
@@ -70,6 +71,7 @@ def plotFigure(X, Y, canvas, filename, xlim=None, title=""):
     canvas.theplot.legend()
     canvas.theplot.set_title(title)
     canvas.theplot.set_xlim(xlim)
+
 
 
 class PlotWidget(FigureCanvas):
