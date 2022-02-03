@@ -18,3 +18,4 @@ IFM21006,2021-11-01,50,Ni/Ti,,,Ar: 3 mTorr,,,,-30V,,data/xrr/IFM21006.xy,data/xr
 IFM21007,2021-11-01,50,Ni/Ti,,,Ar: 3 mTorr,,,,-30 V,,data/xrr/IFM21007.xy,data/xrayoffspec/IFM21007_rocking.xy,,,
 IFM21009,2021-11-01,50,,,,Ar: 3 mTorr,,,,,,data/xrr/IFM21009.xy,data/xrayoffspec/IFM21009_rocking.xy,,,
 IFM21010,2021-11-01,50,Ni/Ti + 11B4C interlayers,,,Ar: 3 mTorr,,,,0V/-30V,interlayers of 20 s,data/xrr/IFM21010.xy,data/xrayoffspec/IFM21010_rocking.xy,,,
+IFM21084,2022-01-20,100,Ni/Ti + 11B4C int,11B4C: 40 W,,,,,,0V/30V,20 s interlayers,,,,,

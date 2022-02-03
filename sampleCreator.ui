@@ -265,6 +265,28 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>sampleIDline</tabstop>
+  <tabstop>dateLine</tabstop>
+  <tabstop>layersLine</tabstop>
+  <tabstop>depTimeLine</tabstop>
+  <tabstop>magPowerLine</tabstop>
+  <tabstop>materialsLine</tabstop>
+  <tabstop>biasLine</tabstop>
+  <tabstop>bgPressureLine</tabstop>
+  <tabstop>pathXraySpecLine</tabstop>
+  <tabstop>openSpecXpath_button</tabstop>
+  <tabstop>pathNspecLine</tabstop>
+  <tabstop>openSpecNpath_button</tabstop>
+  <tabstop>pathOffSpecXline</tabstop>
+  <tabstop>openOffSpecXpath_button</tabstop>
+  <tabstop>pathOffSpecNline</tabstop>
+  <tabstop>openOffSpecNpath_button</tabstop>
+  <tabstop>periodLine</tabstop>
+  <tabstop>SputteringGasLine</tabstop>
+  <tabstop>CommentsLine</tabstop>
+  <tabstop>gammaLine</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

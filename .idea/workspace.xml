@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed path buttons in Sample creator">
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="groundwork for settings using json file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleCreator.ui" beforeDir="false" afterPath="$PROJECT_DIR$/sampleCreator.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settingsdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/settingsdialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1xdVR6KIAfYhqQHwhacushB8YI9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -186,13 +190,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00004" summary="Added some groundwork for stack switcher">
-      <created>1634022638355</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1634022638356</updated>
     </task>
     <task id="LOCAL-00005" summary="Added some groundwork for stack switcher">
       <created>1634022989602</created>
@@ -530,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642507209223</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="groundwork for settings using json file">
+      <created>1642507921827</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507921827</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Small performance fix in peak dragging" />
     <MESSAGE value="Minor code cleanup" />
     <MESSAGE value="Peak detection (alpha)" />
     <MESSAGE value="added peak detection (alpha)" />
@@ -574,7 +577,8 @@
     <MESSAGE value="Minor bugfixes and polish" />
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
     <MESSAGE value="Fixed path buttons in Sample creator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed path buttons in Sample creator" />
+    <MESSAGE value="groundwork for settings using json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="groundwork for settings using json file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
