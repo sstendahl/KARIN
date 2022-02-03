@@ -2,6 +2,7 @@ import CallUI
 import json
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QTableWidgetItem
+import sampleDB
 
 def openSettingsdialog(self):
     self.settingsdialog = CallUI.settingsUI()
@@ -27,6 +28,7 @@ def openSettingsdialog(self):
 def loadSettings(self):
     print("loading settings")
     writeConfig(self)
+    sampleDB.loadSampleDB(self)
 
 
 def writeConfig(self):
