@@ -48,16 +48,6 @@ def writeConfig(self):
         json.dump(config, f)
 
 def showAbout(self):
-    data = {
-        'legend': [
-            {
-                'sampleID': True,
-                'backgroundPressure': True,
-                'magPower': True,
-                'comments': True
-            }]
-    }
-
-    with open('config.json', 'w') as f:
-        json.dump(data, f)
+    self.aboutWindow = CallUI.aboutWindow()
+    self.aboutWindow.show()
 
