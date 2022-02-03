@@ -41,18 +41,20 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
 
             X = XY[0]  # split XY data
             Y = XY[1]
+            skip = int(self.dialogWindow.skipdata.text())
+            Y = Y[skip:]
+            X = X[skip:]
             legend = helpfunctions.createLabel(self, i)
-            if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked and not error:  # if shifted vertically is checked
-                print(f"Not error on {self.samplelist[i].sampleID}")
-                self.shiftvertical = True
-                Y = [element * shifter for element in Y]
-                shifter /= 100000  # Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
+            if not error:
+                if self.dialogWindow.normalizeBox.checkState() == QtCore.Qt.Checked:
+                    self.normalize = True
+                    Y = [element / max(Y) for element in Y]
+                if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked and not error:  # if shifted vertically is checked
+                    self.shiftvertical = True
+                    Y = [element * shifter for element in Y]
+                    shifter /= 100000  # Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order
+                    plotWidget.theplot.set_yticks([])
                 plotFigure(X, Y, plotWidget, legend, xlim, title)
-                plotWidget.theplot.set_yticks([])
-
-            else:
-                if not error:
-                    plotFigure(X, Y, plotWidget, legend, xlim, title)
 
     figure = plotWidget.figure
     canvas = plotWidget.canvas
@@ -78,6 +80,8 @@ class PlotWidget(FigureCanvas):
     def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title=""):
         super(PlotWidget, self).__init__(Figure())
         sns.set()
+        helpfunctions.setGraphTheme()
+        helpfunctions.setGraphContext()
         self.setParent(parent)
         self.figure = Figure()
         self.canvas = FigureCanvas(self.figure)

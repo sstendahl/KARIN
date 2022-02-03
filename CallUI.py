@@ -49,6 +49,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.connectActions()
         self.selected = []
         self.shiftvertical = False
+        self.normalize = False
         self.mousepressed = False
         self.peakobject = []
         self.dragPeakmode = False

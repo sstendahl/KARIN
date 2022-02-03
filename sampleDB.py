@@ -81,6 +81,7 @@ def loadSampleDB(self):
     # This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
     self.selected = []  # To make sure unchecked items will remain unchecked
     self.shiftvertical = False
+    self.normalize = False
     self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
     helpfunctions.clearLayout(self.SpecReflectivity_Xray)
     for i in range(len(self.samplelist)):
@@ -101,6 +102,9 @@ def refreshSampleDB(self):
     self.samplelist = helpfunctions.loadSampleList(self)
     if self.shiftvertical == True:
         self.dialogWindow.checkBox_4.setChecked(True)
+    if self.normalize == True:
+        self.dialogWindow.normalizeBox.setChecked(True)
+
     self.dialogWindow.SampleDBList.setColumnCount(10)
     i = Incrementer()
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID

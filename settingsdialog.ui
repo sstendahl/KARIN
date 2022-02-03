@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>362</width>
-    <height>288</height>
+    <width>572</width>
+    <height>290</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>210</x>
      <y>240</y>
      <width>341</width>
      <height>32</height>
@@ -171,6 +171,97 @@
      <enum>Unchecked</enum>
     </property>
    </item>
+  </widget>
+  <widget class="QComboBox" name="theme">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>10</y>
+     <width>126</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>DarkGrid</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dark</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>White</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Whitegrid</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ticks</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>20</y>
+     <width>66</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Theme</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="context">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>60</y>
+     <width>126</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Paper</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Notebook</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Talk</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Poster</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>70</y>
+     <width>66</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Style</string>
+   </property>
   </widget>
  </widget>
  <resources/>
