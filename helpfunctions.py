@@ -2,7 +2,19 @@ from samples import Sample
 import numpy as np
 import csv
 import json
+import seaborn as sns
 
+def setGraphTheme():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    theme = config['theme'].lower()
+    sns.set_style(theme)
+
+def setGraphContext():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    context = config['context'].lower()
+    sns.set_context(context)
 
 def createLabel(self, index):
     attributes = getLabelAttributes()
@@ -16,7 +28,7 @@ def createLabel(self, index):
 def getLabelAttributes():
     with open('config.json', 'r') as f:
         config = json.load(f)
-    config = config['legend'][0]
+    config = config['legend']
     attributes = []
     for key in config:
         if config.get(key) == True:

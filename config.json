@@ -1,1 +1,1 @@
-{"legend": [{"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}]}
+{"legend": {"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}, "theme": "White", "context": "Notebook"}

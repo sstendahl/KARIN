@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Small bug fixes">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added materials to legend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settingsdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/settingsdialog.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_dialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/simple_dialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +196,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00009" summary="Added shortkeys+SampleDB persistence">
-      <created>1634045060412</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1634045060412</updated>
     </task>
     <task id="LOCAL-00010" summary="Added some off-spec files">
       <created>1634045167404</created>
@@ -534,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643895274141</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added materials to legend">
+      <created>1643896163537</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1643896163537</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented peak detection" />
     <MESSAGE value="Added &quot;add peak&quot; function" />
     <MESSAGE value="Enabled peak detection for singular specular file" />
     <MESSAGE value="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot" />
@@ -578,7 +583,8 @@
     <MESSAGE value="Fixed tab order in Sample Creator" />
     <MESSAGE value="Added dynamically generated labels using settings dialog with json file" />
     <MESSAGE value="Small bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small bug fixes" />
+    <MESSAGE value="Added materials to legend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added materials to legend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,6 +2,8 @@ import CallUI
 import json
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QTableWidgetItem
+
+import helpfunctions
 import sampleDB
 
 def openSettingsdialog(self):
@@ -9,17 +11,22 @@ def openSettingsdialog(self):
     with open('config.json', 'r') as f:
         config = json.load(f)
 
-    legend = config['legend'][0]
+    legend = config['legend']
     i = 0
     self.settingsdialog.legendAttributes.setColumnWidth(0, 200)  # Width for attribute column
 
     for key in legend:
-        if config['legend'][0][key] == True:
+        if config['legend'][key] == True:
             chkBoxItem = QTableWidgetItem()
             chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
             chkBoxItem.setCheckState(QtCore.Qt.Checked)
             self.settingsdialog.legendAttributes.setItem(i, 1, chkBoxItem)
         i = i + 1
+
+    theme = config['theme']
+    self.settingsdialog.theme.setCurrentText(theme)
+    context = config['context']
+    self.settingsdialog.context.setCurrentText(context)
 
 
     self.settingsdialog.show()
@@ -27,21 +34,29 @@ def openSettingsdialog(self):
 
 def loadSettings(self):
     writeConfig(self)
-    sampleDB.loadSampleDB(self)
+    try:
+        sampleDB.loadSampleDB(self)
+    except:
+        print("Can't load selected samples. You probably haven't opened the SampleDB yet")
 
 
 def writeConfig(self):
     with open('config.json', 'r') as f:
         config = json.load(f)
 
-    legend = config['legend'][0]
-    attributes = []
+    legend = config['legend']
     i = 0
     for key in legend:
-        config['legend'][0][key] = False
+        config['legend'][key] = False
         if self.settingsdialog.legendAttributes.item(i, 1).checkState() == QtCore.Qt.Checked:
-            config['legend'][0][key] = True
+            config['legend'][key] = True
         i = i + 1
+
+    theme = str(self.settingsdialog.theme.currentText())
+    config['theme'] = theme
+
+    context = str(self.settingsdialog.context.currentText())
+    config['context'] = context
 
     # write it back to the file
     with open('config.json', 'w') as f:
