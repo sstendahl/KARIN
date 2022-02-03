@@ -54,7 +54,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.peakobject = []
         self.dragPeakmode = False
         self.singlespec = False
-        self.wavelength = 1.5406
+
+        self.wavelength = helpfunctions.getWavelength("xray")
 
 
     def connectActions(self):
