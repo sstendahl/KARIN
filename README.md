@@ -18,6 +18,7 @@ Note that this is a very early alpha. Development is done on Fedora so testing i
  
 Currently working features include:
 - A fully working Sample Database (SampleDB). The SampleDB gets its information from the included csv file. Both specular and off-specular measurements of the selected Samples are loaded automatically when closing the SampleDB. The shortkey Ctrl+D opens SampleDB.
+- Specular and off-specular data can be stored for both X-ray and Neutrons for each sample in the SampleDB. 
 - SampleDB can be exported to PDF file
 - Normalization of measurements for easy comparison
 - When loading multiple measurements simultaniously, it is possible to shift them vertically in the SampleDB for easy comparison.
@@ -26,8 +27,8 @@ Currently working features include:
 - Manual peak insertion or removal while in Add peak mode or in Remove Peak mode respectively. 
 - Manual settings for wavelength (shortkey CTRL+S), graph theme and style and attributes displayed in legend.
 
-Features that are planned in the semi-short term include, but are not limited to:
-- Ability to switch between X-ray and Neutron data
+
+Features that are planned in the forseeable future include, but are not limited to:
 - Conversion from theta to q-space and vice-versa
 - Simulations (both specular and full 2D maps) using the BornAgain code-base
 - Data manipulation tools such as shift in x-data, and cutting selected parts of the measurement (e.g. direct beam)
@@ -35,4 +36,3 @@ Features that are planned in the semi-short term include, but are not limited to
 - A simple sample builder for reflectivity simulations
 - Support for 2D maps as obtained at SuperAdam at ILL
 - In the longer term: simple fitting features, at least for specular data.
-

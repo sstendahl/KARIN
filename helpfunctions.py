@@ -13,6 +13,11 @@ def saveFileDialog(self):
                                               "Portable Document Format (PDF) (*.pdf)", options=options)
     return fileName
 
+def getSource():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    return config['source'].lower()
+
 def setGraphTheme():
     with open('config.json', 'r') as f:
         config = json.load(f)

@@ -23,6 +23,8 @@ def openSettingsdialog(self):
             self.settingsdialog.legendAttributes.setItem(i, 1, chkBoxItem)
         i = i + 1
 
+
+
     theme = config['theme']
     self.settingsdialog.theme.setCurrentText(theme)
     context = config['context']
@@ -31,6 +33,9 @@ def openSettingsdialog(self):
     self.settingsdialog.xraywavelength.setText(str(xraywavelength))
     neutronwavelength = config['neutronwavelength']
     self.settingsdialog.neutronwavelength.setText(str(neutronwavelength))
+    source = config['source']
+    print(source)
+    self.settingsdialog.source.setCurrentText(source)
 
     self.settingsdialog.show()
     self.settingsdialog.accepted.connect(lambda: loadSettings(self))
@@ -67,8 +72,9 @@ def writeConfig(self):
     neutronwavelength = str(self.settingsdialog.neutronwavelength.text())
     config['neutronwavelength'] = float(neutronwavelength)
 
+    source = str(self.settingsdialog.source.currentText())
+    config['source'] = source
 
-    # write it back to the file
     with open('config.json', 'w') as f:
         json.dump(config, f)
 
