@@ -385,7 +385,7 @@
   </action>
   <action name="menuXraySource">
    <property name="text">
-    <string>Xrays</string>
+    <string>X-rays</string>
    </property>
   </action>
   <action name="menuNeutronSource">
