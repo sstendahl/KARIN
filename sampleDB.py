@@ -5,6 +5,7 @@ import CallUI
 import plottingtools
 import csv
 from pathlib import Path
+import exportPDF
 from samples import Sample
 
 def loadEdit(self, i):
@@ -148,6 +149,7 @@ def openSampleDB(self):
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
     self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
+    self.dialogWindow.exportPDF_button.clicked.connect(lambda: exportPDF.exportcsvtoPDF(self))
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
     self.addSampleWindow.openSpecXpath_button.clicked.connect(lambda: getSamplelocation(self, "specX"))

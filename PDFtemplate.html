@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+</head>
+<body>
+ {% block layout_style %}
+<style> @page { size: 16in 12in;; margin: 2cm; } </style>
+
+{% endblock %}
+     {{ sample_table }}
+</body>
+</html>
