@@ -318,10 +318,10 @@
     </property>
     <widget class="QMenu" name="menuShow_2">
      <property name="title">
-      <string>View</string>
+      <string>Source</string>
      </property>
-     <addaction name="actionSpecular_X_ray_2"/>
-     <addaction name="actionOff_specular_X_ray"/>
+     <addaction name="menuXraySource"/>
+     <addaction name="menuNeutronSource"/>
      <addaction name="separator"/>
      <addaction name="separator"/>
     </widget>
@@ -335,6 +335,7 @@
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="menuTools"/>
+    <addaction name="separator"/>
     <addaction name="menuShow_2"/>
    </widget>
    <addaction name="menuFile"/>
@@ -382,12 +383,12 @@
     <string>Specular X-ray</string>
    </property>
   </action>
-  <action name="actionSpecular_X_ray_2">
+  <action name="menuXraySource">
    <property name="text">
     <string>Xrays</string>
    </property>
   </action>
-  <action name="actionOff_specular_X_ray">
+  <action name="menuNeutronSource">
    <property name="text">
     <string>Neutrons</string>
    </property>

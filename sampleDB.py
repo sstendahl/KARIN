@@ -110,6 +110,7 @@ def loadSampleDB(self):
     self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, datatypeoffSpec,
                                                      xlabel="Rocking angle ω(°)",title=titleoffspec)
 
+
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
     self.singlespec = False

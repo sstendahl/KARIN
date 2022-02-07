@@ -13,6 +13,14 @@ def saveFileDialog(self):
                                               "Portable Document Format (PDF) (*.pdf)", options=options)
     return fileName
 
+def setSource(source):
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    config['source'] = source
+    with open('config.json', 'w') as f:
+        json.dump(config, f)
+
+
 def getSource():
     with open('config.json', 'r') as f:
         config = json.load(f)
@@ -42,10 +50,13 @@ def createLabel(self, index):
 def getWavelength(source):
     with open('config.json', 'r') as f:
         config = json.load(f)
-    if source == "xray":
+        source = source.lower()
+    if source == "x-ray":
         return config['xraywavelength']
     if source == "neutron":
         return config['neutronwavelength']
+
+
 
 def getSkipdata():
     with open('config.json', 'r') as f:
@@ -100,7 +111,7 @@ def loadSampleList(self):
     return samplelist
 
 def calculatePeriod(self):
-    source = "xray"
+    source = getSource()
     wavelength = getWavelength(source)
     m = []
     for i in range(len(self.peakobject)):

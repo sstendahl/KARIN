@@ -1,1 +1,1 @@
-{"legend": {"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}, "theme": "Dark", "context": "Notebook", "xraywavelength": 1.54, "neutronwavelength": 5.23, "skipspecdata": 10, "source": "X-Ray"}
+{"legend": {"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}, "theme": "White", "context": "Talk", "xraywavelength": 1.54, "neutronwavelength": 5.23, "skipspecdata": "5", "source": "X-Ray"}

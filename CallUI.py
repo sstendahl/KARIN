@@ -55,7 +55,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dragPeakmode = False
         self.singlespec = False
 
-        self.wavelength = helpfunctions.getWavelength("xray")
+        self.wavelength = helpfunctions.getWavelength("x-ray")
 
 
     def connectActions(self):
@@ -67,6 +67,8 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionSettings.triggered.connect(lambda: settings.openSettingsdialog(self))
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(self.triggerDetectpeaks)
+        self.menuXraySource.triggered.connect(lambda: self.sourceMenu("X-ray"))
+        self.menuNeutronSource.triggered.connect(lambda: self.sourceMenu("Neutron"))
         self.openSampleDB_button.clicked.connect(lambda: sampleDB.openSampleDB(self))
         self.addPeak_button.clicked.connect(self.addpeakButtonclick)
         self.removePeak_button.clicked.connect(self.removepeakButtonclick)
@@ -81,6 +83,13 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shortcut_settings= QShortcut(QKeySequence('Ctrl+S'), self)
         self.shortcut_settings.activated.connect(lambda: settings.openSettingsdialog(self))
 
+
+    def sourceMenu(self, source):
+        helpfunctions.setSource(source)
+        try:
+            sampleDB.loadSampleDB(self)
+        except:
+            print("Can't load selected samples. You probably haven't opened the SampleDB yet")
 
 #This function below is temporary just as a showcase. Will be removed and implemented properly later on
 #This function is painfully ugly, but works as proof of concept
