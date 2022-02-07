@@ -2,7 +2,16 @@ from samples import Sample
 import numpy as np
 import csv
 import json
+from PyQt5.QtWidgets import QFileDialog
 import seaborn as sns
+
+
+def saveFileDialog(self):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    fileName = QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "",
+                                              "Portable Document Format (PDF) (*.pdf)", options=options)
+    return fileName
 
 def setGraphTheme():
     with open('config.json', 'r') as f:
@@ -33,7 +42,10 @@ def getWavelength(source):
     if source == "neutron":
         return config['neutronwavelength']
 
-
+def getSkipdata():
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    return config['skipspecdata']
 
 def getLabelAttributes():
     with open('config.json', 'r') as f:

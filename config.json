@@ -1,1 +1,1 @@
-{"legend": {"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}, "theme": "DarkGrid", "context": "Notebook", "xraywavelength": 1.54, "neutronwavelength": 5.12}
+{"legend": {"sampleID": true, "materials": true, "magPower": false, "backgroundPressure": false, "comments": false}, "theme": "DarkGrid", "context": "Notebook", "xraywavelength": 1.54, "neutronwavelength": 5.12, "skipspecdata": 10}
