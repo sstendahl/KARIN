@@ -28,7 +28,15 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
                 if datatype.__eq__("xraySpec"):
                     XY = helpfunctions.openXY(
                         path=self.samplelist[i].specularpathXray)  # load the XY data from the specular X-ray file
-                    xlim = 0.1
+                    xlim = 0
+                elif datatype.__eq__("neutronSpec"):
+                    XY = helpfunctions.openXY(
+                        path=self.samplelist[i].specularpathNeutron)  # load the XY data from the specular neutron file
+                    xlim = 0
+                elif datatype.__eq__("neutronoffSpec"):
+                    XY = helpfunctions.openXY(
+                        path=self.samplelist[i].offspecularpathNeutron)  # load the XY data from the specular neutron file
+                    xlim = None
                 elif datatype == "xrayoffSpec":
                     XY = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
                     xlim = None

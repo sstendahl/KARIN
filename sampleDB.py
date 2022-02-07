@@ -80,6 +80,7 @@ def getPath(self):
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
     # This module loads when OK is pressed on the SampleDB. Loading the selected data and plotting them in the application.
+    source = helpfunctions.getSource()
     self.selected = []  # To make sure unchecked items will remain unchecked
     self.shiftvertical = False
     self.normalize = False
@@ -88,14 +89,26 @@ def loadSampleDB(self):
     for i in range(len(self.samplelist)):
         if self.dialogWindow.SampleDBList.item(i, self.includeColumn).checkState() == QtCore.Qt.Checked:
             self.selected.append(i)
-    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, "xraySpec",title="Specular X-Ray Reflectivity")
+    if source == "x-ray":
+        datatypeSpec = "xraySpec"
+        titlespec = "Specular X-Ray Reflectivity"
+        datatypeoffSpec = "xrayoffSpec"
+        titleoffspec = "Off-specular Neutron Reflectivity"
+
+    else:
+        datatypeSpec = "neutronSpec"
+        titlespec = "Specular Neutron Reflectivity"
+        datatypeoffSpec = "neutronoffSpec"
+        titleoffspec = "Off-specular Neutron Reflectivity"
+
+    self.figXrayspec = plottingtools.plotonCanvas(self, self.SpecReflectivity_Xray, datatypeSpec,title=titlespec)
     self.figXrayspec[1]
     self.figXrayspec[1].mpl_connect("motion_notify_event", self.hover)
     self.figXrayspec[1].mpl_connect("button_press_event", self.mousepress)
     self.figXrayspec[1].mpl_connect("button_release_event", self.mouserelease)
     helpfunctions.clearLayout(self.offSpecReflectivity_Xray)
-    self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, "xrayoffSpec",
-                                                     xlabel="Rocking angle ω(°)",title="Off-specular X-Ray Reflectivity")
+    self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, datatypeoffSpec,
+                                                     xlabel="Rocking angle ω(°)",title=titleoffspec)
 
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget

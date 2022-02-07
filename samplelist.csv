@@ -1,5 +1,5 @@
 Sample ID,Date,Amount of Layers,Materials,Magnetron Powers,Growth Times,Inlet gasses,Background Pressure,Period,Gamma ratio,Bias,Comments,Specular X-ray file location,Off-specular X-Ray file location,Specular Neutron file location,Off-specular Neutron file location,2D Map location
-IFM20026,2020-04-04,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,0V/-30V,,/home/sjoerd/Projects/KARIN/data/xrr/IFM20026.xy,data/xrayoffspec/IFM20026_rocking.xy,,,
+IFM20026,2020-04-04,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,0V/-30V,,/home/sjoerd/Projects/KARIN/data/xrr/IFM20026.xy,data/xrayoffspec/IFM20026_rocking.xy,/home/sjoerd/Projects/KARIN/data/xrr/IFM20026.xy,data/xrayoffspec/IFM20026_rocking.xy,
 IFM20027,2020-04-05,100,Ni/Ti + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,-30V,test,data/xrr/IFM20027.xy,data/xrayoffspec/IFM20027_rocking.xy,,,
 IFM20028,2020-04-03,100,Ti/Ni + 11B4C,11B4C: 40W,,Ar: 3 mTorr,,,,0V/-35V,,data/xrr/IFM20028.xy,data/xrayoffspec/IFM20028_rocking.xy,,,
 IFM20029,2020-04-03,100,Ti/Ni,,,Ar: 3 mTorr,,,,0V/-30V,Poor sample,data/xrr/IFM20029.xy,data/xrayoffspec/IFM20045_rocking.xy,,,
