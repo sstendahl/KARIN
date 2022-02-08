@@ -4,108 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed typo">
-      <change afterPath="$PROJECT_DIR$/data/xrr/10B4C.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/10B4C.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/11B4C.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/11B4C.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/11B4C_2.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/11B4C_2.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM200010_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21007_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21009_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21011.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21012.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21013.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21013_2.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21014.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21015_2.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21016_2.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21017.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21018_2.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21019.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21020.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21043.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21044.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21045.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21046.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21047.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21047_RETRYSAMPLE.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21048.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21051.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21052.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21052_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21053.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21054.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21054_ROCKING-INTERLAYERS.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21055.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21056.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21056_rocking.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21061.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21062.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21062_THEOTHERIS63ITHINK.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21063.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21064.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21065.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21066.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21067.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21068.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21069.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21071.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21072.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21073.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21074.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21075-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21076-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21076-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21076-R.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21077-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21077-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21079-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21079-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21080-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21080-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21081-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21081-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21082-RATE.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21083-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21083-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21084-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21084-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21084-R.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21085-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21085-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21086-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21086-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21088-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21090-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21091-L-ROCKING.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21091-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21093.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21094-L-NIB4C-TI.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21094-M-NIB4CTI.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21095-L-NITIB4C40W.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21095-R.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21096-L-NITIB4C30W.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21097-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21098-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21098-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21099-L.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21099-M.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IFM21099-R.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/IMF21006.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/INTERLAYERS.xy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/xrr/NiB4C-Ti.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Fixed a bug where new sample was overwritten after editing previous sample">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/AZ140_2.xy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/IFM21001.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM21001.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/IFM21002.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM21002.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/IFM21007.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM21007.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/xrr/IFM21010.xy" beforeDir="false" afterPath="$PROJECT_DIR$/data/xrr/IFM21010.xy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
     </list>
@@ -291,13 +191,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00019" summary="Removed some prints">
-      <created>1634130020134</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1634130020134</updated>
     </task>
     <task id="LOCAL-00020" summary="Groundwork for Detect Peaks feature">
       <created>1634137382541</created>
@@ -635,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644257013035</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Fixed a bug where new sample was overwritten after editing previous sample">
+      <created>1644336875916</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1644336875916</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +554,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented sample edit mode" />
     <MESSAGE value="Minor bugfix" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="Fixed a bug in sample creator where attributes got mixed up" />
@@ -679,7 +578,8 @@
     <MESSAGE value="Changed version number" />
     <MESSAGE value="Added source selection in menu bar" />
     <MESSAGE value="Fixed typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed typo" />
+    <MESSAGE value="Fixed a bug where new sample was overwritten after editing previous sample" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug where new sample was overwritten after editing previous sample" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

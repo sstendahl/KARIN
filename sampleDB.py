@@ -8,7 +8,8 @@ from pathlib import Path
 import exportPDF
 from samples import Sample
 
-def loadEdit(self, i):
+def loadEdit(self, j):
+    i = getSampleIDrow(self, j)
     self.addSampleWindow.sampleIDline.setText(self.samplelist[i].sampleID)
     self.addSampleWindow.dateLine.setText(self.samplelist[i].date)
     self.addSampleWindow.layersLine.setText(self.samplelist[i].layers)
@@ -26,9 +27,20 @@ def loadEdit(self, i):
     self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutron)
     self.addSampleWindow.pathOffSpecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
+def getSampleIDrow(self, i):
+    #Will use following to fix sorting issues:
+    sampleID = self.dialogWindow.SampleDBList.item(i, 0).text()
+    print(f"Current selected sample is {sampleID}")
+    for sample in range(len(self.samplelist)):
+        if self.samplelist[sample].sampleID == sampleID:
+            j = sample
+
+    return j
+
 
 def editSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()
+    sampleID = getSampleIDrow(self, i)
     loadEdit(self,i)
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
@@ -194,7 +206,8 @@ def getSamplelocation(self,datatype):
         self.addSampleWindow.pathOffSpecNline.setText(path)
 
 def removeSample(self):
-    i = self.dialogWindow.SampleDBList.currentRow()
+    j = self.dialogWindow.SampleDBList.currentRow()
+    i = getSampleIDrow(self, j)
     self.removeConfirmation = CallUI.removeConfirmation()
     self.removeConfirmation.warning_removesample.setText(f"You are about to remove {self.samplelist[i].sampleID} from the SampleDB. Are you sure?")
     self.removeConfirmation.show()
