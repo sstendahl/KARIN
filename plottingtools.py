@@ -44,7 +44,7 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
                     XY = [[0], [0]]
             except:
                 error = True
-                print("Can't open corresponding file, make sure it exists")
+                print("I was unable to open reflectivity file.")
                 XY = [[0], [0]]
 
             X = XY[0]  # split XY data
@@ -57,7 +57,7 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
                 if self.dialogWindow.normalizeBox.checkState() == QtCore.Qt.Checked:
                     self.normalize = True
                     Y = [element / max(Y) for element in Y]
-                if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked and not error:  # if shifted vertically is checked
+                if self.dialogWindow.checkBox_4.checkState() == QtCore.Qt.Checked:  # if shifted vertically is checked
                     self.shiftvertical = True
                     Y = [element * shifter for element in Y]
                     shifter /= 100000  # Divide each subsequent plot by 100k to shift them on log scale. Divide to make sure legend is in right order

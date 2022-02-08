@@ -110,7 +110,6 @@ def loadSampleDB(self):
     self.figXrayoffspec = plottingtools.plotonCanvas(self, self.offSpecReflectivity_Xray, datatypeoffSpec,
                                                      xlabel="Rocking angle ω(°)",title=titleoffspec)
 
-
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
     self.singlespec = False
@@ -162,7 +161,7 @@ def openSampleDB(self):
     self.dialogWindow = CallUI.dialogUI()
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
-    self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
+    self.dialogWindow.addSample_button.clicked.connect(lambda: addSampleButton(self))
     self.dialogWindow.exportPDF_button.clicked.connect(lambda: exportPDF.exportcsvtoPDF(self))
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
@@ -173,6 +172,15 @@ def openSampleDB(self):
     refreshSampleDB(self)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
+
+def addSampleButton(self):
+    try:
+        self.addSampleWindow.accepted.disconnect()
+        self.addSampleWindow.accepted.connect(lambda: newSample(self))
+    except:
+        self.addSampleWindow.accepted.connect(lambda: newSample(self))
+    self.addSampleWindow.show()
+
 
 def getSamplelocation(self,datatype):
     path = getPath(self)
