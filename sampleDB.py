@@ -28,15 +28,23 @@ def loadEdit(self, j):
     self.addSampleWindow.pathOffSpecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
 def getSampleIDrow(self, i):
-    #Will use following to fix sorting issues:
     sampleID = self.dialogWindow.SampleDBList.item(i, 0).text()
-    print(f"Current selected sample is {sampleID}")
     for sample in range(len(self.samplelist)):
         if self.samplelist[sample].sampleID == sampleID:
             j = sample
 
     return j
 
+def savetoSampleDB(self):
+    period = self.periodLabel.text()[8:]
+    self.confirmPeriodWindow = CallUI.confirmPeriodWindow()
+    self.confirmPeriodWindow.warning_period.setText(f"The period {period} will be written to sample  {self.samplelist[int(self.selected[0])].sampleID}. Are you sure?")
+    self.confirmPeriodWindow.show()
+    self.confirmPeriodWindow.accepted.connect(lambda: periodAccept(self, period))
+
+def periodAccept(self, period):
+    self.samplelist[int(self.selected[0])].period = period
+    writeToSampleList(self)
 
 def editSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()

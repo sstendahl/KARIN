@@ -123,4 +123,4 @@ def calculatePeriod(self):
     thetaSquared = np.square(np.sin((np.array(peaks) / 2) * np.pi / 180))
     coef = np.polyfit(mSquared, thetaSquared, 1)
     period = wavelength / (2 * np.sqrt(coef[0]))
-    self.PeriodXray.setText(f"Period: {period:.2f} Å")
+    self.periodLabel.setText(f"Period: {period:.2f} Å")

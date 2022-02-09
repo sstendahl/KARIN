@@ -18,7 +18,9 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")
 Ui_dialog, DialogClass = uic.loadUiType("simple_dialog.ui")
 Ui_sampleCreator, sampleCreatorClass = uic.loadUiType("sampleCreator.ui")
 Ui_settingsDialog, settingsDialogClass = uic.loadUiType("settingsdialog.ui")
+Ui_confirmPeriodWindow, confirmPeriodWindowclass = uic.loadUiType("confirmPeriod.ui")
 Ui_removeConfirmationwindow, removeConfirmationclass = uic.loadUiType("removeConfirmation.ui")
+
 Ui_aboutWindow, aboutWindowClass = uic.loadUiType("aboutwindow.ui")
 
 
@@ -27,7 +29,10 @@ class aboutWindow(aboutWindowClass, Ui_aboutWindow):
         aboutWindowClass.__init__(self, parent)
         self.setupUi(self)
 
-
+class confirmPeriodWindow(confirmPeriodWindowclass, Ui_confirmPeriodWindow):
+    def __init__(self, parent=None):
+        confirmPeriodWindowclass.__init__(self, parent)
+        self.setupUi(self)
 
 class removeConfirmation(removeConfirmationclass, Ui_removeConfirmationwindow):
     def __init__(self, parent=None):
@@ -77,6 +82,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
         self.removeAll_button.clicked.connect(lambda: vlinetools.removeAllPeaks(self))
+        self.savePeriod_button.clicked.connect(lambda: sampleDB.savetoSampleDB(self))
         self.normalizeToSpec_button.clicked.connect(self.normalizetoSpec)
         self.centerPeak_button.clicked.connect(self.centerPeak)
         self.temp_button.clicked.connect(self.normalizeAndCenter)
@@ -217,7 +223,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         if len(self.peakobject) >= 2:
             helpfunctions.calculatePeriod(self)
         else:
-            self.PeriodXray.setText(f"Period: -- Å")
+            self.periodLabel.setText(f"Period: -- Å")
 
 
     def mouserelease(self, event):

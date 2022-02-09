@@ -58,45 +58,10 @@
                  <layout class="QVBoxLayout" name="verticalLayout_3">
                   <item>
                    <layout class="QGridLayout" name="gridLayout_2">
-                    <item row="6" column="0">
+                    <item row="7" column="0">
                      <widget class="QPushButton" name="removeAll_button">
                       <property name="text">
                        <string>Clear all peaks</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="0" alignment="Qt::AlignLeft">
-                     <widget class="QListWidget" name="peakList">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="editTriggers">
-                       <set>QAbstractItemView::NoEditTriggers</set>
-                      </property>
-                      <property name="selectionMode">
-                       <enum>QAbstractItemView::NoSelection</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="0">
-                     <widget class="QLabel" name="PeriodXray">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string>Period: -- Å</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -146,6 +111,48 @@
                        </widget>
                       </item>
                      </layout>
+                    </item>
+                    <item row="3" column="0" alignment="Qt::AlignLeft">
+                     <widget class="QListWidget" name="peakList">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="selectionMode">
+                       <enum>QAbstractItemView::NoSelection</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="periodLabel">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>Period: -- Å</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="8" column="0">
+                     <widget class="QPushButton" name="savePeriod_button">
+                      <property name="text">
+                       <string>Save period to SampleDB</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
