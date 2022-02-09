@@ -37,8 +37,11 @@ def getSampleIDrow(self, i):
 def savetoSampleDB(self):
     period = self.periodLabel.text()[8:]
     self.confirmPeriodWindow = CallUI.confirmPeriodWindow()
-    self.confirmPeriodWindow.warning_period.setText(f"The period {period} will be written to sample  {self.samplelist[int(self.selected[0])].sampleID}. Are you sure?")
-    self.confirmPeriodWindow.show()
+    try:
+        self.confirmPeriodWindow.warning_period.setText(f"The period {period} will be written to sample  {self.samplelist[int(self.selected[0])].sampleID}. Are you sure?")
+        self.confirmPeriodWindow.show()
+    except:
+        print("Make sure to find a period first using the peak detection tool or inserting peaks manually")
     self.confirmPeriodWindow.accepted.connect(lambda: periodAccept(self, period))
 
 def periodAccept(self, period):

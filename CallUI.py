@@ -20,9 +20,13 @@ Ui_sampleCreator, sampleCreatorClass = uic.loadUiType("sampleCreator.ui")
 Ui_settingsDialog, settingsDialogClass = uic.loadUiType("settingsdialog.ui")
 Ui_confirmPeriodWindow, confirmPeriodWindowclass = uic.loadUiType("confirmPeriod.ui")
 Ui_removeConfirmationwindow, removeConfirmationclass = uic.loadUiType("removeConfirmation.ui")
-
+Ui_periodGraph, periodGraphclass = uic.loadUiType("periodgraph.ui")
 Ui_aboutWindow, aboutWindowClass = uic.loadUiType("aboutwindow.ui")
 
+class periodGraph(periodGraphclass, Ui_periodGraph):
+    def __init__(self, parent=None):
+        periodGraphclass.__init__(self, parent)
+        self.setupUi(self)
 
 class aboutWindow(aboutWindowClass, Ui_aboutWindow):
     def __init__(self, parent=None):
@@ -78,6 +82,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.addPeak_button.clicked.connect(self.addpeakButtonclick)
         self.removePeak_button.clicked.connect(self.removepeakButtonclick)
         self.dragMode_button.clicked.connect(self.dragpeakButtonclick)
+        self.showFit_button.clicked.connect(lambda: plottingtools.showPeriodGraph(self))
         self.Insert_line_button.clicked.connect(self.insertLine_pressed)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
@@ -88,6 +93,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.temp_button.clicked.connect(self.normalizeAndCenter)
         self.shortcut_settings= QShortcut(QKeySequence('Ctrl+S'), self)
         self.shortcut_settings.activated.connect(lambda: settings.openSettingsdialog(self))
+
 
 
     def sourceMenu(self, source):

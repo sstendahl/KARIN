@@ -1,15 +1,37 @@
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import helpfunctions
+import numpy as np
 import seaborn as sns
 from matplotlib.figure import Figure
 from PyQt5 import QtCore
+import CallUI
+import plottingtools
 
+def showPeriodGraph(self):
+    self.periodGraph = CallUI.periodGraph()
+    layout = self.periodGraph.periodGraph
+    helpfunctions.clearLayout(self.periodGraph.periodGraph)
+    XY = helpfunctions.calculatePeriod(self)
+    print(min(XY[0]))
+    X = np.linspace(min(XY[0]),max(XY[0]),100)
+    Y = XY[2][0]*X + XY[2][1]
+    plotWidget = PlotWidget(xlabel="m squared", ylabel="theta squared")
+    # 100 linearly spaced numbers
+    x = np.linspace(-5, 5, 100)
+    plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None)
+    plotFigure(X, Y, plotWidget, scale="linear")
 
-def singlePlotonCanvas(self, layout, filename, X, Y, xlim=None):
+    figure = plotWidget.figure
+    canvas = plotWidget.canvas
+
+    layout.addWidget(canvas)
+    self.periodGraph.show()
+
+def singlePlotonCanvas(self, layout, filename, X, Y, xlim=None, scale="log", marker=None):
     canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
     figure = canvas.figure
-    plotFigure(X, Y, canvas, filename, xlim)
+    plotFigure(X, Y, canvas, filename, xlim, scale=scale, marker=marker)
     layout.addWidget(canvas)
     figurecanvas = [figure, canvas]
     self.toolbar = NavigationToolbar(canvas, self)
@@ -17,7 +39,7 @@ def singlePlotonCanvas(self, layout, filename, X, Y, xlim=None):
     return figurecanvas
 
 
-def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ (°)", title=""):
+def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ (°)", title="", scale="log"):
     shifter = 1
     plotWidget = PlotWidget(xlabel=xlabel)
     for i in self.selected:
@@ -75,17 +97,19 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
     return figurecanvas
 
 
-def plotFigure(X, Y, canvas, filename, xlim=None, title=""):
+def plotFigure(X, Y, canvas, filename="", xlim=None, title="", scale="log",marker=None, linestyle="solid"):
     fig = canvas.theplot
-    fig.plot(X, Y, label=filename)
+    fig.plot(X, Y, label=filename, marker=marker, linestyle=linestyle)
     canvas.theplot.legend()
     canvas.theplot.set_title(title)
     canvas.theplot.set_xlim(xlim)
+    print(scale)
+    canvas.theplot.set_yscale(scale)
 
 
 
 class PlotWidget(FigureCanvas):
-    def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title=""):
+    def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title="", scale="log"):
         super(PlotWidget, self).__init__(Figure())
         sns.set()
         helpfunctions.setGraphTheme()
@@ -94,7 +118,7 @@ class PlotWidget(FigureCanvas):
         self.figure = Figure()
         self.canvas = FigureCanvas(self.figure)
         self.theplot = self.figure.add_subplot(111)
-        self.theplot.set_yscale('log')
+        self.theplot.set_yscale(scale)
         self.theplot.set_title(title)
         self.theplot.set_xlabel(xlabel)
         self.theplot.set_ylabel(ylabel)

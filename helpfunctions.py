@@ -123,3 +123,7 @@ def calculatePeriod(self):
     coef = np.polyfit(mSquared, thetaSquared, 1)
     period = wavelength / (2 * np.sqrt(coef[0]))
     self.periodLabel.setText(f"Period: {period:.2f} Å")
+    x = mSquared
+    y = thetaSquared
+    XY = [x,y, coef]
+    return XY
