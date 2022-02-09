@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added labels for fit graph in peak detection">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bug fixes">
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +190,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00026" summary="Peak detection (alpha)">
-      <created>1634231840418</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1634231840418</updated>
     </task>
     <task id="LOCAL-00027" summary="added peak detection (alpha)">
       <created>1634231863744</created>
@@ -534,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644433096150</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Bug fixes">
+      <created>1644433702396</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1644433702396</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed regression bug" />
     <MESSAGE value="UX changes in SampleDB" />
     <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
     <MESSAGE value="removed some redundant prints" />
@@ -578,7 +577,8 @@
     <MESSAGE value="Added &quot;add Period to SampleDB&quot; functionality" />
     <MESSAGE value="Added &quot;show fit functionality&quot; for peak detection" />
     <MESSAGE value="Added labels for fit graph in peak detection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added labels for fit graph in peak detection" />
+    <MESSAGE value="Bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

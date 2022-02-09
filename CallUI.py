@@ -225,11 +225,16 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.figXrayspec[1].draw()
 
     def detectPeaks(self, event):
-        vlinetools.detectPeaks(self, "xraySpec")
-        if len(self.peakobject) >= 2:
-            helpfunctions.calculatePeriod(self)
-        else:
-            self.periodLabel.setText(f"Period: -- Å")
+        while True:
+            try:
+                vlinetools.detectPeaks(self, "xraySpec")
+            except:
+                print("Could not detect peaks, make sure the sample is loaded!")
+            if len(self.peakobject) >= 2:
+                helpfunctions.calculatePeriod(self)
+            else:
+                self.periodLabel.setText(f"Period: -- Å")
+            break
 
 
     def mouserelease(self, event):
