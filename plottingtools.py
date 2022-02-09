@@ -18,19 +18,20 @@ def showPeriodGraph(self):
         except:
             "Could not calculate period, make sure the sample is loaded"
             break
-        print(min(XY[0]))
         X = np.linspace(min(XY[0]),max(XY[0]),100)
         Y = XY[2][0]*X + XY[2][1]
         plotWidget = PlotWidget(xlabel="m squared", ylabel="theta squared")
         # 100 linearly spaced numbers
         x = np.linspace(-5, 5, 100)
-        plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None, filename="Peaks")
+        plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle="solid", filename="Peaks")
         plotFigure(X, Y, plotWidget, scale="linear", filename="Fit")
 
         figure = plotWidget.figure
         canvas = plotWidget.canvas
-
+        toolbar = NavigationToolbar(canvas, self)
         layout.addWidget(canvas)
+        layout.addWidget(toolbar)
+
         self.periodGraph.show()
         break
 
@@ -105,11 +106,10 @@ def plotonCanvas(self, layout, datatype="xraySpec", xlabel="Incidence angle 2θ 
 
 def plotFigure(X, Y, canvas, filename="", xlim=None, title="", scale="log",marker=None, linestyle="solid"):
     fig = canvas.theplot
-    fig.plot(X, Y, label=filename, marker=marker, linestyle=linestyle)
+    fig.plot(X, Y, label=filename, linestyle=linestyle, marker=marker)
     canvas.theplot.legend()
     canvas.theplot.set_title(title)
     canvas.theplot.set_xlim(xlim)
-    print(scale)
     canvas.theplot.set_yscale(scale)
 
 

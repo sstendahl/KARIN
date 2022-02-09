@@ -58,13 +58,6 @@
                  <layout class="QVBoxLayout" name="verticalLayout_3">
                   <item>
                    <layout class="QGridLayout" name="gridLayout_2">
-                    <item row="7" column="0">
-                     <widget class="QPushButton" name="removeAll_button">
-                      <property name="text">
-                       <string>Clear all peaks</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="5" column="0">
                      <layout class="QGridLayout" name="gridLayout">
                       <item row="1" column="1">
@@ -110,44 +103,12 @@
                         </property>
                        </widget>
                       </item>
-                      <item row="2" column="0">
-                       <widget class="QPushButton" name="showFit_button">
-                        <property name="enabled">
-                         <bool>true</bool>
-                        </property>
-                        <property name="text">
-                         <string>Show fit</string>
-                        </property>
-                        <property name="checkable">
-                         <bool>false</bool>
-                        </property>
-                        <property name="checked">
-                         <bool>false</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item row="2" column="1">
-                       <widget class="QPushButton" name="savePeriod_button">
-                        <property name="text">
-                         <string>Save to SampleDB</string>
-                        </property>
-                       </widget>
-                      </item>
                      </layout>
                     </item>
-                    <item row="4" column="0">
-                     <widget class="QLabel" name="periodLabel">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
+                    <item row="7" column="0">
+                     <widget class="QPushButton" name="removeAll_button">
                       <property name="text">
-                       <string>Period: -- Å</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                       <string>Clear all peaks</string>
                       </property>
                      </widget>
                     </item>
@@ -167,6 +128,60 @@
                       </property>
                       <property name="selectionMode">
                        <enum>QAbstractItemView::NoSelection</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="periodLabel">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>Period: -- Å</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="9" column="0">
+                     <layout class="QGridLayout" name="gridLayout_10">
+                      <item row="0" column="0">
+                       <layout class="QGridLayout" name="gridLayout_11">
+                        <item row="0" column="0">
+                         <widget class="QPushButton" name="showFit_button">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="text">
+                           <string>Show fit</string>
+                          </property>
+                          <property name="checkable">
+                           <bool>false</bool>
+                          </property>
+                          <property name="checked">
+                           <bool>false</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QPushButton" name="savePeriod_button">
+                          <property name="text">
+                           <string>Save to SampleDB</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                    <item row="8" column="0">
+                     <widget class="Line" name="line">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
                      </widget>
                     </item>
@@ -294,16 +309,6 @@
            <layout class="QVBoxLayout" name="offSpecReflectivity_Xray"/>
           </item>
          </layout>
-        </widget>
-        <widget class="QWidget" name="tab_4">
-         <attribute name="title">
-          <string>Simulations</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab">
-         <attribute name="title">
-          <string>Calculator</string>
-         </attribute>
         </widget>
        </widget>
       </item>

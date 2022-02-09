@@ -28,24 +28,15 @@ def detectPeaks(self, datatype):
     self.figXrayspec[1].draw()
 
 def removeAllPeaks(self):
-    while True:
-        try:
-            for i in range(len(self.peakobject)):
-                self.peakobject = []
-                self.peakobject[i].line.remove()
-            self.figXrayspec[1].draw()
-
-        except:
-            print("Could not remove peaks, you probably haven't defined any")
-            break
-
-        try:
-            updatePeaklist(self)
-            self.periodLabel.setText(f"Period: -- Å")
-        except:
-            print("Could not update peak list, perhaps the list does not exist?")
-        self.figXrayspec[1].draw()
-        break
+    for i in range(len(self.peakobject)):
+        self.peakobject[i].line.remove()
+    self.peakobject = []
+    try:
+        updatePeaklist(self)
+        self.periodLabel.setText(f"Period: -- Å")
+    except:
+        print("Could not update peak list, perhaps the list does not exist?")
+    self.figXrayspec[1].draw()
 
 def dragVline(self,event, datatype="XraySpec"):
     if datatype == "XraySpec":

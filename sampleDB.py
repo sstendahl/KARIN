@@ -181,7 +181,7 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
 
 def openSampleDB(self):
-    # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
+    # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget,
     self.dialogWindow = CallUI.dialogUI()
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
@@ -194,6 +194,7 @@ def openSampleDB(self):
     self.addSampleWindow.openOffSpecXpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecX"))
     self.addSampleWindow.openOffSpecNpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecN"))
     refreshSampleDB(self)
+    self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.DescendingOrder)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
 
