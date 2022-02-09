@@ -14,8 +14,13 @@ def detectPeaks(self, datatype):
     for i in range(len(self.peakobject)):
         self.peakobject[i].line.remove()
     self.peakobject = []
-    if datatype == "xraySpec" and self.singlespec == False:
-        XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
+    source = helpfunctions.getSource()
+
+    if self.singlespec == False:
+        if source == "x-ray":
+            XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathXray)
+        if source == "neutron":
+            XY = helpfunctions.openXY(self.samplelist[int(self.selected[0])].specularpathNeutron)
         X = XY[0]
         Y = XY[1]
     if self.singlespec == True:
