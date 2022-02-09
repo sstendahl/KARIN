@@ -18,16 +18,25 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType("form.ui")
 Ui_dialog, DialogClass = uic.loadUiType("simple_dialog.ui")
 Ui_sampleCreator, sampleCreatorClass = uic.loadUiType("sampleCreator.ui")
 Ui_settingsDialog, settingsDialogClass = uic.loadUiType("settingsdialog.ui")
+Ui_confirmPeriodWindow, confirmPeriodWindowclass = uic.loadUiType("confirmPeriod.ui")
 Ui_removeConfirmationwindow, removeConfirmationclass = uic.loadUiType("removeConfirmation.ui")
+Ui_periodGraph, periodGraphclass = uic.loadUiType("periodgraph.ui")
 Ui_aboutWindow, aboutWindowClass = uic.loadUiType("aboutwindow.ui")
 
+class periodGraph(periodGraphclass, Ui_periodGraph):
+    def __init__(self, parent=None):
+        periodGraphclass.__init__(self, parent)
+        self.setupUi(self)
 
 class aboutWindow(aboutWindowClass, Ui_aboutWindow):
     def __init__(self, parent=None):
         aboutWindowClass.__init__(self, parent)
         self.setupUi(self)
 
-
+class confirmPeriodWindow(confirmPeriodWindowclass, Ui_confirmPeriodWindow):
+    def __init__(self, parent=None):
+        confirmPeriodWindowclass.__init__(self, parent)
+        self.setupUi(self)
 
 class removeConfirmation(removeConfirmationclass, Ui_removeConfirmationwindow):
     def __init__(self, parent=None):
@@ -55,7 +64,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.dragPeakmode = False
         self.singlespec = False
 
-        self.wavelength = helpfunctions.getWavelength("xray")
+        self.wavelength = helpfunctions.getWavelength("x-ray")
 
 
     def connectActions(self):
@@ -67,20 +76,32 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.actionSettings.triggered.connect(lambda: settings.openSettingsdialog(self))
         self.actionData_tools.triggered.connect(lambda: self.SpecularTools.setCurrentIndex(1))
         self.actionDetect_peaks.triggered.connect(self.triggerDetectpeaks)
+        self.menuXraySource.triggered.connect(lambda: self.sourceMenu("X-ray"))
+        self.menuNeutronSource.triggered.connect(lambda: self.sourceMenu("Neutron"))
         self.openSampleDB_button.clicked.connect(lambda: sampleDB.openSampleDB(self))
         self.addPeak_button.clicked.connect(self.addpeakButtonclick)
         self.removePeak_button.clicked.connect(self.removepeakButtonclick)
         self.dragMode_button.clicked.connect(self.dragpeakButtonclick)
+        self.showFit_button.clicked.connect(lambda: plottingtools.showPeriodGraph(self))
         self.Insert_line_button.clicked.connect(self.insertLine_pressed)
         self.shortcut_SampleDB = QShortcut(QKeySequence('Ctrl+D'), self)
         self.shortcut_SampleDB.activated.connect(lambda: sampleDB.openSampleDB(self))
         self.removeAll_button.clicked.connect(lambda: vlinetools.removeAllPeaks(self))
+        self.savePeriod_button.clicked.connect(lambda: sampleDB.savetoSampleDB(self))
         self.normalizeToSpec_button.clicked.connect(self.normalizetoSpec)
         self.centerPeak_button.clicked.connect(self.centerPeak)
         self.temp_button.clicked.connect(self.normalizeAndCenter)
         self.shortcut_settings= QShortcut(QKeySequence('Ctrl+S'), self)
         self.shortcut_settings.activated.connect(lambda: settings.openSettingsdialog(self))
 
+
+
+    def sourceMenu(self, source):
+        helpfunctions.setSource(source)
+        try:
+            sampleDB.loadSampleDB(self)
+        except:
+            print("Can't load selected samples. You probably haven't opened the SampleDB yet")
 
 #This function below is temporary just as a showcase. Will be removed and implemented properly later on
 #This function is painfully ugly, but works as proof of concept
@@ -204,11 +225,16 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.figXrayspec[1].draw()
 
     def detectPeaks(self, event):
-        vlinetools.detectPeaks(self, "xraySpec")
-        if len(self.peakobject) >= 2:
-            helpfunctions.calculatePeriod(self)
-        else:
-            self.PeriodXray.setText(f"Period: -- Å")
+        while True:
+            try:
+                vlinetools.detectPeaks(self, "xraySpec")
+            except:
+                print("Could not detect peaks, make sure the sample is loaded!")
+            if len(self.peakobject) >= 2:
+                helpfunctions.calculatePeriod(self)
+            else:
+                self.periodLabel.setText(f"Period: -- Å")
+            break
 
 
     def mouserelease(self, event):

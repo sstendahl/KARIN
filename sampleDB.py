@@ -8,7 +8,8 @@ from pathlib import Path
 import exportPDF
 from samples import Sample
 
-def loadEdit(self, i):
+def loadEdit(self, j):
+    i = getSampleIDrow(self, j)
     self.addSampleWindow.sampleIDline.setText(self.samplelist[i].sampleID)
     self.addSampleWindow.dateLine.setText(self.samplelist[i].date)
     self.addSampleWindow.layersLine.setText(self.samplelist[i].layers)
@@ -26,9 +27,30 @@ def loadEdit(self, i):
     self.addSampleWindow.pathNspecLine.setText(self.samplelist[i].specularpathNeutron)
     self.addSampleWindow.pathOffSpecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
+def getSampleIDrow(self, i):
+    sampleID = self.dialogWindow.SampleDBList.item(i, 0).text()
+    for sample in range(len(self.samplelist)):
+        if self.samplelist[sample].sampleID == sampleID:
+            j = sample
+    return j
+
+def savetoSampleDB(self):
+    period = self.periodLabel.text()[8:]
+    self.confirmPeriodWindow = CallUI.confirmPeriodWindow()
+    try:
+        self.confirmPeriodWindow.warning_period.setText(f"The period {period} will be written to sample  {self.samplelist[int(self.selected[0])].sampleID}. Are you sure?")
+        self.confirmPeriodWindow.show()
+    except:
+        print("Make sure to find a period first using the peak detection tool or inserting peaks manually")
+    self.confirmPeriodWindow.accepted.connect(lambda: periodAccept(self, period))
+
+def periodAccept(self, period):
+    self.samplelist[int(self.selected[0])].period = period
+    writeToSampleList(self)
 
 def editSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()
+    sampleID = getSampleIDrow(self, i)
     loadEdit(self,i)
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
@@ -119,13 +141,14 @@ def refreshSampleDB(self):
     if self.normalize == True:
         self.dialogWindow.normalizeBox.setChecked(True)
 
-    self.dialogWindow.SampleDBList.setColumnCount(10)
+    self.dialogWindow.SampleDBList.setColumnCount(11)
     i = Incrementer()
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for date
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 50)  # Width for layers
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 170)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(i(), 240)  # Width for magnetron power
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 75)  # Width for Period
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 225)  # Width for magnetron power
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 85)  # Width for bias
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 175)  # Column width for deposition times
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 150)  # Width for background pressure
@@ -140,6 +163,7 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].date)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].layers)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].materials)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].period)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].magPower)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].bias)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].growthTimes)))
@@ -157,11 +181,11 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
 
 def openSampleDB(self):
-    # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
+    # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget,
     self.dialogWindow = CallUI.dialogUI()
     self.addSampleWindow = CallUI.SampleCreator()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
-    self.dialogWindow.addSample_button.clicked.connect(lambda: self.addSampleWindow.show())
+    self.dialogWindow.addSample_button.clicked.connect(lambda: addSampleButton(self))
     self.dialogWindow.exportPDF_button.clicked.connect(lambda: exportPDF.exportcsvtoPDF(self))
     self.dialogWindow.removeSample_button.clicked.connect(lambda: removeSample(self))
     self.dialogWindow.editSample_button.clicked.connect(lambda: editSample(self))
@@ -170,8 +194,18 @@ def openSampleDB(self):
     self.addSampleWindow.openOffSpecXpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecX"))
     self.addSampleWindow.openOffSpecNpath_button.clicked.connect(lambda: getSamplelocation(self, "offspecN"))
     refreshSampleDB(self)
+    self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.DescendingOrder)
     self.dialogWindow.accepted.connect(lambda: loadSampleDB(self))
     self.dialogWindow.show()
+
+def addSampleButton(self):
+    try:
+        self.addSampleWindow.accepted.disconnect()
+        self.addSampleWindow.accepted.connect(lambda: newSample(self))
+    except:
+        self.addSampleWindow.accepted.connect(lambda: newSample(self))
+    self.addSampleWindow.show()
+
 
 def getSamplelocation(self,datatype):
     path = getPath(self)
@@ -185,7 +219,8 @@ def getSamplelocation(self,datatype):
         self.addSampleWindow.pathOffSpecNline.setText(path)
 
 def removeSample(self):
-    i = self.dialogWindow.SampleDBList.currentRow()
+    j = self.dialogWindow.SampleDBList.currentRow()
+    i = getSampleIDrow(self, j)
     self.removeConfirmation = CallUI.removeConfirmation()
     self.removeConfirmation.warning_removesample.setText(f"You are about to remove {self.samplelist[i].sampleID} from the SampleDB. Are you sure?")
     self.removeConfirmation.show()

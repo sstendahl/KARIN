@@ -58,48 +58,6 @@
                  <layout class="QVBoxLayout" name="verticalLayout_3">
                   <item>
                    <layout class="QGridLayout" name="gridLayout_2">
-                    <item row="6" column="0">
-                     <widget class="QPushButton" name="removeAll_button">
-                      <property name="text">
-                       <string>Clear all peaks</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="3" column="0" alignment="Qt::AlignLeft">
-                     <widget class="QListWidget" name="peakList">
-                      <property name="enabled">
-                       <bool>true</bool>
-                      </property>
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="editTriggers">
-                       <set>QAbstractItemView::NoEditTriggers</set>
-                      </property>
-                      <property name="selectionMode">
-                       <enum>QAbstractItemView::NoSelection</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="4" column="0">
-                     <widget class="QLabel" name="PeriodXray">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string>Period: -- Å</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="5" column="0">
                      <layout class="QGridLayout" name="gridLayout">
                       <item row="1" column="1">
@@ -109,6 +67,19 @@
                         </property>
                         <property name="checkable">
                          <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QPushButton" name="DetectPeaks_button">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Detect Peaks</string>
                         </property>
                        </widget>
                       </item>
@@ -132,20 +103,87 @@
                         </property>
                        </widget>
                       </item>
+                     </layout>
+                    </item>
+                    <item row="7" column="0">
+                     <widget class="QPushButton" name="removeAll_button">
+                      <property name="text">
+                       <string>Clear all peaks</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="QListWidget" name="peakList">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="editTriggers">
+                       <set>QAbstractItemView::NoEditTriggers</set>
+                      </property>
+                      <property name="selectionMode">
+                       <enum>QAbstractItemView::NoSelection</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="4" column="0">
+                     <widget class="QLabel" name="periodLabel">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>Period: -- Å</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="9" column="0">
+                     <layout class="QGridLayout" name="gridLayout_10">
                       <item row="0" column="0">
-                       <widget class="QPushButton" name="DetectPeaks_button">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="text">
-                         <string>Detect Peaks</string>
-                        </property>
-                       </widget>
+                       <layout class="QGridLayout" name="gridLayout_11">
+                        <item row="0" column="0">
+                         <widget class="QPushButton" name="showFit_button">
+                          <property name="enabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="text">
+                           <string>Show fit</string>
+                          </property>
+                          <property name="checkable">
+                           <bool>false</bool>
+                          </property>
+                          <property name="checked">
+                           <bool>false</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QPushButton" name="savePeriod_button">
+                          <property name="text">
+                           <string>Save to SampleDB</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </item>
                      </layout>
+                    </item>
+                    <item row="8" column="0">
+                     <widget class="Line" name="line">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -272,16 +310,6 @@
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="tab_4">
-         <attribute name="title">
-          <string>Simulations</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab">
-         <attribute name="title">
-          <string>Calculator</string>
-         </attribute>
-        </widget>
        </widget>
       </item>
      </layout>
@@ -318,10 +346,10 @@
     </property>
     <widget class="QMenu" name="menuShow_2">
      <property name="title">
-      <string>View</string>
+      <string>Source</string>
      </property>
-     <addaction name="actionSpecular_X_ray_2"/>
-     <addaction name="actionOff_specular_X_ray"/>
+     <addaction name="menuXraySource"/>
+     <addaction name="menuNeutronSource"/>
      <addaction name="separator"/>
      <addaction name="separator"/>
     </widget>
@@ -335,6 +363,7 @@
     <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="menuTools"/>
+    <addaction name="separator"/>
     <addaction name="menuShow_2"/>
    </widget>
    <addaction name="menuFile"/>
@@ -382,12 +411,12 @@
     <string>Specular X-ray</string>
    </property>
   </action>
-  <action name="actionSpecular_X_ray_2">
+  <action name="menuXraySource">
    <property name="text">
-    <string>Xrays</string>
+    <string>X-rays</string>
    </property>
   </action>
-  <action name="actionOff_specular_X_ray">
+  <action name="menuNeutronSource">
    <property name="text">
     <string>Neutrons</string>
    </property>

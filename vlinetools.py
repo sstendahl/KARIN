@@ -33,7 +33,7 @@ def removeAllPeaks(self):
     self.peakobject = []
     try:
         updatePeaklist(self)
-        self.PeriodXray.setText(f"Period: -- Å")
+        self.periodLabel.setText(f"Period: -- Å")
     except:
         print("Could not update peak list, perhaps the list does not exist?")
     self.figXrayspec[1].draw()
@@ -73,12 +73,15 @@ def removepeakMode(self, event):
             self.figXrayspec[1].draw()
             break
     if len(self.peakobject) < 2:
-        self.PeriodXray.setText(f"Period: -- Å")
+        self.periodLabel.setText(f"Period: -- Å")
     updatePeaklist(self)
 
 def insertLine(self,x, figure=None):
     if figure == None:
         figure = self.figXrayspec[0]
+    else:
+        figure = self.figXrayspec[0]
+    print("hoi")
     ax = figure.axes[0]
     self.peakobject.append(Peak(x, ax.axvline(x, color='k', linewidth=1.0, linestyle='--')))
     return self.peakobject[-1].line

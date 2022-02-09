@@ -34,7 +34,6 @@ def openSettingsdialog(self):
     neutronwavelength = config['neutronwavelength']
     self.settingsdialog.neutronwavelength.setText(str(neutronwavelength))
     source = config['source']
-    print(source)
     self.settingsdialog.source.setCurrentText(source)
 
     self.settingsdialog.show()
