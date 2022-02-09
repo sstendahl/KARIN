@@ -9,24 +9,30 @@ import CallUI
 import plottingtools
 
 def showPeriodGraph(self):
-    self.periodGraph = CallUI.periodGraph()
-    layout = self.periodGraph.periodGraph
-    helpfunctions.clearLayout(self.periodGraph.periodGraph)
-    XY = helpfunctions.calculatePeriod(self)
-    print(min(XY[0]))
-    X = np.linspace(min(XY[0]),max(XY[0]),100)
-    Y = XY[2][0]*X + XY[2][1]
-    plotWidget = PlotWidget(xlabel="m squared", ylabel="theta squared")
-    # 100 linearly spaced numbers
-    x = np.linspace(-5, 5, 100)
-    plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None, filename="Peaks")
-    plotFigure(X, Y, plotWidget, scale="linear", filename="Fit")
+    while True:
+        self.periodGraph = CallUI.periodGraph()
+        layout = self.periodGraph.periodGraph
+        helpfunctions.clearLayout(self.periodGraph.periodGraph)
+        try:
+            XY = helpfunctions.calculatePeriod(self)
+        except:
+            "Could not calculate period, make sure the sample is loaded"
+            break
+        print(min(XY[0]))
+        X = np.linspace(min(XY[0]),max(XY[0]),100)
+        Y = XY[2][0]*X + XY[2][1]
+        plotWidget = PlotWidget(xlabel="m squared", ylabel="theta squared")
+        # 100 linearly spaced numbers
+        x = np.linspace(-5, 5, 100)
+        plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None, filename="Peaks")
+        plotFigure(X, Y, plotWidget, scale="linear", filename="Fit")
 
-    figure = plotWidget.figure
-    canvas = plotWidget.canvas
+        figure = plotWidget.figure
+        canvas = plotWidget.canvas
 
-    layout.addWidget(canvas)
-    self.periodGraph.show()
+        layout.addWidget(canvas)
+        self.periodGraph.show()
+        break
 
 def singlePlotonCanvas(self, layout, filename, X, Y, xlim=None, scale="log", marker=None):
     canvas = PlotWidget(xlabel="Incidence angle 2θ (°)")
