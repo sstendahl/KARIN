@@ -19,8 +19,8 @@ def showPeriodGraph(self):
     plotWidget = PlotWidget(xlabel="m squared", ylabel="theta squared")
     # 100 linearly spaced numbers
     x = np.linspace(-5, 5, 100)
-    plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None)
-    plotFigure(X, Y, plotWidget, scale="linear")
+    plotFigure(XY[0], XY[1], plotWidget, scale="linear", marker ="o", linestyle=None, filename="Peaks")
+    plotFigure(X, Y, plotWidget, scale="linear", filename="Fit")
 
     figure = plotWidget.figure
     canvas = plotWidget.canvas
