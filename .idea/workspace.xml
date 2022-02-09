@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Changed version number">
-      <change afterPath="$PROJECT_DIR$/confirmPeriod.ui" afterDir="false" />
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added &quot;add Period to SampleDB&quot; functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settingsdialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/settingsdialog.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_dialog.ui" beforeDir="false" afterPath="$PROJECT_DIR$/simple_dialog.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +194,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00022" summary="Added some tools for peak detection">
-      <created>1634199470954</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1634199470954</updated>
     </task>
     <task id="LOCAL-00023" summary="Fixed regression bug where vline stopped working">
       <created>1634200518607</created>
@@ -542,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644338235414</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Added &quot;add Period to SampleDB&quot; functionality">
+      <created>1644425638208</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1644425638208</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Update readme" />
     <MESSAGE value="Fixed a bug in sample creator where attributes got mixed up" />
     <MESSAGE value="Removed redundant function" />
     <MESSAGE value="Fixed regression bug" />
@@ -586,7 +581,8 @@
     <MESSAGE value="Fixed a bug where new sample was overwritten after editing previous sample" />
     <MESSAGE value="Fixed a major bug related to sorting in SampleDB" />
     <MESSAGE value="Changed version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed version number" />
+    <MESSAGE value="Added &quot;add Period to SampleDB&quot; functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;add Period to SampleDB&quot; functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -32,7 +32,6 @@ def getSampleIDrow(self, i):
     for sample in range(len(self.samplelist)):
         if self.samplelist[sample].sampleID == sampleID:
             j = sample
-
     return j
 
 def savetoSampleDB(self):
@@ -139,13 +138,14 @@ def refreshSampleDB(self):
     if self.normalize == True:
         self.dialogWindow.normalizeBox.setChecked(True)
 
-    self.dialogWindow.SampleDBList.setColumnCount(10)
+    self.dialogWindow.SampleDBList.setColumnCount(11)
     i = Incrementer()
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for date
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 50)  # Width for layers
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 170)  # Width for materials
-    self.dialogWindow.SampleDBList.setColumnWidth(i(), 240)  # Width for magnetron power
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 75)  # Width for Period
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 225)  # Width for magnetron power
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 85)  # Width for bias
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 175)  # Column width for deposition times
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 150)  # Width for background pressure
@@ -160,6 +160,7 @@ def refreshSampleDB(self):
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].date)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].layers)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].materials)))
+        self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].period)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].magPower)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].bias)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].growthTimes)))
