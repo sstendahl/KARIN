@@ -24,7 +24,9 @@ Currently working features include:
 - When loading multiple measurements simultaniously, it is possible to shift them vertically in the SampleDB for easy comparison.
 - A vertical line can be inserted in order to compare vertically shifted plots. This line can be dragged around by the mouse pointer
 - Automated peak detection, peak positions can be adjusted by dragging them using the mouse pointer while in drag mode.
-- Manual peak insertion or removal while in Add peak mode or in Remove Peak mode respectively. 
+- Manual peak insertion or removal while in Add peak mode or in Remove Peak mode respectively.
+- The found period can easily be added to the SampleDB with a press of a button 
+- A plot of theta-squared vs m-squared can be opened to check the reliability of the found period 
 - Manual settings for wavelength (shortkey CTRL+S), graph theme and style and attributes displayed in legend.
 
 
@@ -33,6 +35,5 @@ Features that are planned in the forseeable future include, but are not limited 
 - Simulations (both specular and full 2D maps) using the BornAgain code-base
 - Data manipulation tools such as shift in x-data, and cutting selected parts of the measurement (e.g. direct beam)
 - Footprint correction for specular data
-- A simple sample builder for reflectivity simulations
 - Support for 2D maps as obtained at SuperAdam at ILL
 - In the longer term: simple fitting features, at least for specular data.
