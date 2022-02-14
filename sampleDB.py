@@ -28,7 +28,11 @@ def loadEdit(self, j):
     self.addSampleWindow.pathOffSpecNline.setText(self.samplelist[i].offspecularpathNeutron)
 
 def getSampleIDrow(self, i):
-    sampleID = self.dialogWindow.SampleDBList.item(i, 0).text()
+    try:
+        sampleID = self.dialogWindow.SampleDBList.item(i, 0).text()
+    except:
+        print("You have not selected a row, using the top item instead")
+        sampleID = self.dialogWindow.SampleDBList.item(0, 0).text()
     for sample in range(len(self.samplelist)):
         if self.samplelist[sample].sampleID == sampleID:
             j = sample
@@ -50,19 +54,24 @@ def periodAccept(self, period):
 
 def editSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()
-    sampleID = getSampleIDrow(self, i)
+    sampleIDrow = getSampleIDrow(self, i)
+    print(len(self.samplelist))
+    print(sampleIDrow)
+    print(self.samplelist[sampleIDrow].sampleID)
     loadEdit(self,i)
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
-    self.addSampleWindow.accepted.connect(lambda: editSampleAccepted(self,i))
+    self.addSampleWindow.accepted.connect(lambda: editSampleAccepted(self,sampleIDrow))
 
 
 def editSampleAccepted(self,i):
     self.samplelist[i] = defineSample(self)
+    print("I have just changed")
+    print(self.samplelist[i].sampleID)
     writeToSampleList(self)
-    refreshSampleDB(self)
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
+    refreshSampleDB(self)
 
 def defineSample(self):
     sampleID = self.addSampleWindow.sampleIDline.displayText()
@@ -97,6 +106,7 @@ def getPath(self):
     options = QFileDialog.Options()
     options |= QFileDialog.DontUseNativeDialog
     path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt *.xy *.dat);;All Files (*)", options=options)[0]
+    return path
 
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
@@ -134,13 +144,14 @@ def loadSampleDB(self):
 def refreshSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget
     self.singlespec = False
+    self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.AscendingOrder)
     self.samplelist = helpfunctions.loadSampleList(self)
     if self.shiftvertical == True:
         self.dialogWindow.checkBox_4.setChecked(True)
     if self.normalize == True:
         self.dialogWindow.normalizeBox.setChecked(True)
-
-    self.dialogWindow.SampleDBList.setColumnCount(11)
+    columncount = 11
+    self.dialogWindow.SampleDBList.setColumnCount(columncount)
     i = Incrementer()
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for SampleID
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 100)  # Width for date
@@ -150,13 +161,18 @@ def refreshSampleDB(self):
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 225)  # Width for magnetron power
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 85)  # Width for bias
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 175)  # Column width for deposition times
-    self.dialogWindow.SampleDBList.setColumnWidth(i(), 150)  # Width for background pressure
+    self.dialogWindow.SampleDBList.setColumnWidth(i(), 150)    # Width for background pressure
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 250)  # Width for comments
     self.dialogWindow.SampleDBList.setColumnWidth(i(), 75)  # Width for Include column
 
 
+    while self.dialogWindow.SampleDBList.rowCount() > 0:
+        self.dialogWindow.SampleDBList.removeRow(0)
+    print(f"There are currently {self.dialogWindow.SampleDBList.rowCount()} rows")
     self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
+    j = 0
     for i in range(len(self.samplelist)):  # Add items to the TableWidget
+        print(i)
         j = Incrementer()
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].sampleID)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].date)))
@@ -178,6 +194,9 @@ def refreshSampleDB(self):
         chkBoxItem.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
         chkBoxItem.setCheckState(QtCore.Qt.Checked)
         self.dialogWindow.SampleDBList.setItem(element, self.includeColumn, chkBoxItem)
+    self.dialogWindow.SampleDBList.sortItems(0, QtCore.Qt.DescendingOrder)
+
+
 
 def openSampleDB(self):
     # This function loads the SampleDB itself. Filling in the neccesary items in the TableWidget,
