@@ -96,8 +96,7 @@ def newSample(self):
 def getPath(self):
     options = QFileDialog.Options()
     options |= QFileDialog.DontUseNativeDialog
-    path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
-    return path
+    path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt *.xy *.dat);;All Files (*)", options=options)[0]
 
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
