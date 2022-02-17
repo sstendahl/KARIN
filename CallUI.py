@@ -279,7 +279,7 @@ class CallUI(QtBaseClass, Ui_MainWindow):
         self.singlespec = True
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
-        path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt, *.xy, *.dat);;All Files (*)", options=options)[0]
+        path = helpfunctions.getPath(self)
         filename = Path(path).name
         XY = helpfunctions.openXY(path)
         self.Xsinglespec = XY[0]

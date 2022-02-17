@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bug fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.ui" beforeDir="false" afterPath="$PROJECT_DIR$/form.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plottingtools.py" beforeDir="false" afterPath="$PROJECT_DIR$/plottingtools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
@@ -67,7 +67,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -161,6 +161,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="" />
@@ -195,27 +198,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00028" summary="Code cleanup">
-      <created>1634232234552</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1634232234552</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Implemented peak detection">
-      <created>1634232731330</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1634232731330</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Added &quot;add peak&quot; function">
-      <created>1634237670588</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1634237670588</updated>
     </task>
     <task id="LOCAL-00031" summary="Added &quot;add peak&quot; function">
       <created>1634237703774</created>
@@ -539,7 +521,28 @@
       <option name="project" value="LOCAL" />
       <updated>1644434046319</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Bug fixes">
+      <created>1644435767581</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1644435767581</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Updated readme, changed version number">
+      <created>1644436098564</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1644436098564</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Bug fixes">
+      <created>1644437075080</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1644437075080</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="UX changes in SampleDB" />
     <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
     <MESSAGE value="removed some redundant prints" />
     <MESSAGE value="Minor bugfixes and polish" />
@@ -582,6 +584,7 @@
     <MESSAGE value="Added &quot;add Period to SampleDB&quot; functionality" />
     <MESSAGE value="Added &quot;show fit functionality&quot; for peak detection" />
     <MESSAGE value="Added labels for fit graph in peak detection" />
+    <MESSAGE value="Updated readme, changed version number" />
     <MESSAGE value="Bug fixes" />
     <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
   </component>
