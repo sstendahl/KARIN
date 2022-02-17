@@ -43,16 +43,27 @@ def setGraphContext():
     context = config['context'].lower()
     sns.set_context(context)
 
+def setSuperScripts(attribute):
+    attribute = attribute.replace("11B", "$^1$$^1$B")
+    attribute = attribute.replace("10B", "$^1$$^0$B")
+    attribute = attribute.replace("4C", "$_4$C")
+    return attribute
+
 def createLabel(self, index):
     attributes = getLabelAttributes()
     label = ""
     for item in attributes:
         if getattr(self.samplelist[index], item) != "":
             attribute = getattr(self.samplelist[index], item)
+            attribute = setSuperScripts(attribute)
             if item == "gamma":
                 attribute = "$\Gamma$=" + attribute
             if item == "period":
                 attribute = "$\Lambda$=" + attribute
+            if item == "bias":
+                attribute = "U=" + attribute
+            if item == "magPower":
+                attribute = "P=" + attribute
             label = label + attribute + ", "
     label = label[:-2] #Remove comma in the end
     return label
