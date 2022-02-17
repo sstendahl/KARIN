@@ -86,7 +86,6 @@ def insertLine(self,x, figure=None):
         figure = self.figXrayspec[0]
     else:
         figure = self.figXrayspec[0]
-    print("hoi")
     ax = figure.axes[0]
     self.peakobject.append(Peak(x, ax.axvline(x, color='k', linewidth=1.0, linestyle='--')))
     return self.peakobject[-1].line

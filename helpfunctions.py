@@ -5,12 +5,17 @@ import json
 from PyQt5.QtWidgets import QFileDialog
 import seaborn as sns
 
+def getPath(self, documenttype="Data files (*.txt *.xy *.dat);;All Files (*)"):
+    options = QFileDialog.Options()
+    options |= QFileDialog.DontUseNativeDialog
+    path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "",documenttype, options=options)[0]
+    return path
 
-def saveFileDialog(self):
+def saveFileDialog(self, documenttype="Portable Document Format (PDF) (*.pdf)"):
     options = QFileDialog.Options()
     options |= QFileDialog.DontUseNativeDialog
     fileName = QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "",
-                                              "Portable Document Format (PDF) (*.pdf)", options=options)
+                                              documenttype, options=options)
     return fileName
 
 def setSource(source):
@@ -43,8 +48,13 @@ def createLabel(self, index):
     label = ""
     for item in attributes:
         if getattr(self.samplelist[index], item) != "":
-            label = label + getattr(self.samplelist[index], item) + " - "
-    label = label[:-3] #Remove dash in the end
+            attribute = getattr(self.samplelist[index], item)
+            if item == "gamma":
+                attribute = "$\Gamma$=" + attribute
+            if item == "period":
+                attribute = "$\Lambda$=" + attribute
+            label = label + attribute + ", "
+    label = label[:-2] #Remove comma in the end
     return label
 
 def getWavelength(source):

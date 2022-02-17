@@ -55,9 +55,6 @@ def periodAccept(self, period):
 def editSample(self):
     i = self.dialogWindow.SampleDBList.currentRow()
     sampleIDrow = getSampleIDrow(self, i)
-    print(len(self.samplelist))
-    print(sampleIDrow)
-    print(self.samplelist[sampleIDrow].sampleID)
     loadEdit(self,i)
     self.addSampleWindow.show()
     self.addSampleWindow.accepted.disconnect()
@@ -66,8 +63,6 @@ def editSample(self):
 
 def editSampleAccepted(self,i):
     self.samplelist[i] = defineSample(self)
-    print("I have just changed")
-    print(self.samplelist[i].sampleID)
     writeToSampleList(self)
     self.addSampleWindow.accepted.disconnect()
     self.addSampleWindow.accepted.connect(lambda: newSample(self))
@@ -101,12 +96,6 @@ def newSample(self):
     self.samplelist = sorted(self.samplelist, key=lambda x: x.sampleID, reverse=False)
     writeToSampleList(self)
     refreshSampleDB(self)
-
-def getPath(self):
-    options = QFileDialog.Options()
-    options |= QFileDialog.DontUseNativeDialog
-    path = QFileDialog.getOpenFileName(self,"QFileDialog.getOpenFileName()", "","Data files (*.txt *.xy *.dat);;All Files (*)", options=options)[0]
-    return path
 
 def loadSampleDB(self):
     # plottingtools.createcanvas(self)
@@ -168,11 +157,9 @@ def refreshSampleDB(self):
 
     while self.dialogWindow.SampleDBList.rowCount() > 0:
         self.dialogWindow.SampleDBList.removeRow(0)
-    print(f"There are currently {self.dialogWindow.SampleDBList.rowCount()} rows")
     self.dialogWindow.SampleDBList.setRowCount(len(self.samplelist))
     j = 0
     for i in range(len(self.samplelist)):  # Add items to the TableWidget
-        print(i)
         j = Incrementer()
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].sampleID)))
         self.dialogWindow.SampleDBList.setItem(i, j(), QTableWidgetItem((self.samplelist[i].date)))
@@ -226,7 +213,7 @@ def addSampleButton(self):
 
 
 def getSamplelocation(self,datatype):
-    path = getPath(self)
+    path = helpfunctions.getPath(self)
     if datatype == "specX":
         self.addSampleWindow.pathXraySpecLine.setText(path)
     if datatype == "specN":
