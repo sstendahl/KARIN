@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bug fixes">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Added symbol for gamma/lambda in labels + bugfix">
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20018.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20018_ROCKING.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20019.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20019_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20020.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20020_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20022_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20023_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20024_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20025.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20025_rocking.xrdml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20027_rocking.xy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/xrr/IFM20028_rocking.xy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +208,6 @@
       <workItem from="1634298620570" duration="7986000" />
       <workItem from="1634311342783" duration="4245000" />
       <workItem from="1634401718418" duration="1213000" />
-    </task>
-    <task id="LOCAL-00031" summary="Added &quot;add peak&quot; function">
-      <created>1634237703774</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1634237703774</updated>
     </task>
     <task id="LOCAL-00032" summary="Added &quot;add peak&quot; function">
       <created>1634238569270</created>
@@ -542,7 +545,13 @@
       <option name="project" value="LOCAL" />
       <updated>1644437075080</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL−00080" summary="Added symbol for gamma/lambda in labels + bugfix">
+      <created>1645112315676</created>
+      <option name="number" value="LOCAL−00080" />
+      <option name="presentableId" value="LOCAL−00080" />
+      <updated>1645112315677</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
     <MESSAGE value="removed some redundant prints" />
     <MESSAGE value="Minor bugfixes and polish" />
     <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
@@ -586,7 +594,8 @@
     <MESSAGE value="Added labels for fit graph in peak detection" />
     <MESSAGE value="Updated readme, changed version number" />
     <MESSAGE value="Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
+    <MESSAGE value="Added symbol for gamma/lambda in labels + bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added symbol for gamma/lambda in labels + bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
