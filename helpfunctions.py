@@ -14,9 +14,9 @@ def getPath(self, documenttype="Data files (*.txt *.xy *.dat);;All Files (*)"):
 def saveFileDialog(self, documenttype="Portable Document Format (PDF) (*.pdf)"):
     options = QFileDialog.Options()
     options |= QFileDialog.DontUseNativeDialog
-    fileName = QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "",
+    filename = QFileDialog.getSaveFileName(self, "QFileDialog.getSaveFileName()", "",
                                               documenttype, options=options)
-    return fileName
+    return filename
 
 def setSource(source):
     with open('config.json', 'r') as f:
@@ -134,8 +134,9 @@ def calculatePeriod(self):
     source = getSource()
     wavelength = getWavelength(source)
     m = []
+    m_offset = int(self.moffset_box.text())
     for i in range(len(self.peakobject)):
-        m.append(i+1)
+        m.append(i+1+m_offset)
     peaks = []
     for element in self.peakobject:
         peaks.append(element.peak)
