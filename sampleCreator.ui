@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1128</width>
+    <height>349</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sample Editor</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="5" column="5">
+    <widget class="QPushButton" name="openOffSpecNpath_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Open</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLineEdit" name="pathOffSpecNline"/>
+   </item>
+   <item row="7" column="4">
+    <widget class="QLineEdit" name="SputteringGasLine"/>
+   </item>
+   <item row="5" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Path to off-specular neutron file</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="5">
+    <widget class="QPushButton" name="openSpecNpath_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Open</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="4">
+    <widget class="QLineEdit" name="CommentsLine"/>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLineEdit" name="pathXraySpecLine"/>
+   </item>
+   <item row="3" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Path to specular neutron file</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Sputtering gas</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="dateLine"/>
+   </item>
+   <item row="5" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Deposition times</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="sampleIDline"/>
+   </item>
+   <item row="14" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Comments</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1">
+    <widget class="QLineEdit" name="bgPressureLine"/>
+   </item>
+   <item row="16" column="10" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Background Pressure</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Path to off-specular X-ray file</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Amount of layers</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="materialsLine"/>
+   </item>
+   <item row="2" column="5">
+    <widget class="QPushButton" name="openSpecXpath_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Open</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Magnetron Powers</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Date</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLineEdit" name="biasLine"/>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="magPowerLine"/>
+   </item>
+   <item row="6" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>Period</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLineEdit" name="pathNspecLine"/>
+   </item>
+   <item row="7" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Materials</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLineEdit" name="pathOffSpecXline"/>
+   </item>
+   <item row="6" column="4">
+    <widget class="QLineEdit" name="periodLine"/>
+   </item>
+   <item row="16" column="4">
+    <widget class="QLineEdit" name="gammaLine"/>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="layersLine"/>
+   </item>
+   <item row="2" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_9">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Path to specular X-ray file</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>99</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Bias</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_6">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>SampleID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <widget class="QPushButton" name="openOffSpecXpath_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Open</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="depTimeLine"/>
+   </item>
+   <item row="16" column="3" alignment="Qt::AlignRight">
+    <widget class="QLabel" name="label_16">
+     <property name="text">
+      <string>Gamma</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>sampleIDline</tabstop>
+  <tabstop>dateLine</tabstop>
+  <tabstop>layersLine</tabstop>
+  <tabstop>depTimeLine</tabstop>
+  <tabstop>magPowerLine</tabstop>
+  <tabstop>materialsLine</tabstop>
+  <tabstop>biasLine</tabstop>
+  <tabstop>bgPressureLine</tabstop>
+  <tabstop>pathXraySpecLine</tabstop>
+  <tabstop>openSpecXpath_button</tabstop>
+  <tabstop>pathNspecLine</tabstop>
+  <tabstop>openSpecNpath_button</tabstop>
+  <tabstop>pathOffSpecXline</tabstop>
+  <tabstop>openOffSpecXpath_button</tabstop>
+  <tabstop>pathOffSpecNline</tabstop>
+  <tabstop>openOffSpecNpath_button</tabstop>
+  <tabstop>periodLine</tabstop>
+  <tabstop>SputteringGasLine</tabstop>
+  <tabstop>CommentsLine</tabstop>
+  <tabstop>gammaLine</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1121</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1121</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
