@@ -115,11 +115,9 @@ class CallUI(QtBaseClass, Ui_MainWindow):
             error = False
             if datatype == "xrayoffSpec":
                 title = "Off-specular X-ray scattering"
-                print(self.samplelist[i].specularpathXray)
                 XY_spec = helpfunctions.openXY(path=self.samplelist[i].specularpathXray)
                 try:
                     XY_offspec = helpfunctions.openXY(path=self.samplelist[i].offspecularpathXray)
-                    print("This means I found the off-spec file")
                 except:
                     print(f"Could not find an off-specular data file for {self.samplelist[i].sampleID}")
                     XY_offspec = [0][0]

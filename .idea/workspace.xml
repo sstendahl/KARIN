@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="Bug fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CallUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/CallUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpfunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sampleDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/sampleDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplelist.csv" beforeDir="false" afterPath="$PROJECT_DIR$/samplelist.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vlinetools.py" beforeDir="false" afterPath="$PROJECT_DIR$/vlinetools.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="sjoerd &lt;sjoerd1993@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1xdVR6KIAfYhqQHwhacushB8YI9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/../Kawi" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Karin_QT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Karin_QT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plottingtools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Karin_QT" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plottingtools.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.plottingtools" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.plottingtools" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.plottingtools" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3da9c617-dc08-423f-8363-9470b196a59a" name="Changes" comment="" />
+      <created>1630684941872</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630684941872</updated>
+      <workItem from="1630684943943" duration="5058000" />
+      <workItem from="1630835035544" duration="5054000" />
+      <workItem from="1631037133273" duration="1409000" />
+      <workItem from="1633606587643" duration="8309000" />
+      <workItem from="1633678105871" duration="599000" />
+      <workItem from="1633681030410" duration="18573000" />
+      <workItem from="1633968467029" duration="5596000" />
+      <workItem from="1634020562141" duration="43000" />
+      <workItem from="1634020618595" duration="127000" />
+      <workItem from="1634020969672" duration="1712000" />
+      <workItem from="1634022950085" duration="301000" />
+      <workItem from="1634033959020" duration="4144000" />
+      <workItem from="1634039503726" duration="4113000" />
+      <workItem from="1634050350761" duration="254000" />
+      <workItem from="1634050920989" duration="18000" />
+      <workItem from="1634115157435" duration="2088000" />
+      <workItem from="1634128146065" duration="1785000" />
+      <workItem from="1634129995667" duration="8150000" />
+      <workItem from="1634201388365" duration="2444000" />
+      <workItem from="1634214414968" duration="2054000" />
+      <workItem from="1634226607140" duration="11700000" />
+      <workItem from="1634239922835" duration="464000" />
+      <workItem from="1634281318449" duration="3117000" />
+      <workItem from="1634287756292" duration="3094000" />
+      <workItem from="1634298620570" duration="7986000" />
+      <workItem from="1634311342783" duration="4245000" />
+      <workItem from="1634401718418" duration="1213000" />
+    </task>
+    <task id="LOCAL-00031" summary="Added &quot;add peak&quot; function">
+      <created>1634237703774</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1634237703774</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added &quot;add peak&quot; function">
+      <created>1634238569270</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1634238569270</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Enabled peak detection for singular specular file">
+      <created>1634239365886</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1634239365886</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added extra prerequisite for drag mode to prevent errors while dragging outside of plot">
+      <created>1634288555023</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1634288555023</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Bug fixes">
+      <created>1634292019212</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1634292019212</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Removed some redundant data">
+      <created>1634292201251</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1634292201251</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Removed some redundant data">
+      <created>1634292214596</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1634292214596</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Implemented SampleDB">
+      <created>1634306187812</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1634306187812</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Updated readme">
+      <created>1634306299989</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1634306299989</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Code cleanup">
+      <created>1634306343509</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1634306343509</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Implemented sample edit mode">
+      <created>1634315670433</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1634315670433</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Minor bugfix">
+      <created>1634316936220</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1634316936220</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Update readme">
+      <created>1634317048715</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1634317048715</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Fixed a bug in sample creator where attributes got mixed up">
+      <created>1634553243669</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1634553243669</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Removed redundant function">
+      <created>1634553869942</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1634553869942</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fixed regression bug">
+      <created>1634554341175</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1634554341175</updated>
+    </task>
+    <task id="LOCAL-00047" summary="UX changes in SampleDB">
+      <created>1634554662268</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1634554662268</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Added incrementer class for added flexibility in SampleDB class">
+      <created>1634555647352</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1634555647352</updated>
+    </task>
+    <task id="LOCAL-00049" summary="removed some redundant prints">
+      <created>1634555753274</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1634555753274</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Minor bugfixes and polish">
+      <created>1634558167091</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1634558167092</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Rewrote the plotting function as widget in own class. Now supports tight figure layout.">
+      <created>1634565861589</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1634565861589</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Fixed path buttons in Sample creator">
+      <created>1642507209222</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507209223</updated>
+    </task>
+    <task id="LOCAL-00053" summary="groundwork for settings using json file">
+      <created>1642507921827</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1642507921827</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Fixed tab order in Sample Creator">
+      <created>1643884861944</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1643884861945</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added dynamically generated labels using settings dialog with json file">
+      <created>1643893949929</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1643893949929</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Small bug fixes">
+      <created>1643895180313</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1643895180313</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Small bug fixes">
+      <created>1643895274141</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1643895274141</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Added materials to legend">
+      <created>1643896163537</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1643896163537</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Added more setting options and fixed normalization button">
+      <created>1643918645275</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1643918645276</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added wavelength options in settings">
+      <created>1643920052956</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1643920052956</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Added &quot;Export to PDF&quot; function in SampleDB">
+      <created>1644245760914</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1644245760914</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Updated readme">
+      <created>1644245878394</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1644245878394</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Added toggle for x-ray and neutron data">
+      <created>1644249825532</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1644249825532</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Added toggle for x-ray and neutron data">
+      <created>1644249930590</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1644249930590</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Changed version number">
+      <created>1644250470906</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1644250470906</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Added source selection in menu bar">
+      <created>1644256781837</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1644256781838</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Fixed typo">
+      <created>1644257013035</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1644257013035</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Fixed a bug where new sample was overwritten after editing previous sample">
+      <created>1644336875916</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1644336875916</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Fixed a major bug related to sorting in SampleDB">
+      <created>1644338059240</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1644338059240</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Changed version number">
+      <created>1644338235414</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1644338235414</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Added &quot;add Period to SampleDB&quot; functionality">
+      <created>1644425638208</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1644425638208</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Added &quot;add Period to SampleDB&quot; functionality">
+      <created>1644426789840</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1644426789840</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Added &quot;show fit functionality&quot; for peak detection">
+      <created>1644433033926</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1644433033926</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Added labels for fit graph in peak detection">
+      <created>1644433096150</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1644433096150</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Bug fixes">
+      <created>1644433702396</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1644433702396</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Bug fixes">
+      <created>1644434046319</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1644434046319</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Bug fixes">
+      <created>1644435767581</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1644435767581</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Updated readme, changed version number">
+      <created>1644436098564</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1644436098564</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Bug fixes">
+      <created>1644437075080</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1644437075080</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added incrementer class for added flexibility in SampleDB class" />
+    <MESSAGE value="removed some redundant prints" />
+    <MESSAGE value="Minor bugfixes and polish" />
+    <MESSAGE value="Rewrote the plotting function as widget in own class. Now supports tight figure layout." />
+    <MESSAGE value="Fixed path buttons in Sample creator" />
+    <MESSAGE value="groundwork for settings using json file" />
+    <MESSAGE value="Fixed tab order in Sample Creator" />
+    <MESSAGE value="Added dynamically generated labels using settings dialog with json file" />
+    <MESSAGE value="Small bug fixes" />
+    <MESSAGE value="Added materials to legend" />
+    <MESSAGE value="Added more setting options and fixed normalization button" />
+    <MESSAGE value="Added wavelength options in settings" />
+    <MESSAGE value="Added &quot;Export to PDF&quot; function in SampleDB" />
+    <MESSAGE value="Updated readme" />
+    <MESSAGE value="Added toggle for x-ray and neutron data" />
+    <MESSAGE value="Added source selection in menu bar" />
+    <MESSAGE value="Fixed typo" />
+    <MESSAGE value="Fixed a bug where new sample was overwritten after editing previous sample" />
+    <MESSAGE value="Fixed a major bug related to sorting in SampleDB" />
+    <MESSAGE value="Changed version number" />
+    <MESSAGE value="Added &quot;add Period to SampleDB&quot; functionality" />
+    <MESSAGE value="Added &quot;show fit functionality&quot; for peak detection" />
+    <MESSAGE value="Added labels for fit graph in peak detection" />
+    <MESSAGE value="Updated readme, changed version number" />
+    <MESSAGE value="Bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CallUI.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
