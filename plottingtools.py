@@ -2,7 +2,6 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import helpfunctions
 import numpy as np
-import seaborn as sns
 from matplotlib.figure import Figure
 from PyQt5 import QtCore
 import CallUI
@@ -117,7 +116,7 @@ def plotFigure(X, Y, canvas, filename="", xlim=None, title="", scale="log",marke
 class PlotWidget(FigureCanvas):
     def __init__(self, parent=None, xlabel=None, ylabel='Intensity (arb. u)', title="", scale="log"):
         super(PlotWidget, self).__init__(Figure())
-        sns.set()
+      #  sns.set()
         helpfunctions.setGraphTheme()
         helpfunctions.setGraphContext()
         self.setParent(parent)
