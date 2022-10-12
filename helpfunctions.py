@@ -3,7 +3,7 @@ import numpy as np
 import csv
 import json
 from PyQt5.QtWidgets import QFileDialog
-import seaborn as sns
+#import seaborn as sns
 
 def getPath(self, documenttype="Data files (*.txt *.xy *.dat);;All Files (*)"):
     options = QFileDialog.Options()
@@ -35,13 +35,13 @@ def setGraphTheme():
     with open('config.json', 'r') as f:
         config = json.load(f)
     theme = config['theme'].lower()
-    sns.set_style(theme)
+   # sns.set_style(theme)
 
 def setGraphContext():
     with open('config.json', 'r') as f:
         config = json.load(f)
     context = config['context'].lower()
-    sns.set_context(context)
+  #  sns.set_context(context)
 
 def setSuperScripts(attribute):
     attribute = attribute.replace("11B", "$^1$$^1$B")
